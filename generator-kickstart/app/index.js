@@ -87,7 +87,6 @@ KickstartGenerator.prototype.jssnippets = function jssnippets() {
 
   //   // }
     
-
   //   cb();
   // });
 };
