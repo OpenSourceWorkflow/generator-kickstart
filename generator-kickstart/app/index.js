@@ -57,8 +57,40 @@ KickstartGenerator.prototype.structure = function structure() {
 
 KickstartGenerator.prototype.projectfiles = function projectfiles() {
   this.template('_package.json', 'package.json');
+
   this.copy('_config.rb', 'config.rb');
   this.copy('_gruntfile.js', 'gruntfile.js');
   this.copy('_bower.json', 'bower.json');
   this.copy('_gitignore', '.gitignore');
+
+};
+
+KickstartGenerator.prototype.jssnippets = function jssnippets() {
+
+  var cb = this.async();
+
+  this.remote('markusfalk', 'js-snippets', function (err, remote) {
+    if (err) {
+      return cb(err);
+    }
+    remote.directory('.', './test');
+    cb();
+  });
+};
+
+KickstartGenerator.prototype.html5boilerplate = function html5boilerplate() {
+
+  var cb = this.async();
+
+  this.remote('markusfalk', 'js-snippets', function (err, remote) {
+    if (err) {
+      return cb(err);
+    }
+
+    if (this.accordion)
+    remote.directory('.', 'test');
+    
+
+    cb();
+  });
 };
