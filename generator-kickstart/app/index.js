@@ -63,7 +63,6 @@ KickstartGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('_bower.json', 'bower.json');
   this.copy('_gitignore', '.gitignore');
   
-
   // this.copy('components/jquery/jquery.min.js', 'jquery.js');
 
 };
