@@ -24,29 +24,41 @@ KickstartGenerator.prototype.askFor = function askFor() {
   var prompts = [{
     name: 'projectName',
     message: 'Wie heißt das Projekt?'
+  },
+  {
+    type: 'confirm',
+    name: 'webfonts',
+    message: 'Werden webfonts verwendet?',
+    default: true
   }];
 
   this.prompt(prompts, function (props) {
     this.projectName = props.projectName;
+    this.webfonts = props.webfonts;
 
     cb();
   }.bind(this));
 };
 
-KickstartGenerator.prototype.app = function app() {
+KickstartGenerator.prototype.structure = function structure() {
   this.mkdir('img');
   this.mkdir('assets');
   this.mkdir('assets/js');
-  this.mkdir('assets/font');
   this.mkdir('assets/scss');
   this.mkdir('assets/css');
   this.mkdir('assets/img');
+  
+  // include font directory if webfonts need to be used
+  if(this.webfonts) {
+    this.mkdir('assets/font');
+  }
+
 };
 
 KickstartGenerator.prototype.projectfiles = function projectfiles() {
   this.template('_package.json', 'package.json');
-
   this.copy('_config.rb', 'config.rb');
   this.copy('_gruntfile.js', 'gruntfile.js');
+  this.copy('_bower.json', 'bower.json');
   this.copy('_gitignore', '.gitignore');
 };
