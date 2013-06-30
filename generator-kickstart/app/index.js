@@ -62,35 +62,38 @@ KickstartGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('_gruntfile.js', 'gruntfile.js');
   this.copy('_bower.json', 'bower.json');
   this.copy('_gitignore', '.gitignore');
+  
+
+  // this.copy('components/jquery/jquery.min.js', 'jquery.js');
 
 };
 
 KickstartGenerator.prototype.jssnippets = function jssnippets() {
+    this.write('header.js', 'this.headfile');
+    this.write('footer.js', 'this.footfile');
 
-  var cb = this.async();
+  // var cb = this.async();
 
-  this.remote('markusfalk', 'js-snippets', function (err, remote) {
-    if (err) {
-      return cb(err);
-    }
-    remote.directory('.', './test');
-    cb();
-  });
-};
+  // this.remote('markusfalk', 'js-snippets', function (err, remote) {
+  //   if (err) {
+  //     return cb(err);
+  //   }
 
-KickstartGenerator.prototype.html5boilerplate = function html5boilerplate() {
-
-  var cb = this.async();
-
-  this.remote('markusfalk', 'js-snippets', function (err, remote) {
-    if (err) {
-      return cb(err);
-    }
-
-    if (this.accordion)
-    remote.directory('.', 'test');
+  //   // var headfile = this.readFileAsString(path.join(this.sourceRoot(), 'failsafeContainer/head.js'));
+  //   // var footfile = this.readFileAsString(path.join(this.sourceRoot(), 'failsafeContainer/foot.js'));
     
 
-    cb();
-  });
+
+  //   // if(this.accordion) {
+
+  //   // }
+    
+
+  //   cb();
+  // });
 };
+
+KickstartGenerator.prototype.jquery = function jquery() {
+
+};
+
