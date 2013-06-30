@@ -2,9 +2,6 @@
   "name": "<%= _.slugify(projectName) %>",
   "version": "0.0.1",
   "description": "website",
-  "main": "index.html",
-  "repository": "",
-  "author": "",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-watch": "~0.4.4",
