@@ -19,7 +19,7 @@ KickstartGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
   // have Yeoman greet the user.
-  // console.log(this.yeoman);
+  console.log(this.yeoman);
 
   var prompts = [{
     name: 'projectName',
@@ -36,12 +36,24 @@ KickstartGenerator.prototype.askFor = function askFor() {
     name: 'accordion',
     message: 'Gibt es ein Accordion?',
     default: true
+  },
+  {
+    type: 'confirm',
+    name: 'overlay',
+    message: 'Gibt es ein Overlay?',
+    default: true
+  },
+  {
+    name: 'accordion',
+    message: 'Welchen Slider möchtest du verwenden? (flexslider oder anythingslider)'
   }];
 
   this.prompt(prompts, function (props) {
     this.projectName = props.projectName;
     this.webfonts = props.webfonts;
     this.accordion = props.accordion;
+    this.overlay = props.overlay;
+    this.slider = props.slider;
 
     cb();
   }.bind(this));
@@ -65,26 +77,20 @@ KickstartGenerator.prototype.structure = function structure() {
 KickstartGenerator.prototype.projectfiles = function projectfiles() {
   this.template('_package.json', 'package.json');
   this.template('_gruntfile.js', 'gruntfile.js');
+  this.template('_bower.json', 'bower.json');
 
   this.copy('_config.rb', 'config.rb');
-  this.copy('_bower.json', 'bower.json');
   this.copy('_gitignore', '.gitignore');
 
 };
 
 KickstartGenerator.prototype.jssnippets = function jssnippets() {
-    // this.write('header.js', 'this.headfile');
-    // this.write('footer.js', 'this.footfile');
-
   var cb = this.async();
-
   this.remote('markusfalk', 'js-snippets', function (err, remote) {
     if (err) {
       return cb(err);
     }
-
-    remote.directory('.', 'components');
-
+    remote.directory('.', 'components/jssnippets');
     cb();
   });
 };

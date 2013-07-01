@@ -28,7 +28,7 @@ module.exports = function(grunt) {
           {src: ['components/jquery/jquery.min.js'], dest: 'assets/js/jquery.js'},
           {src: ['components/modernizr/modernizr.js'], dest: 'assets/js/modernizr.js'}
         ]
-      },<% if (accordion) { %>
+      }<% if (accordion) { %>,
       snippets: {
         files: [
           {src: ['components/accordion/mf_accordion.js'], dest: 'accordion.js'}
