@@ -30,11 +30,18 @@ KickstartGenerator.prototype.askFor = function askFor() {
     name: 'webfonts',
     message: 'Werden webfonts verwendet?',
     default: true
+  },
+  {
+    type: 'confirm',
+    name: 'accordion',
+    message: 'Gibt es ein Accordion?',
+    default: true
   }];
 
   this.prompt(prompts, function (props) {
     this.projectName = props.projectName;
     this.webfonts = props.webfonts;
+    this.accordion = props.accordion;
 
     cb();
   }.bind(this));
@@ -47,7 +54,7 @@ KickstartGenerator.prototype.structure = function structure() {
   this.mkdir('assets/scss');
   this.mkdir('assets/css');
   this.mkdir('assets/img');
-  
+
   // include font directory if webfonts need to be used
   if(this.webfonts) {
     this.mkdir('assets/font');
@@ -57,41 +64,27 @@ KickstartGenerator.prototype.structure = function structure() {
 
 KickstartGenerator.prototype.projectfiles = function projectfiles() {
   this.template('_package.json', 'package.json');
+  this.template('_gruntfile.js', 'gruntfile.js');
 
   this.copy('_config.rb', 'config.rb');
-  this.copy('_gruntfile.js', 'gruntfile.js');
   this.copy('_bower.json', 'bower.json');
   this.copy('_gitignore', '.gitignore');
-  
-  // this.copy('components/jquery/jquery.min.js', 'jquery.js');
 
 };
 
 KickstartGenerator.prototype.jssnippets = function jssnippets() {
-    this.write('header.js', 'this.headfile');
-    this.write('footer.js', 'this.footfile');
+    // this.write('header.js', 'this.headfile');
+    // this.write('footer.js', 'this.footfile');
 
-  // var cb = this.async();
+  var cb = this.async();
 
-  // this.remote('markusfalk', 'js-snippets', function (err, remote) {
-  //   if (err) {
-  //     return cb(err);
-  //   }
+  this.remote('markusfalk', 'js-snippets', function (err, remote) {
+    if (err) {
+      return cb(err);
+    }
 
-  //   // var headfile = this.readFileAsString(path.join(this.sourceRoot(), 'failsafeContainer/head.js'));
-  //   // var footfile = this.readFileAsString(path.join(this.sourceRoot(), 'failsafeContainer/foot.js'));
-    
+    remote.directory('.', 'components');
 
-
-  //   // if(this.accordion) {
-
-  //   // }
-    
-  //   cb();
-  // });
+    cb();
+  });
 };
-
-KickstartGenerator.prototype.jquery = function jquery() {
-
-};
-

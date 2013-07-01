@@ -1,10 +1,13 @@
 {
   "name": "<%= _.slugify(projectName) %>",
   "version": "0.0.1",
-  "description": "website",
+  "description": "",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-watch": "~0.4.4",
-    "grunt-contrib-compass": "~0.3.0"
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-compass": "~0.3.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-watch": "~0.4.4"
   }
 }
