@@ -1,0 +1,10 @@
+{
+  "name": "<%= _.slugify(projectName) %>",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "modernizr": "~2.6.2"<% if (overlay) { %>,
+    "jquery-colorbox": "~1.4.26"<% } %><% if (slider === 'flex') { %>,
+    "flexslider": "~2.1"<% } %>
+  }
+}
