@@ -20,7 +20,7 @@ KickstartGenerator.prototype.askFor = function askFor() {
 
   // have Yeoman greet the user.
   console.log(this.yeoman);
-  console.log('webit!');
+  console.log('webit! yeoman-generator');
 
   var prompts = [{
     name: 'projectName',
