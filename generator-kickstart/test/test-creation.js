@@ -1,9 +1,7 @@
-/*global describe, beforeEach, it*/
+/*global describe, beforeEach, it */
 'use strict';
-
-var path    = require('path');
+var path = require('path');
 var helpers = require('yeoman-generator').test;
-
 
 describe('kickstart generator', function () {
   beforeEach(function (done) {
@@ -27,11 +25,11 @@ describe('kickstart generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
-      'someOption': 'Y'
+      'someOption': true
     });
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {
-      helpers.assertFiles(expected);
+      helpers.assertFile(expected);
       done();
     });
   });
