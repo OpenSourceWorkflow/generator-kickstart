@@ -5,7 +5,6 @@ var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
 
-
 var KickstartGenerator = yeoman.generators.Base.extend({
 
   init: function () {
@@ -26,11 +25,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     var done = this.async();
 
     // Have Yeoman greet the user.
-    this.log(yosay('Welcome to the marvelous Kickstart generator!'));
-
-    this.log(chalk.red(
-      'This generator is work in progress!'
-    ));
+    this.log(yosay('Kickstart HTML!'));
 
     var prompts = [
       {
@@ -70,12 +65,12 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       this.includeAccordion = this._hasFeature('includeAccordion');
       this.includeModernizr = this._hasFeature('includeModernizr');
 
-      this.log(chalk.bgYellow(chalk.black('###############################')));
-      this.log('answers.ContentElements: ', answers.ContentElements);
-      this.log('this.features: ', this.features);
-      this.log('includeModernizr: ', this.includeModernizr);
-      this.log('includeAccordion: ', this.includeAccordion);
-      this.log(chalk.bgYellow(chalk.black('###############################')));
+      // this.log(chalk.bgYellow(chalk.black('###############################')));
+      // this.log('answers.ContentElements: ', answers.ContentElements);
+      // this.log('this.features: ', this.features);
+      // this.log('includeModernizr: ', this.includeModernizr);
+      // this.log('includeAccordion: ', this.includeAccordion);
+      // this.log(chalk.bgYellow(chalk.black('###############################')));
 
       done();
     }.bind(this));
@@ -91,7 +86,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     this.copy('_package.json', 'package.json');
     this.copy('bowerrc', '.bowerrc');
     this.copy('gitignore', '.gitignore');
-    this.copy('gruntfile.js', 'gruntfile.js');
+    this.template('gruntfile.js', 'gruntfile.js');
     this.template('_bower.json', 'bower.json');
   },
 
@@ -106,6 +101,18 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
   html: function () {
     this.template('sandbox.html', 'sandbox.html');
+  },
+
+  components: function () {
+    if (this.includeAccordion) {
+      this._accordion();
+    }
+  },
+
+  _accordion: function () {
+    this.mkdir('components/app/accordion');
+    this.copy('accordion/accordion.html', 'components/app/accordion/accordion.html');
+    this.copy('accordion/_accordion.scss', 'components/app/accordion/_accordion.scss');
   }
 
 });

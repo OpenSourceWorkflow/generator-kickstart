@@ -95,19 +95,11 @@ module.exports = function(grunt) {
       development: {
         options: {
           // baseUrl: "modules",
-          mainConfigFile: "components/frontend-template-setup.js",
-          name: "frontend-template-setup",
+          mainConfigFile: "components/<%= _.slugify(ProjectName) %>.js",
+          name: "<%= _.slugify(ProjectName) %>",
           optimize: 'none',
-          out: "build/assets/js/frontend-template-setup.js"
+          out: "build/assets/js/<%= _.slugify(ProjectName) %>.js"
         }
-      // },
-      // production: {
-      //   options: {
-      //     baseUrl: "assets/js",
-      //     mainConfigFile: "assets/js/frontend-template-setup.js",
-      //     name: "frontend-template-setup",
-      //     out: "build/assets/js/frontend-template-setup.js"
-      //   }
       }
     },
 
@@ -133,7 +125,6 @@ module.exports = function(grunt) {
           'build/assets/js/libs/require.js': ['components/bower/requirejs/require.js']
         }
       }
-
     },
 
     imagemin: {
@@ -157,17 +148,6 @@ module.exports = function(grunt) {
       }
     }
 
-    // svg2png: {
-    //   development: {
-    //     files: [{
-    //       cwd: 'assets/img',
-    //       src: ['**/*.svg'],
-    //       dest: 'build/assets/img'
-    //     }]
-    //   }
-    // }
-
-
   });
 
   grunt.loadNpmTasks('grunt-contrib-compass');
@@ -176,7 +156,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-replace');
-  // grunt.loadNpmTasks('grunt-svg2png');
 
   grunt.registerTask('default', ['replace', 'imagemin', 'compass:development', 'requirejs:development', 'uglify']);
 

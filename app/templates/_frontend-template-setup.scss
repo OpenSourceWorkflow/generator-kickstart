@@ -63,5 +63,4 @@ $experimental-support-for-svg: true;
 /* Farben */
 
 // $grey-bright: #ccc;
-
-@import "app/common/common";
+<% if (includeAccordion) { %> @import "app/accordion/accordion"; <% } %>

@@ -8,36 +8,16 @@
   <title><%= ProjectName %></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="assets/css/<%= _.slugify(ProjectName) %>.css"><% if (includeModernizr) { %>
-  <script src="assets/js/libs/modernizr.js"></script><% } %>
+  <link rel="stylesheet" href="assets/css/<%= _.slugify(ProjectName) %>.css">
+  <% if (includeModernizr) { %> <script src="assets/js/libs/modernizr.js"></script><% } %> 
 </head>
 <body>
 
   <main class="wrapper">
-
-    {{header}}
-
-    <div class="cols24">
-      <div class="col c8of24">
-
-        {{nav}}
-
-      </div> <!-- col c8of24 -->
-      <div class="col c16of24 no-svg">
-        <h2 class="heading style2">Content Elements</h2>
-
-        {{accordion}}
-        <hr>
-        {{text}}
-        <hr>
-        {{linklist}}
-        <hr>
-        {{image-gallery}}
-
-      </div> <!-- col c16of24 -->
-    </div> <!-- cols24 -->
-
-    {{footer}}
+  
+  <% if (includeAccordion) { %>
+  {{accordion}}
+  <% } %>
 
   </main> <!-- wrapper -->
 
