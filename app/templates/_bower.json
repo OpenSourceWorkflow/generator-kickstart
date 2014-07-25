@@ -1,6 +1,12 @@
 {
-  "name": "package",
+  "name": "<%= _.slugify(ProjectName) %>",
   "version": "0.0.0",
-  "dependencies": {}
+  "main": "sandbox.html",
+  "dependencies": {<% if (oldIE) { %>
+    "jquery": "~1",<% } %><% if (includeModernizr) { %>
+    "modernizr-shim": "~0.0.1",<% } %>
+    "requirejs": "~2.1.14",<% if (includeAccordion) { %>
+    "accordion": "markusfalk/accordion#~1.2.2",<% } %>
+    "jquery.exists": "markusfalk/exists"
+  }
 }
-

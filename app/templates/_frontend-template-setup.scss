@@ -62,14 +62,6 @@ $experimental-support-for-svg: true;
 
 /* Farben */
 
-$grey-bright: #ccc;
-$grey-dark: #222;
+// $grey-bright: #ccc;
 
-$blue: #000022;
-
-// @import "_normalize.scss/normalize";
 @import "app/common/common";
-@import "app/linklist/linklist";
-@import "app/image-gallery/image-gallery";
-@import "app/nav/nav";
-@import "app/accordion/accordion";

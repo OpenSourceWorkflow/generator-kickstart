@@ -5,4 +5,3 @@ node_modules
 *.sublime-*
 .DS_Store
 .ftppass
-temp

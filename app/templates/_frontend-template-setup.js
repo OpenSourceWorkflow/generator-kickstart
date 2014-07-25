@@ -3,12 +3,9 @@ requirejs.config({
   'baseUrl': './', // app
   'paths': {
     'jquery': 'bower/jquery/dist/jquery.min',
-    'jquery.exists': 'bower/jquery.exists/jquery.exists',
-    'accordion': 'bower/accordion/accordion',
-    'foo': 'app/foo/foo'
+    <% if (includeAccordion) { %>'accordion': 'bower/accordion/accordion',<% } %>
   },
   'shim': {
-    'accordion/accordion.js': ['jquery'],
     'jquery.exists/jquery.exists.js': ['jquery']
   }
 });
