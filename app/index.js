@@ -19,7 +19,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
   },
 
   _hasFeature: function (feature) {
-    return feature && feature.indexOf(feature) !== -1;
+    return this.features && this.features.indexOf(feature) !== -1;
   },
 
   askFor: function () {
@@ -64,15 +64,24 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     this.prompt(prompts, function (answers) {
       this.ProjectName = answers.ProjectName;
       this.oldIE = answers.oldIE;
+
+      this.features = answers.ContentElements;
+
       this.includeAccordion = this._hasFeature('includeAccordion');
       this.includeModernizr = this._hasFeature('includeModernizr');
+
+      this.log(chalk.bgYellow(chalk.black('###############################')));
+      this.log('answers.ContentElements: ', answers.ContentElements);
+      this.log('this.features: ', this.features);
+      this.log('includeModernizr: ', this.includeModernizr);
+      this.log('includeAccordion: ', this.includeAccordion);
+      this.log(chalk.bgYellow(chalk.black('###############################')));
 
       done();
     }.bind(this));
   },
 
   folders: function () {
-    this.log('includeModernizr: ', this.includeModernizr);
     this.mkdir('components/app/_deferred');
     this.mkdir('components/bower');
     this.mkdir('img');
