@@ -25,7 +25,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     var done = this.async();
 
     // Have Yeoman greet the user.
-    this.log(yosay('Kickstart HTML!'));
+    this.log(yosay('Kickstart Generator @webit! Scholar Day'));
 
     var prompts = [
       {
@@ -101,18 +101,6 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
   html: function () {
     this.template('sandbox.html', 'sandbox.html');
-  },
-
-  components: function () {
-    if (this.includeAccordion) {
-      this._accordion();
-    }
-  },
-
-  _accordion: function () {
-    this.mkdir('components/app/accordion');
-    this.copy('accordion/accordion.html', 'components/app/accordion/accordion.html');
-    this.copy('accordion/_accordion.scss', 'components/app/accordion/_accordion.scss');
   }
 
 });
