@@ -63,9 +63,9 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   files: function () {
 
-    this.log('js: ', this.includeJS);
-    this.log('html: ', this.includeHTML);
-    this.log('scss: ', this.includeSCSS);
+    // this.log('js: ', this.includeJS);
+    // this.log('html: ', this.includeHTML);
+    // this.log('scss: ', this.includeSCSS);
     // this.log(this._.slugify(this.name));
 
     if(this.includeJS) {
@@ -77,6 +77,11 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     if(this.includeHTML) {
       this.template('component.html', 'components/app/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '.html');
     }
+  },
+
+  end: function () {
+    this.log('done');
+    // this.spawnCommand('composer', ['install']);
   }
 
 });
