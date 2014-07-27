@@ -1,7 +1,7 @@
 {
   "name": "generator-kickstart",
-  "version": "0.1.0",
-  "description": "Yeoman generator",
+  "version": "0.1.2",
+  "description": "Yeoman generator for creating websites based on the Frontend Template Setup (https://github.com/markusfalk/frontend-template-setup)",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "markusfalk/generator-kickstart",
@@ -10,6 +10,7 @@
     "email": "mail@markus-falk.com",
     "url": "https://github.com/markusfalk"
   },
+  "preferGlobal": true,
   "engines": {
     "node": ">=0.10.0"
   },
