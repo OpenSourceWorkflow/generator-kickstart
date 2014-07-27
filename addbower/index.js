@@ -10,7 +10,7 @@ var AddbowerGenerator = yeoman.generators.NamedBase.extend({
   //   });
   // },
 
-  installBower: function () {
+  addBower: function () {
     var done = this.async();
     this.bowerInstall([this.name], { 'save': true }, done);
   }

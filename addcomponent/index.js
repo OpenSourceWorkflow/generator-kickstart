@@ -15,14 +15,14 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     return this.features && this.features.indexOf(feature) !== -1;
   },
 
-  askFor: function () {
+  askForApp: function () {
     var done = this.async();
 
     var prompts = [
       {
         type: 'checkbox',
         name: 'whatFiles',
-        message: 'What do you need?',
+        message: 'What assets do you need?',
         choices: [
         {
           name: 'HTML',
@@ -40,14 +40,12 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
           checked: true
         }
         ]
-      },
+      }
     ];
 
     this.prompt(prompts, function (answers) {
 
       this.features = answers.whatFiles;
-
-      console.log(answers.whatFiles);
 
       this.includeHTML = this._hasFeature('includeHTML');
       this.includeSCSS = this._hasFeature('includeSCSS');
@@ -57,16 +55,13 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     }.bind(this));
   },
 
-  folders: function () {
-    this.mkdir('components/app/' + this.name);
-  },
-
-  files: function () {
+  addApp: function () {
 
     // this.log('js: ', this.includeJS);
     // this.log('html: ', this.includeHTML);
     // this.log('scss: ', this.includeSCSS);
     // this.log(this._.slugify(this.name));
+    this.mkdir('components/app/' + this.name);
 
     if(this.includeJS) {
       this.template('component.js', 'components/app/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '.js');
