@@ -1,12 +1,15 @@
 'use strict';
+
 var util = require('util');
 var yeoman = require('yeoman-generator');
-
 
 var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   init: function () {
     this.pkg = this.dest.readJSON('package.json');
+
+    this.log(this.pkg);
+
     // this.on('end', function () {
     //   this.log('Added component ' + this.name + ' to components/app/' + this._.slugify(this.name));
     // });
@@ -58,10 +61,6 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   addApp: function () {
 
-    // this.log('js: ', this.includeJS);
-    // this.log('html: ', this.includeHTML);
-    // this.log('scss: ', this.includeSCSS);
-    // this.log(this._.slugify(this.name));
     this.mkdir('components/app/' + this.name);
 
     if(this.includeJS) {
@@ -80,9 +79,6 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
       var path = 'components/' + this.pkg.name + '.scss',
           file = this.readFileAsString(path);
-
-      /* make modifications to the file string here */
-      // this.log(file);
 
       file += '@import "app/' + this._.slugify(this.name) + '/'+ this._.slugify(this.name) + '";\n';
 

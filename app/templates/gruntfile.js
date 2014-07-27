@@ -121,7 +121,7 @@ module.exports = function(grunt) {
           beautify: true
         },
         files: {
-          'build/assets/js/libs/modernizr.js': ['components/bower/modernizr-shim/modernizr.min.js'],
+          <% if (includeModernizr) { %>'build/assets/js/libs/modernizr.js': ['components/bower/modernizr-shim/modernizr.min.js'],<% } %>
           'build/assets/js/libs/require.js': ['components/bower/requirejs/require.js']
         }
       }

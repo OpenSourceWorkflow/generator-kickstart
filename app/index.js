@@ -25,13 +25,28 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     var done = this.async();
 
     // Have Yeoman greet the user.
-    this.log(yosay('Kickstart Generator @webit! Scholar Day'));
+    this.log(yosay('Kickstart Generator @ webit! Scholar Day'));
 
     var prompts = [
       {
         type: 'input',
         name: 'ProjectName',
         message: 'Your project name.'
+      },
+      {
+        type: 'input',
+        name: 'ProjectManager',
+        message: 'Who is the project manager?'
+      },
+      {
+        type: 'input',
+        name: 'GraphicDesigner',
+        message: 'Who is the graphic designer?'
+      },
+      {
+        type: 'input',
+        name: 'HTMLDeveloper',
+        message: 'Whats your name?'
       },
       {
         type: 'confirm',
@@ -59,6 +74,9 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     this.prompt(prompts, function (answers) {
       this.ProjectName = answers.ProjectName;
       this.oldIE = answers.oldIE;
+      this.ProjectManager = answers.ProjectManager;
+      this.HTMLDeveloper = answers.HTMLDeveloper;
+      this.GraphicDesigner = answers.GraphicDesigner;
 
       this.features = answers.ContentElements;
 
@@ -83,11 +101,12 @@ var KickstartGenerator = yeoman.generators.Base.extend({
   },
 
   packagefiles: function () {
+    this.copy('_bowerrc', '.bowerrc');
+    this.copy('_gitignore', '.gitignore');
     this.copy('_package.json', 'package.json');
-    this.copy('bowerrc', '.bowerrc');
-    this.copy('gitignore', '.gitignore');
-    this.template('gruntfile.js', 'gruntfile.js');
     this.template('_bower.json', 'bower.json');
+    this.template('_gruntfile.js', 'gruntfile.js');
+    this.template('_readme.md', 'README.md');
   },
 
   javascript: function () {
@@ -100,7 +119,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
   },
 
   html: function () {
-    this.template('sandbox.html', 'sandbox.html');
+    this.template('_sandbox.html', 'sandbox.html');
   }
 
 });
