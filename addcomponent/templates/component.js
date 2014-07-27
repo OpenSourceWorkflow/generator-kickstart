@@ -1,4 +1,4 @@
-define(['jquery'], function() {
+define(['jquery', 'jquery.exists'], function() {
 
   'use strict';
 
