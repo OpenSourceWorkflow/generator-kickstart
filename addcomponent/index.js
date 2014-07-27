@@ -6,9 +6,10 @@ var yeoman = require('yeoman-generator');
 var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   init: function () {
-    this.on('end', function () {
-      this.log('Added component ' + this.name + ' to components/app/' + this._.slugify(this.name));
-    });
+    this.pkg = this.dest.readJSON('package.json');
+    // this.on('end', function () {
+    //   this.log('Added component ' + this.name + ' to components/app/' + this._.slugify(this.name));
+    // });
   },
 
   _hasFeature: function (feature) {
@@ -74,10 +75,25 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     }
   },
 
-  end: function () {
-    this.log('done');
-    // this.spawnCommand('composer', ['install']);
+  addStyling: function () {
+    if(this.includeSCSS) {
+
+      var path = 'components/' + this.pkg.name + '.scss',
+          file = this.readFileAsString(path);
+
+      /* make modifications to the file string here */
+      // this.log(file);
+
+      file += '@import "app/' + this._.slugify(this.name) + '/'+ this._.slugify(this.name) + '";\n';
+
+      this.write(path, file);
+    }
   }
+
+  // end: function () {
+  //   this.log('done');
+  //   // this.spawnCommand('composer', ['install']);
+  // }
 
 });
 
