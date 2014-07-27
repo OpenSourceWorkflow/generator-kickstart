@@ -28,12 +28,12 @@ $ yo kickstart
 
 Adding a module to app/.
 ```bash
-$ yo kickstart:addcomponent
+$ yo kickstart:addcomponent <name>
 ```
 
 Adding a Bower package.
 ```bash
-$ yo kickstart:addbower
+$ yo kickstart:addbower <name>
 ```
 
 ## Requirements
