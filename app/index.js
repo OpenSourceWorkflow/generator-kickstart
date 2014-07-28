@@ -105,6 +105,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     this.copy('_gitignore', '.gitignore');
     this.copy('_package.json', 'package.json');
     this.template('_bower.json', 'bower.json');
+    this.template('_csslintrc', '.csslintrc');
     this.template('_gruntfile.js', 'gruntfile.js');
     this.template('_readme.md', 'README.md');
   },

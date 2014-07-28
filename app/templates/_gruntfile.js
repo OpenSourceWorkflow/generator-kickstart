@@ -146,17 +146,36 @@ module.exports = function(grunt) {
           dest: 'build/assets/img'
         }]
       }
+    },
+
+    jshint: {
+      options: {
+          reporter: require('jshint-stylish')
+      },
+      all: ['components/app/**/*.js']
+    },
+
+    csslint: {
+      options: {
+        csslintrc: '.csslintrc',
+        import: false
+      },
+      lax: {
+        src: ['build/assets/css/**/*.css']
+      }
     }
 
   });
 
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-replace');
 
-  grunt.registerTask('default', ['replace', 'imagemin', 'compass:development', 'requirejs:development', 'uglify']);
+  grunt.registerTask('default', ['replace', 'imagemin', 'compass:development', 'requirejs:development', 'uglify', 'csslint', 'jshint']);
 
 };

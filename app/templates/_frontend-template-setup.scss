@@ -50,7 +50,6 @@ $experimental-support-for-svg: true;
   }
 }
 
-
 // Base64 background-image width png fallback
 @mixin base64-image-retina($url) {
   background-repeat: no-repeat;
@@ -61,6 +60,7 @@ $experimental-support-for-svg: true;
 }
 
 /* Farben */
-
 // $grey-bright: #ccc;
+
+/* Load Modules */
 <% if (includeAccordion) { %> @import "app/accordion/accordion"; <% } %>
