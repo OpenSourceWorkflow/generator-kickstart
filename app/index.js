@@ -85,6 +85,16 @@ var KickstartGenerator = yeoman.generators.Base.extend({
           checked: false
         },
         {
+          name: 'GridLayout',
+          value: 'includeGridLayout',
+          checked: true
+        },
+        {
+          name: 'Base64BackgroundImages',
+          value: 'includeBase64BackgroundImages',
+          checked: true
+        },
+        {
           name: 'Modernizr',
           value: 'includeModernizr',
           checked: true
@@ -116,9 +126,11 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       this.GraphicDesigner = answers.GraphicDesigner;
       this.HTMLDeveloper = answers.HTMLDeveloper;
       this.includeAccordion = this._hasFeature('includeAccordion');
+      this.includeBase64BackgroundImages = this._hasFeature('includeBase64BackgroundImages');
       this.includeColorbox = this._hasFeature('includeColorbox');
       this.includeElementSwitcher = this._hasFeature('includeElementSwitcher');
       this.includeEqualHeight = this._hasFeature('includeEqualHeight');
+      this.includeGridLayout = this._hasFeature('includeGridLayout');
       this.includeModernizr = this._hasFeature('includeModernizr');
       this.includeTabs = this._hasFeature('includeTabs');
       this.oldIE = answers.oldIE;
@@ -158,6 +170,44 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
   html: function () {
     this.template('_sandbox.html', 'sandbox.html');
+  },
+
+  components: function () {
+
+    // colors
+    this.template('colors/_colors.scss', 'components/app/colors/colors.scss');
+
+    // common
+    this.template('common/_common.scss', 'components/app/common/common.scss');
+
+    // header
+    this.template('header/_header.scss', 'components/app/header/header.scss');
+    this.template('header/_header.html', 'components/app/header/header.html');
+
+    // footer
+    this.template('footer/_footer.scss', 'components/app/footer/footer.scss');
+    this.template('footer/_footer.html', 'components/app/footer/footer.html');
+
+    // rte
+    this.template('rte/_rte.html', 'components/app/rte/rte.html');
+    this.template('rte/_rte.scss', 'components/app/rte/rte.scss');
+
+    // element-switcher
+    this.template('element-switcher/_element-switcher.html', 'components/app/element-switcher/element-switcher.html');
+    this.template('element-switcher/_element-switcher.scss', 'components/app/element-switcher/element-switcher.scss');
+
+    // Tabs
+    this.template('tabs/_tabs.html', 'components/app/tabs/tabs.html');
+    this.template('tabs/_tabs.scss', 'components/app/tabs/tabs.scss');
+
+    // Accordion
+    this.template('accordion/_accordion.html', 'components/app/accordion/accordion.html');
+    this.template('accordion/_accordion.scss', 'components/app/accordion/accordion.scss');
+
+    // Colorbox
+    this.template('accordion/_colorbox.html', 'components/app/colorbox/colorbox.html');
+    this.template('colorbox/_colorbox.scss', 'components/app/colorbox/colorbox.scss');
+
   }
 
 });

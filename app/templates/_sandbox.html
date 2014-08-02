@@ -13,13 +13,27 @@
 </head>
 <body>
 
+  {{header}}
+
   <main class="wrapper">
+
+  {{rte}}
 
   <% if (includeAccordion) { %>
   {{accordion}}
   <% } %>
 
+  <% if (includeTabs) { %>
+  {{tabs}}
+  <% } %>
+
+  <% if (includeElementSwitcher) { %>
+  {{element-switcher}}
+  <% } %>
+
   </main> <!-- wrapper -->
+
+  {{footer}}
 
   <script data-main="assets/js/<%= _.slugify(ProjectName) %>" src="assets/js/libs/require.js"></script>
 
