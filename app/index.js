@@ -60,22 +60,22 @@ var KickstartGenerator = yeoman.generators.Base.extend({
         message: 'What more would you like?',
         choices: [
         {
-          name: 'Accordion',
+          name: 'Accordion (author: markusfalk)',
           value: 'includeAccordion',
           checked: false
         },
         {
-          name: 'Tabs',
+          name: 'Tabs (author: markusfalk)',
           value: 'includeTabs',
           checked: false
         },
         {
-          name: 'ElementSwitcher',
+          name: 'ElementSwitcher (author: markusfalk)',
           value: 'includeElementSwitcher',
           checked: false
         },
         {
-          name: 'jquery equal-height Plugin',
+          name: 'jquery equal-height Plugin (author: markusfalk)',
           value: 'includeEqualHeight',
           checked: false
         },
@@ -85,12 +85,12 @@ var KickstartGenerator = yeoman.generators.Base.extend({
           checked: false
         },
         {
-          name: 'GridLayout',
+          name: 'GridLayout (author: markusfalk)',
           value: 'includeGridLayout',
           checked: true
         },
         {
-          name: 'Base64BackgroundImages',
+          name: 'Base64BackgroundImages (author: markusfalk)',
           value: 'includeBase64BackgroundImages',
           checked: true
         },
@@ -175,38 +175,38 @@ var KickstartGenerator = yeoman.generators.Base.extend({
   components: function () {
 
     // colors
-    this.template('colors/_colors.scss', 'components/app/colors/colors.scss');
+    this.template('colors/_colors.scss', 'components/app/colors/_colors.scss');
 
     // common
-    this.template('common/_common.scss', 'components/app/common/common.scss');
+    this.template('common/_common.scss', 'components/app/common/_common.scss');
 
     // header
-    this.template('header/_header.scss', 'components/app/header/header.scss');
+    this.template('header/_header.scss', 'components/app/header/_header.scss');
     this.template('header/_header.html', 'components/app/header/header.html');
 
     // footer
-    this.template('footer/_footer.scss', 'components/app/footer/footer.scss');
+    this.template('footer/_footer.scss', 'components/app/footer/_footer.scss');
     this.template('footer/_footer.html', 'components/app/footer/footer.html');
 
     // rte
     this.template('rte/_rte.html', 'components/app/rte/rte.html');
-    this.template('rte/_rte.scss', 'components/app/rte/rte.scss');
+    this.template('rte/_rte.scss', 'components/app/rte/_rte.scss');
 
     // element-switcher
     this.template('element-switcher/_element-switcher.html', 'components/app/element-switcher/element-switcher.html');
-    this.template('element-switcher/_element-switcher.scss', 'components/app/element-switcher/element-switcher.scss');
+    this.template('element-switcher/_element-switcher.scss', 'components/app/element-switcher/_element-switcher.scss');
 
     // Tabs
     this.template('tabs/_tabs.html', 'components/app/tabs/tabs.html');
-    this.template('tabs/_tabs.scss', 'components/app/tabs/tabs.scss');
+    this.template('tabs/_tabs.scss', 'components/app/tabs/_tabs.scss');
 
     // Accordion
     this.template('accordion/_accordion.html', 'components/app/accordion/accordion.html');
-    this.template('accordion/_accordion.scss', 'components/app/accordion/accordion.scss');
+    this.template('accordion/_accordion.scss', 'components/app/accordion/_accordion.scss');
 
     // Colorbox
-    this.template('accordion/_colorbox.html', 'components/app/colorbox/colorbox.html');
-    this.template('colorbox/_colorbox.scss', 'components/app/colorbox/colorbox.scss');
+    this.template('colorbox/_colorbox.html', 'components/app/colorbox/colorbox.html');
+    this.template('colorbox/_colorbox.scss', 'components/app/colorbox/_colorbox.scss');
 
   }
 

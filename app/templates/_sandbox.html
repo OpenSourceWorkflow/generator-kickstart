@@ -17,6 +17,8 @@
 
   <main class="wrapper">
 
+  <h1 class="heading style1"><%= ProjectName %></h1>
+
   {{rte}}
 
   <% if (includeAccordion) { %>
@@ -29,6 +31,10 @@
 
   <% if (includeElementSwitcher) { %>
   {{element-switcher}}
+  <% } %>
+
+  <% if (includeColorbox) { %>
+  {{colorbox}}
   <% } %>
 
   </main> <!-- wrapper -->

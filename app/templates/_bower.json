@@ -4,14 +4,14 @@
   "main": "sandbox.html",
   "dependencies": {<% if (oldIE) { %>
     "jquery": "~1",<% } %><% if (includeModernizr) { %>
-    "modernizr-shim": "~0.0.1",<% } %>
-    "requirejs": "~2.1.14",<% if (includeAccordion) { %>
+    "modernizr-shim": "~0.0.1",<% } %><% if (includeAccordion) { %>
     "accordion": "~1.2.5",<% } %><% if (includeElementSwitcher) { %>
     "element-switcher": "~1.2.2",<% } %><% if (includeEqualHeight) { %>
     "jquery.equal-height": "~1.0.1",<% } %><% if (includeTabs) { %>
     "tabs": "~1.1.1",<% } %><% if (includeColorbox) { %>
     "colorbox": "~1.5.12",<% } %><% if (includeGridLayout) { %>
     "grid-layout": "~1.0.0",<% } %><% if (includeBase64BackgroundImages) { %>
-    "base64-background-image": "~1.0.1"<% } %>
+    "base64-background-image": "~1.0.1",<% } %>
+    "requirejs": "~2.1.14"
   }
 }

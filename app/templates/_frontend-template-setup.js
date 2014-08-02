@@ -4,16 +4,16 @@ requirejs.config({
   'paths': {
     'jquery': 'bower/jquery/dist/jquery.min',
     'jquery.exists': 'bower/jquery.exists/jquery.exists',
-    <% if (includeEqualHeight) { %>'bower/jquery.equal-height/jquery.equal-height.js',<% } %>
-    <% if (includeColorbox) { %>'bower/colorbox/jquery.colorbox-min.js',<% } %>
+    <% if (includeEqualHeight) { %>'jquery.equal-height': 'bower/jquery.equal-height/jquery.equal-height',<% } %>
+    <% if (includeColorbox) { %>'colorbox': 'bower/colorbox/jquery.colorbox-min',<% } %>
     <% if (includeAccordion) { %>'accordion': 'bower/accordion/accordion',<% } %>
-    <% if (includeTabs) { %>'accordion': 'bower/tabs/tabs',<% } %>
-    <% if (includeElementSwitcher) { %>'accordion': 'bower/element-switcher/element-switcher'<% } %>
+    <% if (includeTabs) { %>'tabs': 'bower/tabs/tabs',<% } %>
+    <% if (includeElementSwitcher) { %>'element-switcher': 'bower/element-switcher/element-switcher'<% } %>
   },
   'shim': {
-    'jquery.exists/jquery.exists.js': ['jquery'],
-    <% if (includeEqualHeight) { %>'jquery.equal-height.js': ['jquery'],<% } %>
-    <% if (includeColorbox) { %>'jquery.colorbox-min.js': ['jquery']<% } %>
+    'jquery.exists': ['jquery'],
+    <% if (includeEqualHeight) { %>'jquery.equal-height': ['jquery'],<% } %>
+    <% if (includeColorbox) { %>'jquery.colorbox-min': ['jquery']<% } %>
   }
 });
 
