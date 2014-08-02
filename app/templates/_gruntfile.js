@@ -8,52 +8,56 @@ module.exports = function(grunt) {
         livereload: true,
         spawn: false
       },
+
+      // Styling
       scss: {
-        files: 'assets/scss/**/*.scss',
-        tasks: ['compass:development']
+        files: 'components/**/*.scss',
+        tasks: ['compass:development', 'csslint']
       },
-      js_modules: {
-        files: ['assets/js/modules/*.js', 'assets/js/*.js'],
-        tasks: ['requirejs:development'],
+
+      // Scripting
+      js: {
+        files: ['components/app/**/*.js', '!components/app/_deferred/**/*.js'],
+        tasks: ['requirejs:development', 'jshint'],
       },
       js_deferred: {
-        files: ['assets/js/modules/deferred/*.js'],
-        tasks: ['uglify:deferred'],
+        files: ['components/app/_deferred/**/*.js'],
+        tasks: ['uglify:deferred', 'jshint'],
       },
-      js_external: {
-        files: ['assets/js/libs/external/*.js'],
-        tasks: ['uglify:external'],
+      js_bower: {
+        files: ['components/bower/**/*.js'],
+        tasks: ['uglify:external', 'requirejs:development'],
       },
-      js_libs: {
-        files: ['assets/js/libs/*.js'],
-        tasks: ['uglify:external'],
-      },
+
+      // HTML
       html: {
-        files: ['**/*.html', '!build/**/*.html'],
+        files: ['**/*.html', '!components/bower/**/*.html', '!build/**/*.html'],
         tasks: ['replace:development'],
       },
+
+      // Images
       img_content: {
         files: 'img/**/*.{png,gif,jpg,svg}',
         tasks: ['imagemin:content'],
       },
       img_background: {
-        files: 'assets/img/**/*.{png,gif,jpg,svg}',
-        tasks: ['imagemin:backgrounds'],
+        files: 'components/**/*.{png,gif,jpg,svg}',
+        tasks: ['clean:css', 'imagemin:backgrounds' , 'compass:development', 'clean:development', 'csslint'],
       }
     },
 
     compass: {
       options: {
         // banner: "/* <%= pkg.author %>, Version: <%= pkg.version %> */",
+        // httpPath: "/build",
         // imagesPath: 'assets/img',
         // specify: '*.scss'
         asset_cache_buster: false,
         cssDir: 'build/assets/css',
         httpImagesPath: '/assets/img',
-        httpPath: "/build", // . = relative
         imagesDir: 'build/assets/img',
         noLineComments: true,
-        sassDir: 'components',
+        sassDir: 'components'
       },
       development: {
         options: {
@@ -163,10 +167,21 @@ module.exports = function(grunt) {
       lax: {
         src: ['build/assets/css/**/*.css']
       }
+    },
+
+    clean: {
+      development: {
+        src: ["build/assets/img/**/*.svg"]
+      },
+      css: {
+        src: ["build/assets/css/**/*.css"]
+      }
     }
 
   });
 
+  grunt.loadNpmTasks('grunt-bower-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
@@ -176,6 +191,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-replace');
 
-  grunt.registerTask('default', ['replace', 'imagemin', 'compass:development', 'requirejs:development', 'uglify', 'csslint', 'jshint']);
+  grunt.registerTask('default', ['replace', 'imagemin', 'compass:development', 'requirejs:development', 'uglify', 'clean:development', 'csslint', 'jshint']);
 
 };
