@@ -1,6 +1,6 @@
 {
   "name": "generator-kickstart",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Yeoman generator for creating websites based on the Frontend Template Setup (https://github.com/markusfalk/frontend-template-setup)",
   "license": "MIT",
   "main": "app/index.js",
