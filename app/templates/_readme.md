@@ -36,6 +36,12 @@ Adding a Bower package.
 $ yo kickstart:addbower <name>
 ```
 
+## Customization
+
+* .gitignore
+* [.csslintrc](https://github.com/CSSLint/csslint/wiki/Rules)
+* [.jshintrc](http://www.jshint.com/docs/options/)
+
 ## Requirements
 
 * [npm](https://npmjs.org)

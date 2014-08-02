@@ -58,16 +58,38 @@ var KickstartGenerator = yeoman.generators.Base.extend({
         type: 'checkbox',
         name: 'ContentElements',
         message: 'What more would you like?',
-        choices: [{
+        choices: [
+        {
           name: 'Accordion',
           value: 'includeAccordion',
+          checked: false
+        },
+        {
+          name: 'Tabs',
+          value: 'includeTabs',
+          checked: false
+        },
+        {
+          name: 'ElementSwitcher',
+          value: 'includeElementSwitcher',
+          checked: false
+        },
+        {
+          name: 'jquery equal-height Plugin',
+          value: 'includeEqualHeight',
+          checked: false
+        },
+        {
+          name: 'Colorbox',
+          value: 'includeColorbox',
           checked: false
         },
         {
           name: 'Modernizr',
           value: 'includeModernizr',
           checked: true
-        }]
+        }
+        ]
       },
       {
         type: 'list',
@@ -94,7 +116,11 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       this.GraphicDesigner = answers.GraphicDesigner;
       this.HTMLDeveloper = answers.HTMLDeveloper;
       this.includeAccordion = this._hasFeature('includeAccordion');
+      this.includeColorbox = this._hasFeature('includeColorbox');
+      this.includeElementSwitcher = this._hasFeature('includeElementSwitcher');
+      this.includeEqualHeight = this._hasFeature('includeEqualHeight');
       this.includeModernizr = this._hasFeature('includeModernizr');
+      this.includeTabs = this._hasFeature('includeTabs');
       this.oldIE = answers.oldIE;
       this.ProjectManager = answers.ProjectManager;
       this.ProjectName = answers.ProjectName;
@@ -117,6 +143,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     this.template('_bower.json', 'bower.json');
     this.template('_csslintrc', '.csslintrc');
     this.template('_gruntfile.js', 'gruntfile.js');
+    this.template('_jshintrc', '.jshintrc');
     this.template('_readme.md', 'README.md');
   },
 
