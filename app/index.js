@@ -90,25 +90,15 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
     this.prompt(prompts, function (answers) {
 
-      this.ProjectName = answers.ProjectName;
-      this.oldIE = answers.oldIE;
-      this.ProjectManager = answers.ProjectManager;
-      this.HTMLDeveloper = answers.HTMLDeveloper;
-      this.GraphicDesigner = answers.GraphicDesigner;
-
       this.features = answers.ContentElements;
-
+      this.GraphicDesigner = answers.GraphicDesigner;
+      this.HTMLDeveloper = answers.HTMLDeveloper;
       this.includeAccordion = this._hasFeature('includeAccordion');
       this.includeModernizr = this._hasFeature('includeModernizr');
-
+      this.oldIE = answers.oldIE;
+      this.ProjectManager = answers.ProjectManager;
+      this.ProjectName = answers.ProjectName;
       this.WCAG2 = answers.WCAG2;
-
-      // this.log(chalk.bgYellow(chalk.black('###############################')));
-      // this.log('answers.ContentElements: ', answers.ContentElements);
-      // this.log('this.features: ', this.features);
-      // this.log('includeModernizr: ', this.includeModernizr);
-      // this.log('includeAccordion: ', this.includeAccordion);
-      // this.log(chalk.bgYellow(chalk.black('###############################')));
 
       done();
     }.bind(this));
