@@ -69,9 +69,27 @@ var KickstartGenerator = yeoman.generators.Base.extend({
           checked: true
         }]
       },
+      {
+        type: 'list',
+        name: 'WCAG2',
+        message: 'What WCAG2A level would you like to develop for?',
+        choices: [{
+          name: 'A',
+          value: 'WCAG2A'
+        },
+        {
+          name: 'AA',
+          value: 'WCAG2AA'
+        },
+        {
+          name: 'AAA',
+          value: 'WCAG2AAA'
+        }]
+      }
     ];
 
     this.prompt(prompts, function (answers) {
+
       this.ProjectName = answers.ProjectName;
       this.oldIE = answers.oldIE;
       this.ProjectManager = answers.ProjectManager;
@@ -82,6 +100,8 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
       this.includeAccordion = this._hasFeature('includeAccordion');
       this.includeModernizr = this._hasFeature('includeModernizr');
+
+      this.WCAG2 = answers.WCAG2;
 
       // this.log(chalk.bgYellow(chalk.black('###############################')));
       // this.log('answers.ContentElements: ', answers.ContentElements);

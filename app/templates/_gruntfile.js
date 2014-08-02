@@ -169,6 +169,23 @@ module.exports = function(grunt) {
       }
     },
 
+    accessibility: {
+      options : {
+        accessibilityLevel: '<%= WCAG2 %>',
+        outputFormat: 'txt',
+        domElement: true
+      },
+      development : {
+        files: [{
+          expand  : true,
+          cwd     : 'build/',
+          src     : ['*.html'],
+          dest    : 'build/WCAG2-reports/',
+          ext     : '-report.txt'
+        }]
+      }
+    },
+
     clean: {
       development: {
         src: ["build/assets/img/**/*.svg"]
@@ -180,6 +197,7 @@ module.exports = function(grunt) {
 
   });
 
+  grunt.loadNpmTasks('grunt-accessibility');
   grunt.loadNpmTasks('grunt-bower-requirejs');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
@@ -191,6 +209,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-replace');
 
-  grunt.registerTask('default', ['replace', 'imagemin', 'compass:development', 'requirejs:development', 'uglify', 'clean:development', 'csslint', 'jshint']);
+  grunt.registerTask('default', ['replace', 'imagemin', 'compass:development', 'requirejs:development', 'uglify', 'clean:development', 'csslint', 'jshint', 'accessibility:development']);
 
 };
