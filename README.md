@@ -33,7 +33,7 @@ This is your working environment:
 
 ```bash
 .
-|── components/ (contains SCSS, JS, HTML for all modules - 3rd part & own)
+|── components/
 |   └── bower/ (all bower components)
 |   └── app/ (all own components in folders containing JS, SCSS, HTML)
 |   |   └── _deferred/ (modules that are loaded dynamically)
