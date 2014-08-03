@@ -89,6 +89,7 @@ The HTML from the accordion component folder will be inserted into the sandbox c
 └── sandbox.html
 ```
 
+In your html file:
 ```html
 <html>
   <head>...</head>
