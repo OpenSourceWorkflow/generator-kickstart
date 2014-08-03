@@ -2,17 +2,22 @@
 
 var util = require('util');
 var yeoman = require('yeoman-generator');
+var chalk = require('chalk');
 
 var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   init: function () {
     this.pkg = this.dest.readJSON('package.json');
 
-    // this.log(this.pkg);
-
-    // this.on('end', function () {
-    //   this.log('Added component ' + this.name + ' to components/app/' + this._.slugify(this.name));
-    // });
+    this.on('end', function () {
+      if (this.ComponentType === 'standardModule') {
+        this.log('Added component ' + this.name + ' to components/app/' + this._.slugify(this.name));
+        this.log('You can use it in your HTML with ' + chalk.blue('{app:{' + this._.slugify(this.name) + '}}'));
+      } else {
+        this.log('Added component ' + this.name + ' to components/app/_deferred/' + this._.slugify(this.name));
+        this.log('You can use it in your HTML with ' + chalk.blue('{deferred:{' + this._.slugify(this.name) + '}}'));
+      }
+    });
   },
 
   _hasFeature: function (feature) {
