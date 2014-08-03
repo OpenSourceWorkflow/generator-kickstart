@@ -79,9 +79,14 @@ In your HTML you need to use one of the following placeholders for the 2 types o
 Accordion Example
 
 ```html
-<div>
-  {app:{accordion}}
-</div>
+<html>
+  <head>...</head>
+  <body>
+    <main>
+      {app:{accordion}}
+    </main>
+  </body>
+</html>
 ```
 
 ## Getting Started
