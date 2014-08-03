@@ -143,7 +143,7 @@ $ grunt watch
 This is for extending the project with another component:
 
 ```bash
-$ yo kickstart:addcomponent
+$ yo kickstart:addcomponent accordion
 $ grunt
 $ grunt watch
 ```
@@ -151,7 +151,7 @@ $ grunt watch
 This is for extending the project with another bower package:
 
 ```bash
-$ yo kickstart:addbower
+$ yo kickstart:addbower accordion
 $ grunt
 $ grunt watch
 ```
