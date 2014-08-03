@@ -64,6 +64,26 @@ This is what it builds into:
 └── sandbox.html
 ```
 
+## HTML Placeholders
+
+Include your modules via placeholder into your main template files. This gives you great overview on your templates and makes it easy to git log your components.
+
+In your HTML you need to use one of the following placeholders for the 2 types of compontents.
+
+```html
+<div>
+  {app:{module-name}}
+  {deferred:{module-name}}
+</div>
+```
+Accordion Example
+
+```html
+<div>
+  {app:{accordion}}
+</div>
+```
+
 ## Getting Started
 
 Install Yeoman & kickstart generator ([Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started))
