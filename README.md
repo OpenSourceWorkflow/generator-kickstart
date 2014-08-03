@@ -56,7 +56,7 @@ This is your working environment:
 This is what it builds into:
 
 ```bash
-.
+build/
 |── assets/
 |   └── img/
 |   └── css/

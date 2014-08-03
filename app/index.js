@@ -59,46 +59,46 @@ var KickstartGenerator = yeoman.generators.Base.extend({
         name: 'ContentElements',
         message: 'What more would you like?',
         choices: [
-        {
-          name: 'Accordion (author: markusfalk)',
-          value: 'includeAccordion',
-          checked: false
-        },
-        {
-          name: 'Tabs (author: markusfalk)',
-          value: 'includeTabs',
-          checked: false
-        },
-        {
-          name: 'ElementSwitcher (author: markusfalk)',
-          value: 'includeElementSwitcher',
-          checked: false
-        },
-        {
-          name: 'jquery equal-height Plugin (author: markusfalk)',
-          value: 'includeEqualHeight',
-          checked: false
-        },
-        {
-          name: 'Colorbox',
-          value: 'includeColorbox',
-          checked: false
-        },
-        {
-          name: 'GridLayout (author: markusfalk)',
-          value: 'includeGridLayout',
-          checked: true
-        },
-        {
-          name: 'Base64BackgroundImages (author: markusfalk)',
-          value: 'includeBase64BackgroundImages',
-          checked: true
-        },
-        {
-          name: 'Modernizr',
-          value: 'includeModernizr',
-          checked: true
-        }
+          {
+            name: 'Accordion (author: markusfalk)',
+            value: 'includeAccordion',
+            checked: false
+          },
+          {
+            name: 'Tabs (author: markusfalk)',
+            value: 'includeTabs',
+            checked: false
+          },
+          {
+            name: 'ElementSwitcher (author: markusfalk)',
+            value: 'includeElementSwitcher',
+            checked: false
+          },
+          {
+            name: 'jquery equal-height Plugin (author: markusfalk)',
+            value: 'includeEqualHeight',
+            checked: false
+          },
+          {
+            name: 'Colorbox',
+            value: 'includeColorbox',
+            checked: false
+          },
+          {
+            name: 'GridLayout (author: markusfalk)',
+            value: 'includeGridLayout',
+            checked: true
+          },
+          {
+            name: 'Base64BackgroundImages (author: markusfalk)',
+            value: 'includeBase64BackgroundImages',
+            checked: true
+          },
+          {
+            name: 'Modernizr',
+            value: 'includeModernizr',
+            checked: true
+          }
         ]
       },
       {
