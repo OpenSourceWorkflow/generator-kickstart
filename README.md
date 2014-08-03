@@ -68,15 +68,26 @@ This is what it builds into:
 
 Include your modules via placeholder into your main template files. This gives you great overview on your templates and makes it easy to git log your components.
 
-In your HTML you need to use one of the following placeholders for the 2 types of compontents.
+In your HTML you need to use one of the following placeholders for the 2 types of compontents. This will include the html from your component folder.
 
 ```html
 <div>
-  {app:{module-name}}
-  {deferred:{module-name}}
+  {app:{component-name}}
+  {deferred:{component-name}}
 </div>
 ```
-Accordion Example
+### Accordion Example
+
+The HTML from the accordion component folder will be inserted into the sandbox containing the placeholder.
+
+```bash
+.
+|── components/
+|   └── app/
+|       └── accordion/
+|           └── accordion.html
+└── sandbox.html
+```
 
 ```html
 <html>
