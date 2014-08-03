@@ -148,6 +148,14 @@ $ grunt
 $ grunt watch
 ```
 
+This is for extending the project with another bower package:
+
+```bash
+$ yo kickstart:addbower
+$ grunt
+$ grunt watch
+```
+
 ## Customization
 
 There are a few customizable options for you to consider:
