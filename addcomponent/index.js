@@ -10,6 +10,9 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     this.pkg = this.dest.readJSON('package.json');
 
     this.on('end', function () {
+
+      this.log('\n');
+
       if (this.ComponentType === 'standardModule') {
         this.log('Added component ' + this.name + ' to components/app/' + this._.slugify(this.name));
         this.log('You can use it in your HTML with ' + chalk.blue('{app:{' + this._.slugify(this.name) + '}}'));
@@ -17,6 +20,12 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
         this.log('Added component ' + this.name + ' to components/app/_deferred/' + this._.slugify(this.name));
         this.log('You can use it in your HTML with ' + chalk.blue('{deferred:{' + this._.slugify(this.name) + '}}'));
       }
+
+      if(this.includeJS) {
+        this.log('Don\'t forget to wire this into your requirejs config (components/' + this.pkg.name + '.js)');
+      }
+
+      this.log('\n');
     });
   },
 
