@@ -8,7 +8,7 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
   init: function () {
     this.pkg = this.dest.readJSON('package.json');
 
-    this.log(this.pkg);
+    // this.log(this.pkg);
 
     // this.on('end', function () {
     //   this.log('Added component ' + this.name + ' to components/app/' + this._.slugify(this.name));
@@ -79,7 +79,7 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     if (this.ComponentType === 'standardModule') {
       this.directory = 'components/app/';
     } else {
-      this.directory = 'components/app/_deferred';
+      this.directory = 'components/app/_deferred/';
     }
 
   },
@@ -109,7 +109,7 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
       if (this.ComponentType === 'standardModule') {
         file += '@import "app/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '";\n';
       } else {
-        file += '@import "app/_deferred' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '";\n';
+        file += '@import "app/_deferred/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '";\n';
       }
 
       this.write(path, file);

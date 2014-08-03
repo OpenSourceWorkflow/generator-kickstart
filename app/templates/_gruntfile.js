@@ -73,13 +73,19 @@ module.exports = function(grunt) {
     },
 
     replace: {
-      development: {
+      modules: {
         options: {
           patterns: [
             {
-              match: /{{(.+)}}/g,
+              match: /{app:{(.+)}}/g,
               replacement: function (match, placeholder) {
-                return grunt.file.read("components/app/" + placeholder + "/" + placeholder + ".html");
+                return grunt.file.read('components/app/' + placeholder + '/' + placeholder + '.html');
+              }
+            },
+            {
+              match: /{deferred:{(.+)}}/g,
+              replacement: function (match, placeholder) {
+                return grunt.file.read('components/app/_deferred/' + placeholder + '/' + placeholder + '.html');
               }
             }
           ]
