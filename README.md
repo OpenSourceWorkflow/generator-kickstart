@@ -73,10 +73,8 @@ Include your modules via placeholder into your main template files. This gives y
 In your HTML you need to use one of the following placeholders for the 2 types of compontents. This will include the html from your component folder.
 
 ```html
-<div>
-  {app:{component-name}}
-  {deferred:{component-name}}
-</div>
+{app:{component-name}}
+{deferred:{component-name}}
 ```
 ### Accordion Example
 
@@ -129,17 +127,24 @@ Adding a Bower package.
 $ yo kickstart:addbower <name>
 ```
 
+### Example workflow
+
+```bash
+$ npm install -g yo
+$ npm install -g generator-kickstart
+
+$ yo kickstart
+$ grunt
+$ grunt watch
+```
+A view commands and you are ready to develop.
+
 ## Customization
+
+There are a few customizable options for you to consider:
 
 * [.csslintrc](https://github.com/CSSLint/csslint/wiki/Rules)
 * [.jshintrc](http://www.jshint.com/docs/options/)
-
-## Requirements
-
-* [npm](https://npmjs.org)
-* [Yeoman](http://yeoman.io)
-* [Grunt](http://gruntjs.com)
-* [Bower](http://bower.io)
 
 ## License
 
