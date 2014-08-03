@@ -1,47 +1,109 @@
-# generator-kickstart [![Build Status](https://secure.travis-ci.org/markusfalk/generator-kickstart.png?branch=master)](https://travis-ci.org/markusfalk/generator-kickstart)
+# generator-kickstart
 
-> [Yeoman](http://yeoman.io) generator
+The generator-kickstart is an opinionated setup for front end development designed to make use of the following technologies:
 
+* Compass & SASS
+* requireJS
+* jQuery
+
+It aimes at creating frontend templates with high quality standards by continuously testing your work in progress:
+
+* checks for WCAG2 compliance at different levels
+* uses JSHint to check your java script
+* CSSLint monitores your styling 
+
+## Main goal
+
+The main goal of the project is to incorporate dependency management for the web using [Bower](http://bower.io) to enable you to reuse great projects easily and streamline your everday workflow.  
+
+The generator installs many commonly used components ready for you to customize to your needs:
+
+* [Accordion](https://github.com/markusfalk/accordion)
+* [Base64 Background Images](https://github.com/markusfalk/base64-background-image)
+* [Colorbox](http://www.jacklmoore.com/colorbox/)
+* [Element-Switcher](https://github.com/markusfalk/element-switcher)
+* [Grid Layout](https://github.com/markusfalk/grid-layout)
+* [jquery.equal-height Plugin](https://github.com/markusfalk/jquery.equal-height)
+* [Modernizr](http://modernizr.com/)
+* [Tabs](https://github.com/markusfalk/tabs)
+
+## The setup
+
+This is your working environment:
+
+```bash
+.
+|── components/ (contains SCSS, JS, HTML for all modules - 3rd part & own)
+|   └── bower/ (all bower components)
+|   └── app/ (all own components in folders containing JS, SCSS, HTML)
+|   |   └── _deferred/ (modules that are loaded dynamically)
+|   |   └── main.js (main requirejs module)
+|   └── <project-name>.js (require config)
+|   └── <project-name>.scss (base file for SCSS)
+|── img/ (images rendered by CMS)
+└── .bowerrc
+└── .csslintrc
+└── .gitignore
+└── bower.json
+└── gruntfile.js
+└── package.json
+└── README.md
+└── sandbox.html (main template)
+```
+
+This is what it builds into:
+
+```bash
+.
+|── assets/
+|   └── img/
+|   └── css/
+|   └── js/
+|       └── _deferred/
+|── img/ 
+└── sandbox.html
+```
 
 ## Getting Started
 
-### What is Yeoman?
-
-Trick question. It's not a thing. It's this guy:
-
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+Install Yeoman & kickstart generator ([Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started))
 
 ```bash
 $ npm install -g yo
-```
-
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-kickstart from npm, run:
-
-```bash
 $ npm install -g generator-kickstart
 ```
 
-Finally, initiate the generator:
+Your are ready to use the generator with:
 
 ```bash
 $ yo kickstart
 ```
 
-### Getting To Know Yeoman
+Adding a module to app/.
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+```bash
+$ yo kickstart:addcomponent <name>
+```
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+Adding a Bower package.
 
+```bash
+$ yo kickstart:addbower <name>
+```
+
+## Customization
+
+* [.csslintrc](https://github.com/CSSLint/csslint/wiki/Rules)
+* [.jshintrc](http://www.jshint.com/docs/options/)
+
+## Requirements
+
+* [npm](https://npmjs.org)
+* [Yeoman](http://yeoman.io)
+* [Grunt](http://gruntjs.com)
+* [Bower](http://bower.io)
 
 ## License
 
 MIT
+
