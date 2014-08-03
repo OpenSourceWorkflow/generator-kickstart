@@ -129,6 +129,8 @@ $ yo kickstart:addbower <name>
 
 ### Example workflow
 
+Here is what you need to get a new project working:
+
 ```bash
 $ npm install -g yo
 $ npm install -g generator-kickstart
@@ -137,7 +139,14 @@ $ yo kickstart
 $ grunt
 $ grunt watch
 ```
-A view commands and you are ready to develop.
+
+This is for extending the project with another component:
+
+```bash
+$ yo kickstart:addcomponent
+$ grunt
+$ grunt watch
+```
 
 ## Customization
 
