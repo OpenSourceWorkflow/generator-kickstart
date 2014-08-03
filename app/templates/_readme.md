@@ -10,6 +10,10 @@ Project manager: <%= ProjectManager %>
 Designer: <%= GraphicDesigner %>
 HTML developer: <%= HTMLDeveloper %>
 
+## WCAG2
+
+Level: <%= WCAG2 %>
+
 ## Usage
 
 This is a kickstarted project (https://github.com/markusfalk/generator-kickstart).

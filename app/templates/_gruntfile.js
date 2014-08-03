@@ -178,7 +178,7 @@ module.exports = function(grunt) {
 
     accessibility: {
       options : {
-        accessibilityLevel: '<%= WCAG2 %>',
+        accessibilityLevel: 'WCAG2<%= WCAG2 %>',
         outputFormat: 'txt',
         domElement: true
       },

@@ -107,15 +107,15 @@ var KickstartGenerator = yeoman.generators.Base.extend({
         message: 'What WCAG2A level would you like to develop for?',
         choices: [{
           name: 'A',
-          value: 'WCAG2A'
+          value: 'A'
         },
         {
           name: 'AA',
-          value: 'WCAG2AA'
+          value: 'AA'
         },
         {
           name: 'AAA',
-          value: 'WCAG2AAA'
+          value: 'AAA'
         }]
       }
     ];
