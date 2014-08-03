@@ -13,33 +13,33 @@
 </head>
 <body>
 
-  {{header}}
+  {app:{header}}
 
   <main class="wrapper">
 
   <h1 class="heading style1"><%= ProjectName %></h1>
 
-  {{rte}}
+  {app:{rte}}
 
   <% if (includeAccordion) { %>
-  {{accordion}}
+  {app:{accordion}}
   <% } %>
 
   <% if (includeTabs) { %>
-  {{tabs}}
+  {app:{tabs}}
   <% } %>
 
   <% if (includeElementSwitcher) { %>
-  {{element-switcher}}
+  {app:{element-switcher}}
   <% } %>
 
   <% if (includeColorbox) { %>
-  {{colorbox}}
+  {app:{colorbox}}
   <% } %>
 
   </main> <!-- wrapper -->
 
-  {{footer}}
+  {app:{footer}}
 
   <script data-main="assets/js/<%= _.slugify(ProjectName) %>" src="assets/js/libs/require.js"></script>
 
