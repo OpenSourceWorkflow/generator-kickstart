@@ -60,22 +60,22 @@ var KickstartGenerator = yeoman.generators.Base.extend({
         message: 'What more would you like?',
         choices: [
           {
-            name: 'Accordion (author: markusfalk)',
+            name: 'Accordion',
             value: 'includeAccordion',
             checked: false
           },
           {
-            name: 'Tabs (author: markusfalk)',
+            name: 'Tabs',
             value: 'includeTabs',
             checked: false
           },
           {
-            name: 'ElementSwitcher (author: markusfalk)',
+            name: 'ElementSwitcher',
             value: 'includeElementSwitcher',
             checked: false
           },
           {
-            name: 'jquery equal-height Plugin (author: markusfalk)',
+            name: 'jquery equal-height Plugin',
             value: 'includeEqualHeight',
             checked: false
           },
@@ -85,12 +85,12 @@ var KickstartGenerator = yeoman.generators.Base.extend({
             checked: false
           },
           {
-            name: 'GridLayout (author: markusfalk)',
+            name: 'GridLayout',
             value: 'includeGridLayout',
             checked: true
           },
           {
-            name: 'Base64BackgroundImages (author: markusfalk)',
+            name: 'Base64BackgroundImages',
             value: 'includeBase64BackgroundImages',
             checked: true
           },
