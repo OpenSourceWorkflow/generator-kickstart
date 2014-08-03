@@ -25,7 +25,7 @@ The generator installs many commonly used components ready for you to customize 
 * [Grid Layout](https://github.com/markusfalk/grid-layout)
 * [jquery.equal-height Plugin](https://github.com/markusfalk/jquery.equal-height)
 * [Modernizr](http://modernizr.com/)
-* [Tabs]()https://github.com/markusfalk/tabs
+* [Tabs](https://github.com/markusfalk/tabs)
 
 ## The setup
 
