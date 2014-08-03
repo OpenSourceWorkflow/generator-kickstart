@@ -1,3 +1,5 @@
+PRERELASE: not ready for production yet!
+
 # generator-kickstart
 
 The generator-kickstart is an opinionated setup for front end development designed to make use of the following technologies:
