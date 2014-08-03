@@ -1,4 +1,4 @@
-# generator-kickstart [![Build Status](https://secure.travis-ci.org/markusfalk/generator-kickstart.png?branch=master)](https://travis-ci.org/markusfalk/generator-kickstart)
+# generator-kickstart
 
 The generator-kickstart is an opinionated setup for front end development designed to make use of the following technologies:
 
