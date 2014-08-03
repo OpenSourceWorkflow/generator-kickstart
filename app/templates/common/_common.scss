@@ -1,0 +1,20 @@
+<% if (includeModernizr) { %>
+/* https://github.com/markusfalk/grid-layout */
+@include grid-layout;
+<% } %>
+<% if (includeBase64BackgroundImages) { %>
+/*
+
+  https://github.com/markusfalk/base64-background-image
+
+  %icon {
+    @include base64-background-image("icon");
+  }
+
+  // extend the placeholder
+  .ico {
+    @extend %disruption-orange;
+  }
+
+*/
+<% } %>
