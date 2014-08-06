@@ -31,7 +31,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       {
         type: 'input',
         name: 'ProjectName',
-        message: 'Your project name.'
+        message: 'What is the project\'s name?'
       },
       {
         type: 'input',
@@ -46,12 +46,12 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       {
         type: 'input',
         name: 'HTMLDeveloper',
-        message: 'Whats your name?'
+        message: 'Who is developing the fronten end?'
       },
       {
         type: 'confirm',
         name: 'oldIE',
-        message: 'Support IE8?',
+        message: 'Would you like to support legacy IE (<9)?',
         default: false
       },
       {
