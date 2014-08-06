@@ -1,4 +1,4 @@
-PRERELASE: not ready for production yet!
++++ PRE-RELEASE: not ready for production yet! +++
 
 # generator-kickstart
 
@@ -21,11 +21,13 @@ The main goal of the project is to incorporate dependency management for the web
 The generator installs many commonly used components ready for you to customize to your needs:
 
 * [Accordion](https://github.com/markusfalk/accordion)
+* [AnythingSlider](https://github.com/CSS-Tricks/AnythingSlider)
 * [Base64 Background Images](https://github.com/markusfalk/base64-background-image)
 * [Colorbox](http://www.jacklmoore.com/colorbox/)
 * [Element-Switcher](https://github.com/markusfalk/element-switcher)
 * [Grid Layout](https://github.com/markusfalk/grid-layout)
 * [jquery.equal-height Plugin](https://github.com/markusfalk/jquery.equal-height)
+* [jquery.exists Plugin](https://github.com/markusfalk/jquery.exists)
 * [Modernizr](http://modernizr.com/)
 * [Tabs](https://github.com/markusfalk/tabs)
 
