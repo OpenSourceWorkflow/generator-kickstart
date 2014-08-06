@@ -10,7 +10,8 @@ $experimental-support-for-svg: true;
 @import "app/footer/footer";
 @import "app/rte/rte";
 
-<% if (includeElementSwitcher) { %> @import "app/element-switcher/element-switcher"; <% } %>
-<% if (includeTabs) { %> @import "app/tabs/tabs"; <% } %>
-<% if (includeAccordion) { %> @import "app/accordion/accordion"; <% } %>
-<% if (includeColorbox) { %> @import "app/colorbox/colorbox"; <% } %>
+<% if (includeElementSwitcher) { %>@import "app/element-switcher/element-switcher";<% } %>
+<% if (includeTabs) { %>@import "app/tabs/tabs";<% } %>
+<% if (includeAccordion) { %>@import "app/accordion/accordion";<% } %>
+<% if (includeColorbox) { %>@import "app/overlay/overlay";<% } %>
+<% if (includeAnythingSlider) { %>@import "app/overlay/overlay";<% } %>

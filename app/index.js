@@ -60,13 +60,18 @@ var KickstartGenerator = yeoman.generators.Base.extend({
         message: 'What more would you like?',
         choices: [
           {
-            name: 'Accordion',
-            value: 'includeAccordion',
+            name: 'Colorbox',
+            value: 'includeColorbox',
             checked: false
           },
           {
-            name: 'Tabs',
-            value: 'includeTabs',
+            name: 'AnythingSlider',
+            value: 'includeAnythingSlider',
+            checked: false
+          },
+          {
+            name: 'Accordion',
+            value: 'includeAccordion',
             checked: false
           },
           {
@@ -75,13 +80,13 @@ var KickstartGenerator = yeoman.generators.Base.extend({
             checked: false
           },
           {
-            name: 'jquery equal-height Plugin',
-            value: 'includeEqualHeight',
+            name: 'Tabs',
+            value: 'includeTabs',
             checked: false
           },
           {
-            name: 'Colorbox',
-            value: 'includeColorbox',
+            name: 'jquery equal-height Plugin',
+            value: 'includeEqualHeight',
             checked: false
           },
           {
@@ -122,10 +127,17 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
     this.prompt(prompts, function (answers) {
 
-      this.features = answers.ContentElements;
+      // README
       this.GraphicDesigner = answers.GraphicDesigner;
       this.HTMLDeveloper = answers.HTMLDeveloper;
+      this.ProjectManager = answers.ProjectManager;
+      this.ProjectName = answers.ProjectName;
+
+      // Bower components
+      this.features = answers.ContentElements;
+      
       this.includeAccordion = this._hasFeature('includeAccordion');
+      this.includeAnythingSlider = this._hasFeature('includeAnythingSlider');
       this.includeBase64BackgroundImages = this._hasFeature('includeBase64BackgroundImages');
       this.includeColorbox = this._hasFeature('includeColorbox');
       this.includeElementSwitcher = this._hasFeature('includeElementSwitcher');
@@ -133,9 +145,9 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       this.includeGridLayout = this._hasFeature('includeGridLayout');
       this.includeModernizr = this._hasFeature('includeModernizr');
       this.includeTabs = this._hasFeature('includeTabs');
+
+      // Support level
       this.oldIE = answers.oldIE;
-      this.ProjectManager = answers.ProjectManager;
-      this.ProjectName = answers.ProjectName;
       this.WCAG2 = answers.WCAG2;
 
       done();
@@ -151,7 +163,8 @@ var KickstartGenerator = yeoman.generators.Base.extend({
   packagefiles: function () {
     this.copy('_bowerrc', '.bowerrc');
     this.copy('_gitignore', '.gitignore');
-    this.copy('_package.json', 'package.json');
+
+    this.template('_package.json', 'package.json');
     this.template('_bower.json', 'bower.json');
     this.template('_csslintrc', '.csslintrc');
     this.template('_gruntfile.js', 'gruntfile.js');
@@ -192,21 +205,41 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     this.template('rte/_rte.html', 'components/app/rte/rte.html');
     this.template('rte/_rte.scss', 'components/app/rte/_rte.scss');
 
+  },
+
+  optionalComponents: function () {
+
     // element-switcher
-    this.template('element-switcher/_element-switcher.html', 'components/app/element-switcher/element-switcher.html');
-    this.template('element-switcher/_element-switcher.scss', 'components/app/element-switcher/_element-switcher.scss');
+    if(this.includeElementSwitcher) {
+      this.template('element-switcher/_element-switcher.html', 'components/app/element-switcher/element-switcher.html');
+      this.template('element-switcher/_element-switcher.scss', 'components/app/element-switcher/_element-switcher.scss');
+    }
 
     // Tabs
-    this.template('tabs/_tabs.html', 'components/app/tabs/tabs.html');
-    this.template('tabs/_tabs.scss', 'components/app/tabs/_tabs.scss');
+    if(this.includeTabs) {
+      this.template('tabs/_tabs.html', 'components/app/tabs/tabs.html');
+      this.template('tabs/_tabs.scss', 'components/app/tabs/_tabs.scss');
+    }
 
     // Accordion
-    this.template('accordion/_accordion.html', 'components/app/accordion/accordion.html');
-    this.template('accordion/_accordion.scss', 'components/app/accordion/_accordion.scss');
+    if(this.includeAccordion) {
+      this.template('accordion/_accordion.html', 'components/app/accordion/accordion.html');
+      this.template('accordion/_accordion.scss', 'components/app/accordion/_accordion.scss');
+    }
 
     // Colorbox
-    this.template('colorbox/_colorbox.html', 'components/app/colorbox/colorbox.html');
-    this.template('colorbox/_colorbox.scss', 'components/app/colorbox/_colorbox.scss');
+    if(this.includeColorbox) {
+      this.template('overlay/_overlay.html', 'components/app/overlay/overlay.html');
+      this.template('overlay/_overlay.js', 'components/app/overlay/overlay.js');
+      this.template('overlay/_overlay.scss', 'components/app/overlay/_overlay.scss');
+    }
+
+    // AnythingSlider
+    if(this.includeAnythingSlider) {
+      this.template('slider/_slider.html', 'components/app/slider/slider.html');
+      this.template('slider/_slider.js', 'components/app/slider/slider.js');
+      this.template('slider/_slider.scss', 'components/app/slider/_slider.scss');
+    }
 
   }
 
