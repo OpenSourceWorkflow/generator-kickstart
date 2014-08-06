@@ -46,7 +46,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       {
         type: 'input',
         name: 'HTMLDeveloper',
-        message: 'Who is developing the fronten end?'
+        message: 'Who is developing the front-end?'
       },
       {
         type: 'confirm',
@@ -135,7 +135,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
       // Bower components
       this.features = answers.ContentElements;
-      
+
       this.includeAccordion = this._hasFeature('includeAccordion');
       this.includeAnythingSlider = this._hasFeature('includeAnythingSlider');
       this.includeBase64BackgroundImages = this._hasFeature('includeBase64BackgroundImages');
