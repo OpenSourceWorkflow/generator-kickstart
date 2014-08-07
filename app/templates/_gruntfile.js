@@ -105,6 +105,7 @@ module.exports = function(grunt) {
       development: {
         options: {
           // baseUrl: "modules",
+          useStrict: true,
           mainConfigFile: "components/<%= _.slugify(ProjectName) %>.js",
           name: "<%= _.slugify(ProjectName) %>",
           optimize: 'none',
