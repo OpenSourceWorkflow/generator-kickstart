@@ -1,7 +1,7 @@
 {
   "name": "generator-kickstart",
-  "version": "0.1.9",
-  "description": "Yeoman generator for creating frontend for websites",
+  "version": "0.1.10",
+  "description": "Yeoman generator for creating websites with RequireJS & Compass",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "markusfalk/generator-kickstart",
@@ -21,6 +21,15 @@
     "app"
   ],
   "keywords": [
+    "bower",
+    "compass",
+    "csslint",
+    "grunt",
+    "jquery",
+    "jshint",
+    "requirejs",
+    "sass",
+    "wcag2",
     "yeoman-generator"
   ],
   "dependencies": {
