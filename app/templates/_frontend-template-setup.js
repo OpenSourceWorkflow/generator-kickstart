@@ -4,12 +4,12 @@ requirejs.config({
   'paths': {
     'jquery': 'bower/jquery/dist/jquery.min',
     'jquery.exists': 'bower/jquery.exists/jquery.exists',
-    <% if (includeEqualHeight) { %>'jquery.equal-height': 'bower/jquery.equal-height/jquery.equal-height',<% } %>
-    <% if (includeColorbox) { %>'colorbox': 'bower/colorbox/jquery.colorbox-min',<% } %>
-    <% if (includeAnythingSlider) { %>'slider': 'bower/anythingslider/js/jquery.anythingslider.min',<% } %>
     <% if (includeAccordion) { %>'accordion': 'bower/accordion/accordion',<% } %>
-    <% if (includeTabs) { %>'tabs': 'bower/tabs/tabs',<% } %>
-    <% if (includeElementSwitcher) { %>'element-switcher': 'bower/element-switcher/element-switcher'<% } %>
+    <% if (includeAnythingSlider) { %>'slider': 'bower/anythingslider/js/jquery.anythingslider.min',<% } %>
+    <% if (includeColorbox) { %>'colorbox': 'bower/colorbox/jquery.colorbox-min',<% } %>
+    <% if (includeElementSwitcher) { %>'element-switcher': 'bower/element-switcher/element-switcher',<% } %>
+    <% if (includeEqualHeight) { %>'jquery.equal-height': 'bower/jquery.equal-height/jquery.equal-height',<% } %>
+    <% if (includeTabs) { %>'tabs': 'bower/tabs/tabs'<% } %>
   },
   'shim': {
     'jquery.exists': ['jquery'],
