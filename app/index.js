@@ -155,7 +155,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
   },
 
   folders: function () {
-    this.mkdir('components/app/_deferred');
+    // this.mkdir('components/app/_deferred');
     this.mkdir('components/bower');
     this.mkdir('img');
   },
