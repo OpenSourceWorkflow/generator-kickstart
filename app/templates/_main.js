@@ -1,13 +1,13 @@
 require([
-  'jquery',
-  'jquery.exists'<% if (includeAccordion) { %>,
+  'jquery',<% if (includeAccordion) { %>,
   'accordion',<% } %><% if (oldIE) { %>
   'respondJS',<% } %><% if (includeAnythingSlider) { %>
   'slider',<% } %><% if (includeColorbox) { %>
   'colorbox',<% } %><% if (includeElementSwitcher) { %>
   'element-switcher',<% } %><% if (includeEqualHeight) { %>
   'jquery.equal-height',<% } %><% if (includeTabs) { %>
-  'tabs'<% } %>
+  'tabs',<% } %>
+  'jquery.exists'
   ], function() {
 
   'use strict';
