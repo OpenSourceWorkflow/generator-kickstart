@@ -25,7 +25,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     var done = this.async();
 
     // Have Yeoman greet the user.
-    this.log(yosay('Kickstart your front end'));
+    this.log(yosay('Thank you for chosing Kickstart. Sit back and relax while I setup your project. '));
 
     var prompts = [
       {
@@ -46,7 +46,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       {
         type: 'input',
         name: 'HTMLDeveloper',
-        message: 'Who is developing the front-end?'
+        message: 'Who is developing the front end?'
       },
       {
         type: 'confirm',
