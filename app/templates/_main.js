@@ -23,7 +23,7 @@ require([
     // loadDynamicDependencies: function() {
       // this.$bar.exists(function() {
       //   console.log('.bar exists: load bar');
-      //   require(['assets/js/deferred/bar']);
+      //   require(['assets/js/_deferred/bar']);
       // });
     // }
   };
