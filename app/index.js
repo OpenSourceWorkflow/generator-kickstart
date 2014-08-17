@@ -25,7 +25,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     var done = this.async();
 
     // Have Yeoman greet the user.
-    this.log(yosay('Kickstart Generator @ webit! Scholar Day'));
+    this.log(yosay('Kickstart your front end'));
 
     var prompts = [
       {
