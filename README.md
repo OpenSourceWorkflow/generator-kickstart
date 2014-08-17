@@ -99,7 +99,7 @@ As you can see in the 'foo' example. Save images used for styling to the img/ su
 
 ## Example for component 'Foo'
 
-Here is a complete setup for the included 'foo' component:
+Here is a complete setup for the 'Foo' component:
 
 ```bash
 .
