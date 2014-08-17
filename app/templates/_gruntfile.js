@@ -31,8 +31,8 @@ module.exports = function(grunt) {
 
       // HTML
       html: {
-        files: ['**/*.html', '!components/bower/**/*.html', '!build/**/*.html'],
-        tasks: ['replace:development'],
+        files: ['*.html', 'components/app/**/*.html' , '!components/bower/**/*.html', '!build/**/*.html'],
+        tasks: ['replace', 'accessibility'],
       },
 
       // Images
