@@ -38,7 +38,7 @@ This is your working environment:
 ```bash
 .
 |── components/
-|   └── libs/ (all bower components)
+|   └── libs/ (all 3rd party components)
 |   └── app/ (all own components in folders containing JS, SCSS, HTML)
 |   |   └── _deferred/ (modules that are loaded dynamically)
 |   |   └── main.js (main requirejs module)
