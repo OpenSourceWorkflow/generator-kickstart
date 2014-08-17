@@ -192,14 +192,6 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     // common
     this.template('common/_common.scss', 'components/app/common/_common.scss');
 
-    // header
-    this.template('header/_header.scss', 'components/app/header/_header.scss');
-    this.template('header/_header.html', 'components/app/header/header.html');
-
-    // footer
-    this.template('footer/_footer.scss', 'components/app/footer/_footer.scss');
-    this.template('footer/_footer.html', 'components/app/footer/footer.html');
-
     // rte
     this.template('rte/_rte.html', 'components/app/rte/rte.html');
     this.template('rte/_rte.scss', 'components/app/rte/_rte.scss');
