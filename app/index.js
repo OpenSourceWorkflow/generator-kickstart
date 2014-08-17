@@ -25,7 +25,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     var done = this.async();
 
     // Have Yeoman greet the user.
-    this.log(yosay('Thank you for chosing Kickstart. Sit back and relax while I setup your project. '));
+    this.log(yosay('Thank you for choosing Kickstart. Sit back and relax while I setup your project. '));
 
     var prompts = [
       {

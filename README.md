@@ -101,6 +101,9 @@ The HTML from the accordion component folder will be inserted into the sandbox c
 |── components/
 |   └── app/
 |       └── accordion/
+|           └── img/
+|               └── arrow.svg
+|               └── arrow.png
 |           └── accordion.html
 └── sandbox.html
 ```
@@ -116,6 +119,10 @@ In your html file:
   </body>
 </html>
 ```
+
+## Assets
+
+As you can see in the accordion example above. Images used for styling to the img/ subfolder of your component. There the grunt task expects an SVG and a PNG. If you choose to use the 'Base64BackgroundImages' mxin the SVG is inlined into your CSS and the png is saved to assets/img as fallback.
 
 ## Getting Started
 
@@ -172,6 +179,10 @@ $ yo kickstart:addbower accordion
 $ grunt
 $ grunt watch
 ```
+
+## FAQ
+
+* Where do I put webfonts? app/common/font (can be font/ in any component).
 
 ## Customization
 
