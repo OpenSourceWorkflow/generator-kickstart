@@ -104,6 +104,8 @@ The HTML from the accordion component folder will be inserted into the sandbox c
 |           └── img/
 |               └── arrow.svg
 |               └── arrow.png
+|           └── accordion.js
+|           └── accordion.scss
 |           └── accordion.html
 └── sandbox.html
 ```
