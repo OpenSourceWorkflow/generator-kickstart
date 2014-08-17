@@ -12,17 +12,17 @@ module.exports = function(grunt) {
       // Styling
       scss: {
         files: 'components/**/*.scss',
-        tasks: ['imagemin', 'sync', 'compass:development', 'modernizr', 'csslint']
+        tasks: ['imagemin', 'sync', 'compass:development', <% if (includeModernizr) { %>'modernizr',<% } %> 'csslint']
       },
 
       // Scripting
       js: {
         files: ['components/*.js', 'components/app/**/*.js', '!components/app/_deferred/**/*.js'],
-        tasks: ['requirejs:development', 'modernizr', 'jshint'],
+        tasks: ['requirejs:development', <% if (includeModernizr) { %>'modernizr',<% } %> 'jshint'],
       },
       js_deferred: {
         files: ['components/app/_deferred/**/*.js'],
-        tasks: ['uglify:deferred', 'modernizr', 'jshint'],
+        tasks: ['uglify:deferred', <% if (includeModernizr) { %>'modernizr',<% } %> 'jshint'],
       },
       js_bower: {
         files: ['components/libs/**/*.js'],
@@ -214,7 +214,7 @@ module.exports = function(grunt) {
         }],
         verbose: true
       }
-    },
+    }<% if (includeModernizr) { %>,
 
     modernizr: {
       dist: {
@@ -231,11 +231,11 @@ module.exports = function(grunt) {
             "src": ['build/**/*.js', 'build/**/*.css']
         }
       }
-    }
+    }<% } %>
 
   });
 
-  grunt.loadNpmTasks("grunt-modernizr");
+  <% if (includeModernizr) { %>grunt.loadNpmTasks("grunt-modernizr");<% } %>
   grunt.loadNpmTasks('grunt-accessibility');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
@@ -248,6 +248,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-sync');
 
-  grunt.registerTask('default', ['replace', 'imagemin', 'sync',  'compass:development', 'requirejs:development', 'uglify', 'clean:development', 'modernizr', 'csslint', 'jshint', 'accessibility']);
+  grunt.registerTask('default', ['replace', 'imagemin', 'sync',  'compass:development', 'requirejs:development', 'uglify', 'clean:development', <% if (includeModernizr) { %>'modernizr',<% } %> 'csslint', 'jshint', 'accessibility']);
 
 };
