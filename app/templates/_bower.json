@@ -12,7 +12,8 @@
     "colorbox": "~1.5.12",<% } %><% if (includeGridLayout) { %>
     "grid-layout": "~1.0.0",<% } %><% if (includeBase64BackgroundImages) { %>
     "base64-background-image": "~1.0.1",<% } %><% if (includeAnythingSlider) { %>
-    "anythingslider": "~1.9.4",<% } %>
+    "anythingslider": "~1.9.4",<% } %><% if (oldIE) { %>
+    "respondJS": "~1.4.2",<% } %>
     "jquery.exists": "~1.0.0",
     "requirejs": "~2.1.14"
   }

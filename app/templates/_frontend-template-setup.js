@@ -5,6 +5,7 @@ requirejs.config({
     'jquery': 'libs/jquery/dist/jquery.min',
     'jquery.exists': 'libs/jquery.exists/jquery.exists',
     <% if (includeAccordion) { %>'accordion': 'libs/accordion/accordion',<% } %>
+    <% if (oldIE) { %>'respondJS': 'libs/respondJS/dest/respond.min',<% } %>
     <% if (includeAnythingSlider) { %>'slider': 'libs/anythingslider/js/jquery.anythingslider.min',<% } %>
     <% if (includeColorbox) { %>'colorbox': 'libs/colorbox/jquery.colorbox-min',<% } %>
     <% if (includeElementSwitcher) { %>'element-switcher': 'libs/element-switcher/element-switcher',<% } %>
