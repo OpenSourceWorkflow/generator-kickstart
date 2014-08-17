@@ -1,15 +1,14 @@
 $experimental-support-for-svg: true;
 
 /* Load Modules */
-<% if (includeGridLayout) { %> @import "libs/grid-layout/grid-layout"; <% } %>
-<% if (includeBase64BackgroundImages) { %> @import "libs/base64-background-image/base64-background-image"; <% } %>
-
+@import "compass";
+<% if (includeGridLayout) { %>@import "libs/grid-layout/grid-layout"; <% } %>
+<% if (includeBase64BackgroundImages) { %>@import "libs/base64-background-image/base64-background-image"; <% } %>
 @import "app/colors/colors";
 @import "app/common/common";
 @import "app/header/header";
 @import "app/footer/footer";
 @import "app/rte/rte";
-
 <% if (includeElementSwitcher) { %>@import "app/element-switcher/element-switcher";<% } %>
 <% if (includeTabs) { %>@import "app/tabs/tabs";<% } %>
 <% if (includeAccordion) { %>@import "app/accordion/accordion";<% } %>
