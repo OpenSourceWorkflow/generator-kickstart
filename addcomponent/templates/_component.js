@@ -4,10 +4,14 @@ define(['jquery', 'jquery.exists'], function() {
 
   var <%= _.classify(name) %> = {
     cacheElements: function() {
+      this.$<%= _.underscored(name) %> = $('.<%= _.slugify(name) %>')
     },
     init: function() {
       this.cacheElements();
-      this.bindEvents();
+
+      this.$<%= _.underscored(name) %>.exists(function() {
+        this.bindEvents();
+      });
     },
     bindEvents: function() {
     }
