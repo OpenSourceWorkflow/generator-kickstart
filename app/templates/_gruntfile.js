@@ -214,10 +214,28 @@ module.exports = function(grunt) {
         }],
         verbose: true
       }
+    },
+
+    modernizr: {
+      dist: {
+        "devFile" : "components/bower/modernizr-shim/modernizr.min.js",
+        "outputFile" : "build/assets/js/libs/modernizr.js",
+        "extra" : {
+          "shiv" : true,
+          "printshiv" : false,
+          "load" : false,
+          "mq" : false,
+          "cssclasses" : true
+        },
+        "files" : {
+            "src": ['build/**/*.js', 'build/**/*.css']
+        }
+      }
     }
 
   });
 
+  grunt.loadNpmTasks("grunt-modernizr");
   grunt.loadNpmTasks('grunt-accessibility');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
@@ -230,6 +248,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-sync');
 
-  grunt.registerTask('default', ['replace', 'imagemin','sync',  'compass:development', 'requirejs:development', 'uglify', 'clean:development', 'csslint', 'jshint', 'accessibility:development']);
+  grunt.registerTask('default', ['replace', 'imagemin', 'sync',  'compass:development', 'requirejs:development', 'uglify', 'clean:development', 'modernizr', 'csslint', 'jshint', 'accessibility']);
 
 };
