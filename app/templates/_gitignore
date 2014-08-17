@@ -1,7 +1,6 @@
-components/bower
-.sass-cache
-build
-node_modules
 *.sublime-*
 .DS_Store
 .ftppass
+.sass-cache
+build
+node_modules
