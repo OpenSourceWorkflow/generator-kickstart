@@ -12,17 +12,17 @@ module.exports = function(grunt) {
       // Styling
       scss: {
         files: 'components/**/*.scss',
-        tasks: ['imagemin', 'sync', 'compass:development', 'csslint']
+        tasks: ['imagemin', 'sync', 'compass:development', 'modernizr', 'csslint']
       },
 
       // Scripting
       js: {
         files: ['components/*.js', 'components/app/**/*.js', '!components/app/_deferred/**/*.js'],
-        tasks: ['requirejs:development', 'jshint'],
+        tasks: ['requirejs:development', 'modernizr', 'jshint'],
       },
       js_deferred: {
         files: ['components/app/_deferred/**/*.js'],
-        tasks: ['uglify:deferred', 'jshint'],
+        tasks: ['uglify:deferred', 'modernizr', 'jshint'],
       },
       js_bower: {
         files: ['components/bower/**/*.js'],
