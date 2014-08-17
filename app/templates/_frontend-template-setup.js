@@ -1,6 +1,6 @@
 requirejs.config({
-	'appdir': '../', // components
-  'baseUrl': './', // app
+	'appdir': '../',
+  'baseUrl': './',
   'paths': {
     'jquery': 'libs/jquery/dist/jquery.min',
     'jquery.exists': 'libs/jquery.exists/jquery.exists',

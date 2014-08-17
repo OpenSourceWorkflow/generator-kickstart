@@ -92,39 +92,144 @@ In your HTML you need to use one of the following placeholders for the 2 types o
 {app:{component-name}}
 {deferred:{component-name}}
 ```
-### Accordion Example
 
-The HTML from the accordion component folder will be inserted into the sandbox containing the placeholder.
+## Assets
+
+As you can see in the 'foo' example. Save images used for styling to the img/ subfolder of your component. There the grunt task expects an SVG and a PNG. If you choose to use the 'Base64BackgroundImages' mixin the SVG is inlined into your CSS and the png is saved to assets/img as fallback.
+
+## Example
+
+Here is a complete setup for the included 'foo' component:
 
 ```bash
 .
 |── components/
+|   └── <project-name>.js (require config)
+|   └── <project-name>.scss
 |   └── app/
-|       └── accordion/
+|       └── main.js
+|       └── foo/
 |           └── img/
 |               └── arrow.svg
 |               └── arrow.png
-|           └── accordion.js
-|           └── accordion.scss
-|           └── accordion.html
+|           └── foo.js
+|           └── foo.scss
+|           └── foo.html
 └── sandbox.html
 ```
 
-In your html file:
+In your html file you can use placeholders to keep it clean and simple (sandbox.html):
+
 ```html
 <html>
   <head>...</head>
   <body>
     <main>
-      {app:{accordion}}
+      {app:{foo}}
     </main>
   </body>
 </html>
 ```
 
-## Assets
+The requireJS config file (<project-name>.js):
 
-As you can see in the accordion example above. Save images used for styling to the img/ subfolder of your component. There the grunt task expects an SVG and a PNG. If you choose to use the 'Base64BackgroundImages' mixin the SVG is inlined into your CSS and the png is saved to assets/img as fallback.
+```javascript
+requirejs.config({
+  'appdir': '../',
+  'baseUrl': './',
+  'paths': {
+    'jquery': 'libs/jquery/dist/jquery.min',
+    'jquery.exists': 'libs/jquery.exists/jquery.exists',
+    'foo': 'app/foo/foo'
+  },
+  'shim': {
+    'jquery.exists': ['jquery']
+  }
+});
+
+requirejs(['app/main']);
+
+```
+
+App entry point:
+
+```javascript
+require([
+  'jquery',
+  'foo',
+  'jquery.exists'
+  ], function() {
+
+  'use strict';
+
+  var Main = {
+    cacheElements: function() {
+      // this.$bar = $('.bar');
+    },
+    init: function() {
+      this.cacheElements();
+      // this.loadDynamicDependencies();
+    }
+    // loadDynamicDependencies: function() {
+      // this.$bar.exists(function() {
+      //   console.log('.bar exists: load bar');
+      //   require(['assets/js/deferred/bar']);
+      // });
+    // }
+  };
+
+  Main.init();
+
+});
+```
+
+Your inital styling (foo.scss):
+
+```css
+.foo {
+  color: red;
+}
+```
+
+Your inital markup (foo.html):
+
+```html
+<div class="foo">
+  <p>Foo!</p>
+</div> <!-- foo -->
+```
+
+Your inital script (foo.js):
+
+```javascript
+define(['jquery', 'jquery.exists'], function() {
+
+  'use strict';
+
+  var Foo = {
+    cacheElements: function() {
+      this.$foo = $('.foo');
+    },
+    init: function() {
+      this.cacheElements();
+
+      this.$foo.exists(function() {
+        this.bindEvents();
+      });
+    },
+    bindEvents: function() {
+    }
+  };
+
+  Foo.init();
+
+  // return {
+  //   : Foo.
+  // };
+
+});
+
+```
 
 ## Getting Started
 
