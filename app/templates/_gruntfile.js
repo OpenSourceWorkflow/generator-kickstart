@@ -12,7 +12,7 @@ module.exports = function(grunt) {
       // Styling
       scss: {
         files: 'components/**/*.scss',
-        tasks: ['compass:development', 'csslint']
+        tasks: ['imagemin', 'compass:development', 'csslint']
       },
 
       // Scripting
