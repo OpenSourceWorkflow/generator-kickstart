@@ -122,7 +122,7 @@ In your html file:
 
 ## Assets
 
-As you can see in the accordion example above. Save images used for styling to the img/ subfolder of your component. There the grunt task expects an SVG and a PNG. If you choose to use the 'Base64BackgroundImages' mxin the SVG is inlined into your CSS and the png is saved to assets/img as fallback.
+As you can see in the accordion example above. Save images used for styling to the img/ subfolder of your component. There the grunt task expects an SVG and a PNG. If you choose to use the 'Base64BackgroundImages' mixin the SVG is inlined into your CSS and the png is saved to assets/img as fallback.
 
 ## Getting Started
 
