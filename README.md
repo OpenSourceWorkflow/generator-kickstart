@@ -12,11 +12,11 @@ It aimes at creating frontend templates with high quality standards by continuou
 
 * checks for WCAG2 compliance at different levels
 * uses JSHint to check your java script
-* CSSLint monitores your styling 
+* CSSLint monitores your styling
 
 ## Main goal
 
-The main goal of the project is to incorporate dependency management for the web using [Bower](http://bower.io) to enable you to reuse great projects easily and streamline your everday workflow.  
+The main goal of the project is to incorporate dependency management for the web using [Bower](http://bower.io) to enable you to reuse great projects easily and streamline your everday workflow.
 
 The generator installs many commonly used components ready for you to customize to your needs:
 
@@ -38,7 +38,7 @@ This is your working environment:
 ```bash
 .
 |── components/
-|   └── bower/ (all bower components)
+|   └── libs/ (all bower components)
 |   └── app/ (all own components in folders containing JS, SCSS, HTML)
 |   |   └── _deferred/ (modules that are loaded dynamically)
 |   |   └── main.js (main requirejs module)
@@ -64,7 +64,7 @@ build/
 |   └── css/
 |   └── js/
 |       └── _deferred/
-|── img/ 
+|── img/
 └── sandbox.html
 ```
 

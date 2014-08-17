@@ -10,7 +10,7 @@ var AddbowerGenerator = yeoman.generators.NamedBase.extend({
     this.on('end', function () {
 
       this.log('\n');
-      this.log('Added component ' + this.name + ' to components/bower/');
+      this.log('Added component ' + this.name + ' to components/libs/');
       this.log('Don\'t forget to wire this into your requirejs config (components/' + this.pkg.name + '.js)');
       this.log('\n');
     });

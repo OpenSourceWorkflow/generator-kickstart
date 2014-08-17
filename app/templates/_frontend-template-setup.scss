@@ -1,8 +1,8 @@
 $experimental-support-for-svg: true;
 
 /* Load Modules */
-<% if (includeGridLayout) { %> @import "bower/grid-layout/grid-layout"; <% } %>
-<% if (includeBase64BackgroundImages) { %> @import "bower/base64-background-image/base64-background-image"; <% } %>
+<% if (includeGridLayout) { %> @import "libs/grid-layout/grid-layout"; <% } %>
+<% if (includeBase64BackgroundImages) { %> @import "libs/base64-background-image/base64-background-image"; <% } %>
 
 @import "app/colors/colors";
 @import "app/common/common";

@@ -1,4 +1,4 @@
-components/bower
+components/libs
 .sass-cache
 build
 node_modules

@@ -25,13 +25,13 @@ module.exports = function(grunt) {
         tasks: ['uglify:deferred', 'modernizr', 'jshint'],
       },
       js_bower: {
-        files: ['components/bower/**/*.js'],
+        files: ['components/libs/**/*.js'],
         tasks: ['uglify:external', 'requirejs:development'],
       },
 
       // HTML
       html: {
-        files: ['*.html', 'components/app/**/*.html' , '!components/bower/**/*.html', '!build/**/*.html'],
+        files: ['*.html', 'components/app/**/*.html' , '!components/libs/**/*.html', '!build/**/*.html'],
         tasks: ['replace', 'accessibility'],
       },
 
@@ -132,8 +132,8 @@ module.exports = function(grunt) {
           beautify: true
         },
         files: {
-          <% if (includeModernizr) { %>'build/assets/js/libs/modernizr.js': ['components/bower/modernizr-shim/modernizr.min.js'],<% } %>
-          'build/assets/js/libs/require.js': ['components/bower/requirejs/require.js']
+          <% if (includeModernizr) { %>'build/assets/js/libs/modernizr.js': ['components/libs/modernizr-shim/modernizr.min.js'],<% } %>
+          'build/assets/js/libs/require.js': ['components/libs/requirejs/require.js']
         }
       }
     },
@@ -218,7 +218,7 @@ module.exports = function(grunt) {
 
     modernizr: {
       dist: {
-        "devFile" : "components/bower/modernizr-shim/modernizr.min.js",
+        "devFile" : "components/libs/modernizr-shim/modernizr.min.js",
         "outputFile" : "build/assets/js/libs/modernizr.js",
         "extra" : {
           "shiv" : true,
