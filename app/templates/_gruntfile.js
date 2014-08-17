@@ -12,7 +12,7 @@ module.exports = function(grunt) {
       // Styling
       scss: {
         files: 'components/**/*.scss',
-        tasks: ['imagemin', 'compass:development', 'csslint']
+        tasks: ['imagemin', 'sync', 'compass:development', 'csslint']
       },
 
       // Scripting
@@ -201,12 +201,24 @@ module.exports = function(grunt) {
       css: {
         src: ["build/assets/css/**/*.css"]
       }
+    },
+
+    sync: {
+      webfonts: {
+        files: [{
+          flatten: true,
+          expand: true,
+          cwd: 'components/app',
+          src: ['**/*.{ttf,eot,woff}'],
+          dest: 'build/assets/font'
+        }],
+        verbose: true
+      }
     }
 
   });
 
   grunt.loadNpmTasks('grunt-accessibility');
-  // grunt.loadNpmTasks('grunt-bower-requirejs');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-csslint');
@@ -216,7 +228,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-replace');
+  grunt.loadNpmTasks('grunt-sync');
 
-  grunt.registerTask('default', ['replace', 'imagemin', 'compass:development', 'requirejs:development', 'uglify', 'clean:development', 'csslint', 'jshint', 'accessibility:development']);
+  grunt.registerTask('default', ['replace', 'imagemin','sync',  'compass:development', 'requirejs:development', 'uglify', 'clean:development', 'csslint', 'jshint', 'accessibility:development']);
 
 };
