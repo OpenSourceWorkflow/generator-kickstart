@@ -97,7 +97,7 @@ In your HTML you need to use one of the following placeholders for the 2 types o
 
 As you can see in the 'foo' example. Save images used for styling to the img/ subfolder of your component. There the grunt task expects an SVG and a PNG. If you choose to use the 'Base64BackgroundImages' mixin the SVG is inlined into your CSS and the png is saved to assets/img as fallback.
 
-## Example
+## Example for component 'Foo'
 
 Here is a complete setup for the included 'foo' component:
 
@@ -131,7 +131,7 @@ In your html file you can use placeholders to keep it clean and simple (sandbox.
 </html>
 ```
 
-The requireJS config file (<project-name>.js):
+The requireJS config file (project-name.js):
 
 ```javascript
 requirejs.config({
@@ -183,7 +183,7 @@ require([
 });
 ```
 
-base file for styling (<project-name>.scss):
+base file for styling (project-name.scss):
 
 ```css
 $experimental-support-for-svg: true;
