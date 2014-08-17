@@ -2,7 +2,7 @@
 
 ## Browser Support (IE)
 
-This project supports IE8!<% } %>
+This project supports IE8! RespondJS is used for MediaQueries and jQuery is 1.x.x<% } %>
 
 ## Team
 

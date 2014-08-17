@@ -2,15 +2,27 @@
 
 # generator-kickstart
 
-The generator-kickstart is an opinionated setup for front end development designed to make use of the following technologies:
+The generator-kickstart is an opinionated setup for front end development designed to make use of the following technologies and paradigms:
 
-* Compass & SASS
-* requireJS
-* jQuery
+* [Compass](http://compass-style.org/)
+* [CSSLint](http://csslint.net/)
+* [HTML5](http://www.html5rocks.com/)
+* [jQuery](http://jquery.com/)
+* [JSHint](http://www.jshint.com/)
+* [OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
+* [requireJS](http://requirejs.org/)
+* [SASS](http://sass-lang.com/)
+* [WCAG2](http://www.w3.org/TR/WCAG20/)
+
+For development it uses:
+
+* [Yeoman](http://yeoman.io)
+* [Grunt](http://gruntjs.com)
+* [Bower](http://bower.io)
 
 It aimes at creating frontend templates with high quality standards by continuously testing your work in progress:
 
-* checks for WCAG2 compliance at different levels
+* checks for WCAG2 compliance at different levels (A, AA, AAA)
 * uses JSHint to check your java script
 * CSSLint monitores your styling
 
@@ -29,6 +41,7 @@ The generator installs many commonly used components ready for you to customize 
 * [jquery.equal-height Plugin](https://github.com/markusfalk/jquery.equal-height)
 * [jquery.exists Plugin](https://github.com/markusfalk/jquery.exists)
 * [Modernizr](http://modernizr.com/)
+* [Respond.js](https://github.com/scottjehl/Respond)
 * [Tabs](https://github.com/markusfalk/tabs)
 
 ## The setup
@@ -64,6 +77,7 @@ build/
 |   └── css/
 |   └── js/
 |       └── _deferred/
+|       └── libs/
 |── img/
 └── sandbox.html
 ```
