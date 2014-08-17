@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 
       // Scripting
       js: {
-        files: ['components/app/**/*.js', '!components/app/_deferred/**/*.js'],
+        files: ['components/*.js', 'components/app/**/*.js', '!components/app/_deferred/**/*.js'],
         tasks: ['requirejs:development', 'jshint'],
       },
       js_deferred: {
