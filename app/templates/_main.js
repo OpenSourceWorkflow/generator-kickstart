@@ -1,5 +1,5 @@
 require([
-  'jquery',<% if (includeAccordion) { %>,
+  'jquery',<% if (includeAccordion) { %>
   'accordion',<% } %><% if (oldIE) { %>
   'respondJS',<% } %><% if (includeAnythingSlider) { %>
   'slider',<% } %><% if (includeColorbox) { %>
