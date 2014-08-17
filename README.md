@@ -183,6 +183,19 @@ require([
 });
 ```
 
+base file for styling (<project-name>.scss):
+
+```css
+$experimental-support-for-svg: true;
+
+@import "compass";
+@import "app/colors/colors";
+@import "app/common/common";
+@import "app/rte/rte";
+@import "app/foo/foo";
+
+```
+
 Your inital styling (foo.scss):
 
 ```css
