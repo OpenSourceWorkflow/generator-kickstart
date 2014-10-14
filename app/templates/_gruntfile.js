@@ -233,7 +233,7 @@ module.exports = function(grunt) {
           "cssclasses" : true
         },
         "files" : {
-            "src": ['build/**/*.js', 'build/**/*.css']
+          "src": ['components/app/**/*.js', 'build/**/*.css']
         }
       }
     }<% } %>
