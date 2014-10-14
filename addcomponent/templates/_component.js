@@ -3,21 +3,21 @@ define(['jquery', 'jquery.exists'], function() {
   'use strict';
 
   var <%= _.classify(name) %> = {
-    cacheElements: function() {
+    _cacheElements: function() {
       this.$<%= _.underscored(name) %> = $('.<%= _.slugify(name) %>');
     },
-    init: function() {
+    _init: function() {
       this.cacheElements();
 
       this.$<%= _.underscored(name) %>.exists(function() {
         this.bindEvents();
       });
     },
-    bindEvents: function() {
+    _bindEvents: function() {
     }
   };
 
-  <%= _.classify(name) %>.init();
+  <%= _.classify(name) %>._init();
 
   // return {
   //   : <%= _.classify(name) %>.
