@@ -222,7 +222,7 @@ module.exports = function(grunt) {
         "outputFile" : "build/assets/js/libs/modernizr.js",
         "extra" : {
           "shiv" : true,
-          "printshiv" : false,
+          "printshiv" : true,
           "load" : false,
           "mq" : false,
           "cssclasses" : true
