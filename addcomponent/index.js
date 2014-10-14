@@ -15,10 +15,14 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
       if (this.ComponentType === 'standardModule') {
         this.log('Added component ' + this.name + ' to components/app/' + this._.slugify(this.name));
-        this.log('You can use it in your HTML with ' + chalk.blue('{app:{' + this._.slugify(this.name) + '}}'));
+        if(this.includeHTML) {
+          this.log('You can use it in your HTML with ' + chalk.blue('{app:{' + this._.slugify(this.name) + '}}'));
+        }
       } else {
         this.log('Added component ' + this.name + ' to components/app/_deferred/' + this._.slugify(this.name));
-        this.log('You can use it in your HTML with ' + chalk.blue('{deferred:{' + this._.slugify(this.name) + '}}'));
+        if(this.includeHTML) {
+          this.log('You can use it in your HTML with ' + chalk.blue('{deferred:{' + this._.slugify(this.name) + '}}'));
+        }
       }
 
       if(this.includeJS) {
