@@ -1,5 +1,3 @@
-$experimental-support-for-svg: true;
-
 /* Load Modules */
 @import "compass";
 <% if (includeGridLayout) { %>@import "libs/grid-layout/grid-layout"; <% } %>
