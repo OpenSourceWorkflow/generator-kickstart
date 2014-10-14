@@ -57,8 +57,7 @@ module.exports = function(grunt) {
         httpImagesPath: '/assets/img',
         imagesDir: 'build/assets/img',
         noLineComments: true,
-        require 'sass-css-importer',
-        require: 'sass-css-importer'
+        require: 'sass-css-importer',
         sassDir: 'components'
       },
       development: {
