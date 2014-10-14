@@ -48,17 +48,14 @@ module.exports = function(grunt) {
 
     compass: {
       options: {
-        // banner: "/* <%= pkg.author %>, Version: <%= pkg.version %> */",
-        // httpPath: "/build",
-        // imagesPath: 'assets/img',
-        // specify: '*.scss'
         asset_cache_buster: false,
         cssDir: 'build/assets/css',
         httpImagesPath: '/assets/img',
         imagesDir: 'build/assets/img',
         noLineComments: true,
         require: 'sass-css-importer',
-        sassDir: 'components'
+        sassDir: 'components',
+        sourcemap: true
       },
       development: {
         options: {
@@ -103,13 +100,16 @@ module.exports = function(grunt) {
     },
 
     requirejs: {
+      options: {
+        mainConfigFile: "components/<%= _.slugify(ProjectName) %>.js",
+        name: "<%= _.slugify(ProjectName) %>",
+        out: "build/assets/js/<%= _.slugify(ProjectName) %>.js",
+        useStrict: true
+      },
       development: {
         options: {
-          mainConfigFile: "components/<%= _.slugify(ProjectName) %>.js",
-          name: "<%= _.slugify(ProjectName) %>",
-          optimize: 'none',
-          out: "build/assets/js/<%= _.slugify(ProjectName) %>.js",
-          useStrict: true
+          generateSourceMaps: true,
+          optimize: 'none'
         }
       },
       production: {
