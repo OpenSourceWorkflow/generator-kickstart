@@ -10,6 +10,7 @@ The generator-kickstart is an opinionated setup for front end development design
 * [jQuery](http://jquery.com/)
 * [JSHint](http://www.jshint.com/)
 * [OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
+* [QUnit](http://qunitjs.com/)
 * [requireJS](http://requirejs.org/)
 * [SASS](http://sass-lang.com/)
 * [WCAG2](http://www.w3.org/TR/WCAG20/)
