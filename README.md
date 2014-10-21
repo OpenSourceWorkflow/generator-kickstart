@@ -194,6 +194,11 @@ base file for styling (project-name.scss):
 @import "app/common/common";
 @import "app/rte/rte";
 @import "app/foo/foo";
+/*
+or CSS files via [sass-css-importer](https://github.com/chriseppstein/sass-css-importer)
+in case a lib has no scss file
+*/
+@import "CSS:libs/abc/styling";
 
 ```
 
