@@ -201,32 +201,32 @@ var KickstartGenerator = yeoman.generators.Base.extend({
   optionalComponents: function () {
 
     // element-switcher
-    if(this.includeElementSwitcher) {
+    if (this.includeElementSwitcher) {
       this.template('element-switcher/_element-switcher.html', 'components/app/element-switcher/element-switcher.html');
       this.template('element-switcher/_element-switcher.scss', 'components/app/element-switcher/_element-switcher.scss');
     }
 
     // Tabs
-    if(this.includeTabs) {
+    if (this.includeTabs) {
       this.template('tabs/_tabs.html', 'components/app/tabs/tabs.html');
       this.template('tabs/_tabs.scss', 'components/app/tabs/_tabs.scss');
     }
 
     // Accordion
-    if(this.includeAccordion) {
+    if (this.includeAccordion) {
       this.template('accordion/_accordion.html', 'components/app/accordion/accordion.html');
       this.template('accordion/_accordion.scss', 'components/app/accordion/_accordion.scss');
     }
 
     // Colorbox
-    if(this.includeColorbox) {
+    if (this.includeColorbox) {
       this.template('overlay/_overlay.html', 'components/app/overlay/overlay.html');
       this.template('overlay/_overlay.js', 'components/app/overlay/overlay.js');
       this.template('overlay/_overlay.scss', 'components/app/overlay/_overlay.scss');
     }
 
     // AnythingSlider
-    if(this.includeAnythingSlider) {
+    if (this.includeAnythingSlider) {
       this.template('slider/_slider.html', 'components/app/slider/slider.html');
       this.template('slider/_slider.js', 'components/app/slider/slider.js');
       this.template('slider/_slider.scss', 'components/app/slider/_slider.scss');
