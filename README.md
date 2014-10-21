@@ -186,8 +186,6 @@ require([
 base file for styling (project-name.scss):
 
 ```css
-$experimental-support-for-svg: true;
-
 @import "compass";
 @import "app/colors/colors";
 @import "app/common/common";
@@ -244,9 +242,108 @@ define(['jquery', 'jquery.exists'], function() {
 
 ```
 
+## Unit Tests
+
+The Kickstart Generator uses [QUnit](http://qunitjs.com/) for Unit Tests.
+To make it work with requireJS it sets up a parallel requireJS project and loads
+HTML and JS into the test suite via jQuery.
+
+To get things going the main entry point for your unit tests is **/qunit.js**.
+There you have to add paths to all modules used by the tests. Then you load the
+test module and start the tests.
+
+```javascript
+require.config({
+    baseUrl: "../",
+    paths: {
+      'jquery': 'components/libs/jquery/dist/jquery.min',
+
+      // 'test-YOUR_MODULE': 'components/app/YOUR_MODULE/test-YOUR_MODULE',
+      // 'YOUR_MODULE': 'components/app/YOUR_MODULE/YOUR_MODULE',
+
+      // 'test-YOUR_DEFERRED_MODULE': 'components/app/_deferred/YOUR_DEFERRED_MODULE/test-YOUR_DEFERRED_MODULE',
+      // 'YOUR_DEFERRED_MODULE': 'components/app/_deferred/YOUR_DEFERRED_MODULE/YOUR_DEFERRED_MODULE'
+    },
+    shim: {
+     'QUnit': {
+        exports: 'QUnit'
+      }
+    }
+});
+
+require([
+  // 'test-YOUR_MODULE',
+  ], function(
+    // YOUR_MODULE,
+    ) {
+
+  // YOUR_MODULE.startTests();
+
+  QUnit.load();
+  QUnit.start();
+
+});
+```
+
+Tests are put into the component folder right next to the module you want to test.
+Kickstart assumes that this file is prefixed with **test-** and then contains the module's
+name.
+
+```bash
+.
+|── components/
+|   └── app/
+|       └── <component-name>/
+|           └── <component-name>.js
+└──         └── test-<component-name>.js
+```
+
+The test-* file then contains your actual tests. It comes with 2 exmample test cases.
+One is a simple call to a public function of the module.
+The other loads HTML and then fires a public function so that you could test on
+DOM manipulation.
+
+```javascript
+define(['<component-name>'], function(Foo) {
+
+  'use strict';
+
+  var TestFoo = {
+    startTests: function() {
+
+      module("<component-name>");
+
+      // test("<component-name> Test", function() {
+      //   equal(<component-name>.publicFunction(), "Foo", "Function should return 'Foo'");
+      // });
+
+      // asyncTest("<component-name> Test", function() {
+      //   expect(1);
+
+      //   $('#qunit-fixture').load('../components/app/<component-name>/<component-name>.html', function(data) {
+      //     <component-name>.init();
+      //     ok($('.<component-name>').hasClass('lorem'), ".<component-name> should have class 'lorem'");
+      //     QUnit.start();
+      //   });
+
+      // });
+
+    }
+  };
+
+  return {
+    startTests: TestFoo.startTests
+  };
+
+});
+
+
+```
+
+
 ## Getting Started
 
-Install Yeoman & kickstart generator ([Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started))
+Install Yeoman & Kickstart generator ([Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started))
 
 ```bash
 $ npm install -g yo
@@ -314,4 +411,3 @@ There are a few customizable options for you to consider:
 ## License
 
 MIT
-
