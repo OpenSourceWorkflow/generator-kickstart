@@ -5,7 +5,7 @@ define(['<%= _.slugify(name) %>'], function(<%= _.classify(name) %>) {
   var Test<%= _.classify(name) %> = {
     startTests: function() {
 
-      module("module <%= _.classify(name) %>");
+      module("<%= _.classify(name) %>");
 
       // test("<%= _.classify(name) %> Test", function() {
       //   equal(Foo.greet(), "Hello", "Function should return 'Hello'");
