@@ -177,8 +177,8 @@ var KickstartGenerator = yeoman.generators.Base.extend({
   },
 
   qunit: function () {
-    this.template('_qunit-test-suite.html', 'qunit/_qunit-test-suite.html');
-    this.copy('_qunit.js', 'qunit/_qunit.js');
+    this.template('qunit/_qunit-test-suite.html', 'qunit/_qunit-test-suite.html');
+    this.copy('qunit/_qunit.js', 'qunit/_qunit.js');
   },
 
   styles: function () {
