@@ -89,7 +89,7 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
       this.includeHTML = this._hasFeature('includeHTML');
       this.includeJS = this._hasFeature('includeJS');
-      this.includeJS = this._hasFeature('includeQUnit');
+      this.includeQUnit = this._hasFeature('includeQUnit');
       this.includeSCSS = this._hasFeature('includeSCSS');
 
       this.ComponentType = answers.ComponentType;

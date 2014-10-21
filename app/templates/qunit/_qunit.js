@@ -1,7 +1,7 @@
 require.config({
     baseUrl: "../",
     paths: {
-      'jquery': 'components/bower/jquery/dist/jquery.min',
+      'jquery': 'components/libs/jquery/dist/jquery.min',
 
       // 'test-<%= _.slugify(name) %>': 'components/app/<%= _.slugify(name) %>/test-<%= _.slugify(name) %>',
       // '<%= _.slugify(name) %>': 'components/app/<%= _.slugify(name) %>/<%= _.slugify(name) %>',

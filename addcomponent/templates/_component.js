@@ -6,7 +6,7 @@ define(['jquery', 'jquery.exists'], function() {
     _cacheElements: function() {
       this.$<%= _.underscored(name) %> = $('.<%= _.slugify(name) %>');
     },
-    _init: function() {
+    init: function() {
       this.cacheElements();
 
       this.$<%= _.underscored(name) %>.exists(function() {
@@ -17,10 +17,8 @@ define(['jquery', 'jquery.exists'], function() {
     }
   };
 
-  <%= _.classify(name) %>._init();
-
-  // return {
-  //   : <%= _.classify(name) %>.
-  // };
+  return {
+    init: <%= _.classify(name) %>.init
+  };
 
 });
