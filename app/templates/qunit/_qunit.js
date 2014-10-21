@@ -3,11 +3,11 @@ require.config({
     paths: {
       'jquery': 'components/libs/jquery/dist/jquery.min',
 
-      // 'test-<%= _.slugify(name) %>': 'components/app/<%= _.slugify(name) %>/test-<%= _.slugify(name) %>',
-      // '<%= _.slugify(name) %>': 'components/app/<%= _.slugify(name) %>/<%= _.slugify(name) %>',
+      // 'test-YOUR_MODULE': 'components/app/YOUR_MODULE/test-YOUR_MODULE',
+      // 'YOUR_MODULE': 'components/app/YOUR_MODULE/YOUR_MODULE',
 
-      // 'test-<%= _.slugify(name) %>': 'components/app/_deferred/<%= _.slugify(name) %>/test-<%= _.slugify(name) %>',
-      // '<%= _.slugify(name) %>': 'components/app/_deferred/<%= _.slugify(name) %>/<%= _.slugify(name) %>'
+      // 'test-YOUR_DEFERRED_MODULE': 'components/app/_deferred/YOUR_DEFERRED_MODULE/test-YOUR_DEFERRED_MODULE',
+      // 'YOUR_DEFERRED_MODULE': 'components/app/_deferred/YOUR_DEFERRED_MODULE/YOUR_DEFERRED_MODULE'
     },
     shim: {
      'QUnit': {
@@ -17,12 +17,12 @@ require.config({
 });
 
 require([
-  // 'test-<%= _.slugify(name) %>',
+  // 'test-YOUR_MODULE',
   ], function(
-    // <%= _.slugify(name) %>,
+    // YOUR_MODULE,
     ) {
 
-  // <%= _.slugify(name) %>.startTests();
+  // YOUR_MODULE.startTests();
 
   QUnit.load();
   QUnit.start();
