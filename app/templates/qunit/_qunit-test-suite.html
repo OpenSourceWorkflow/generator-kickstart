@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QUnit Tests Suite: <%= ProjectName %></title>
+  <link rel="stylesheet" href="../components/bower/qunit/qunit/qunit.css">
+</head>
+<body>
+
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+
+  <script src="../components/bower/qunit/qunit/qunit.js"></script>
+  <script>
+    QUnit.config.autostart = false;
+  </script>
+
+  <script data-main="tests" src="../components/bower/requirejs/require.js"></script>
+
+</body>
+</html>

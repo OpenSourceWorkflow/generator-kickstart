@@ -73,6 +73,11 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
             name: 'JS',
             value: 'includeJS',
             checked: true
+          },
+          {
+            name: 'QUnit Test',
+            value: 'includeQUnit',
+            checked: false
           }
         ]
       }
@@ -83,8 +88,9 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
       this.features = answers.whatFiles;
 
       this.includeHTML = this._hasFeature('includeHTML');
-      this.includeSCSS = this._hasFeature('includeSCSS');
       this.includeJS = this._hasFeature('includeJS');
+      this.includeJS = this._hasFeature('includeQUnit');
+      this.includeSCSS = this._hasFeature('includeSCSS');
 
       this.ComponentType = answers.ComponentType;
 
@@ -116,13 +122,17 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     if (this.includeHTML) {
       this.template('_component.html', this.directory + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '.html');
     }
+    if (this.includeQUnit) {
+      this.template('_qunit-test.js', this.directory + this._.slugify(this.name) + '/test-' + this._.slugify(this.name) + '.js');
+    }
   },
 
   addStyling: function () {
     if (this.includeSCSS) {
 
-      var path = 'components/' + this.pkg.name + '.scss',
-          file = this.readFileAsString(path);
+      var
+      path = 'components/' + this.pkg.name + '.scss',
+      file = this.readFileAsString(path);
 
       if (this.ComponentType === 'standardModule') {
         file += '@import "app/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '";\n';

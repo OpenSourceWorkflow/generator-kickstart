@@ -209,6 +209,10 @@ module.exports = function(grunt) {
       }
     },
 
+    qunit: {
+      all: ['qunit/qunit-test-suite.html']
+    },
+
     sync: {
       webfonts: {
         files: [{
@@ -241,13 +245,14 @@ module.exports = function(grunt) {
 
   });
 
-  <% if (includeModernizr) { %>grunt.loadNpmTasks("grunt-modernizr");<% } %>
   grunt.loadNpmTasks('grunt-accessibility');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  <% if (includeModernizr) { %>grunt.loadNpmTasks("grunt-modernizr");<% } %>
+  grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
