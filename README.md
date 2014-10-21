@@ -164,18 +164,20 @@ require([
 
   var Main = {
     cacheElements: function() {
-      // this.$bar = $('.bar');
+      this.$bar = $('.bar');
     },
     init: function() {
       this.cacheElements();
-      // this.loadDynamicDependencies();
+      this.loadDynamicDependencies();
+    },
+    loadDynamicDependencies: function() {
+      this.$bar.exists(function() {
+        require(['assets/js/deferred/bar'], function(Bar) {
+          Bar.init();
+        });
+
+      });
     }
-    // loadDynamicDependencies: function() {
-      // this.$bar.exists(function() {
-      //   console.log('.bar exists: load bar');
-      //   require(['assets/js/_deferred/bar']);
-      // });
-    // }
   };
 
   Main.init();
