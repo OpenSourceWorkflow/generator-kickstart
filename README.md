@@ -168,6 +168,10 @@ require([
     init: function() {
       this.cacheElements();
       this.loadDynamicDependencies();
+
+      // Modules
+      Foo.init();
+
     },
     loadDynamicDependencies: function() {
       this.$bar.exists(function() {
