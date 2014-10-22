@@ -1,5 +1,3 @@
-+++ PRE-RELEASE: not ready for production yet! +++
-
 # generator-kickstart
 
 The generator-kickstart is an opinionated setup for front end development designed to make use of the following technologies and paradigms:
@@ -344,10 +342,12 @@ define(['<component-name>'], function(Foo) {
   };
 
 });
-
-
 ```
+### Grunt Task
 
+```bash
+$ grunt qunit
+```
 
 ## Getting Started
 
