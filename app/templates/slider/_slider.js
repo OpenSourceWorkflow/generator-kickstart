@@ -1,29 +1,23 @@
-define(['jquery', 'exists'], function() {
-  
-  /************************************************************
-  Strict Mode
-  @see http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more
-  *************************************************************/
+define(['jquery', 'jquery.exists'], function() {
+
   'use strict';
-  
+
   /************************************************************
   @description Slider
   *************************************************************/
   var Slider = {
-    cacheElements: function() {
+    _cacheElements: function() {
     },
     init: function() {
       this.cacheElements();
       this.bindEvents();
     },
-    bindEvents: function() {
+    _bindEvents: function() {
     }
   };
 
-  Slider.init();
-
-  // return {
-  //   : Slider.
-  // };
+  return {
+    init: Slider.init
+  };
 
 });

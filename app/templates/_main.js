@@ -1,14 +1,14 @@
 require([
   'jquery',<% if (includeAccordion) { %>
-  'accordion',<% } %><% if (oldIE) { %>
-  'respondJS',<% } %><% if (includeAnythingSlider) { %>
+  'accordion',<% } %><% if (includeAnythingSlider) { %>
   'slider',<% } %><% if (includeColorbox) { %>
-  'colorbox',<% } %><% if (includeElementSwitcher) { %>
-  'element-switcher',<% } %><% if (includeEqualHeight) { %>
-  'jquery.equal-height',<% } %><% if (includeTabs) { %>
-  'tabs',<% } %>
+  'overlay',<% } %><% if (includeElementSwitcher) { %>
+  'element-switcher',<% } %><% if (includeTabs) { %>
+  'tabs',<% } %><% if (includeEqualHeight) { %>
+  'jquery.equal-height',<% } %><% if (oldIE) { %>
+  'respondJS',<% } %>
   'jquery.exists'
-  ], function() {
+  ], function($, Accordion, Slider, Overlay, ElementSwitcher, Tabs) {
 
   'use strict';
 
@@ -19,6 +19,14 @@ require([
     init: function() {
       this.cacheElements();
       // this.loadDynamicDependencies();
+
+      // Modules
+      <% if (includeAccordion) { %>Accordion.init()<% } %>
+      <% if (includeAnythingSlider) { %>Slider.init()<% } %>
+      <% if (includeColorbox) { %>Overlay.init()<% } %>
+      <% if (includeElementSwitcher) { %>ElementSwitcher.init()<% } %>
+      <% if (includeElementTabs) { %>ElementTabs.init()<% } %>
+
     }
     // loadDynamicDependencies: function() {
       // this.$bar.exists(function() {

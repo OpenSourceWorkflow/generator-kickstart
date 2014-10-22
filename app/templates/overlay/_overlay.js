@@ -1,29 +1,23 @@
-define(['jquery', 'plugins/exists'], function() {
-  
-  /************************************************************
-  Strict Mode
-  @see http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more
-  *************************************************************/
+define(['jquery', 'jquery.exists'], function() {
+
   'use strict';
-  
+
   /************************************************************
   @description Overlay
   *************************************************************/
   var Overlay = {
-    cacheElements: function() {
+    _cacheElements: function() {
     },
     init: function() {
       this.cacheElements();
       this.bindEvents();
     },
-    bindEvents: function() {
+    _bindEvents: function() {
     }
   };
 
-  Overlay.init();
-
-  // return {
-  //   : Overlay.
-  // };
+  return {
+    init: Overlay.init
+  };
 
 });
