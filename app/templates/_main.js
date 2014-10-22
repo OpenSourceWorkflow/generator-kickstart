@@ -8,7 +8,7 @@ require([
   'jquery.equal-height',<% } %><% if (oldIE) { %>
   'respondJS',<% } %>
   'jquery.exists'
-  ], function($, Accordion, Slider, Overlay, ElementSwitcher, Tabs) {
+  ], function($<% if (includeAccordion) { %>, Accordion<% } %><% if (includeAnythingSlider) { %>, Slider<% } %><% if (includeColorbox) { %>, Overlay<% } %><% if (includeElementSwitcher) { %>, ElementSwitcher<% } %><% if (includeTabs) { %>, Tabs<% } %>) {
 
   'use strict';
 
@@ -21,11 +21,11 @@ require([
       // this.loadDynamicDependencies();
 
       // Modules
-      <% if (includeAccordion) { %>Accordion.init()<% } %>
-      <% if (includeAnythingSlider) { %>Slider.init()<% } %>
-      <% if (includeColorbox) { %>Overlay.init()<% } %>
-      <% if (includeElementSwitcher) { %>ElementSwitcher.init()<% } %>
-      <% if (includeElementTabs) { %>ElementTabs.init()<% } %>
+      <% if (includeAccordion) { %>Accordion.init();<% } %>
+      <% if (includeAnythingSlider) { %>Slider.init();<% } %>
+      <% if (includeColorbox) { %>Overlay.init();<% } %>
+      <% if (includeElementSwitcher) { %>ElementSwitcher.init();<% } %>
+      <% if (includeTabs) { %>Tabs.init();<% } %>
 
     }
     // loadDynamicDependencies: function() {
