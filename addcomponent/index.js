@@ -16,15 +16,15 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
       if (this.ComponentType === 'standardModule') {
         this.log('Added component ' + this.name + ' to components/app/' + this._.slugify(this.name));
         if(this.includeHTML) {
-          this.log('You can use it in your HTML with ' + chalk.blue('{app:{' + this._.slugify(this.name) + '}}'));
+          this.log('You can use it in your HTML with ' + chalk.yellow('{app:{' + this._.slugify(this.name) + '}}'));
         }
       } else {
         this.log('Added component ' + this.name + ' to components/app/_deferred/' + this._.slugify(this.name));
         if(this.includeHTML) {
-          this.log('You can use it in your HTML with ' + chalk.blue('{deferred:{' + this._.slugify(this.name) + '}}'));
+          this.log('You can use it in your HTML with ' + chalk.yellow('{deferred:{' + this._.slugify(this.name) + '}}'));
         }
       }
-      
+
       this.log('\n');
     });
   },
@@ -147,24 +147,15 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     file = this.readFileAsString(path);
 
     if(this.includeJS) {
-
       var
       match = '//{{app}}',
       newcontent = '//{{app}}\n    \'' + this._.slugify(this.name) + '\': \'' + 'app/' + this._.slugify(this.name) + '/'+ this._.slugify(this.name) + '\',';
-
       var newfile = file.replace(match, newcontent);
-
-      this.log(newfile);
     }
 
     this.write(path, newfile);
 
   }
-
-  // end: function () {
-  //   this.log('done');
-  //   // this.spawnCommand('composer', ['install']);
-  // }
 
 });
 
