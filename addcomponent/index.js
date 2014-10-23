@@ -142,6 +142,27 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
       this.write(path, file);
     }
+  },
+
+  addToRequireJS: function () {
+
+    var
+    path = 'components/' + this.pkg.name + '.js',
+    file = this.readFileAsString(path);
+
+    if(this.includeJS) {
+
+      var
+      match = '//{{app}}',
+      newcontent = '//{{app}}\n    \'' + this._.slugify(this.name) + '\': \'' + 'app/' + this._.slugify(this.name) + '/'+ this._.slugify(this.name) + '\',';
+
+      var newfile = file.replace(match, newcontent);
+
+      this.log(newfile);
+    }
+
+    this.write(path, newfile);
+
   }
 
   // end: function () {
