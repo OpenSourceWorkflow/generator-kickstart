@@ -24,11 +24,7 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
           this.log('You can use it in your HTML with ' + chalk.blue('{deferred:{' + this._.slugify(this.name) + '}}'));
         }
       }
-
-      if(this.includeJS) {
-        this.log('Don\'t forget to wire this into your requirejs config (components/' + this.pkg.name + '.js)');
-      }
-
+      
       this.log('\n');
     });
   },
