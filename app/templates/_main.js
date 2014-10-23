@@ -18,7 +18,7 @@ require([
     },
     init: function() {
       this.cacheElements();
-      // this.loadDynamicDependencies();
+      // this.loadDynamicModules();
 
       // Modules
       <% if (includeAccordion) { %>Accordion.init();<% } %>
@@ -28,7 +28,7 @@ require([
       <% if (includeTabs) { %>Tabs.init();<% } %>
 
     }
-    // loadDynamicDependencies: function() {
+    // loadDynamicModules: function() {
       // this.$bar.exists(function() {
       //   console.log('.bar exists: load bar');
       //   require(['assets/js/_deferred/bar']);

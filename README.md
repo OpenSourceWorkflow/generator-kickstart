@@ -167,13 +167,13 @@ require([
     },
     init: function() {
       this.cacheElements();
-      this.loadDynamicDependencies();
+      this.loadDynamicModules();
 
       // Modules
       Foo.init();
 
     },
-    loadDynamicDependencies: function() {
+    loadDynamicModules: function() {
       this.$bar.exists(function() {
         require(['assets/js/deferred/bar'], function(Bar) {
           Bar.init();
