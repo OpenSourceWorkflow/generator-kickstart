@@ -1,6 +1,7 @@
 'use strict';
 var util = require('util');
 var yeoman = require('yeoman-generator');
+var chalk = require('chalk');
 
 var AddbowerGenerator = yeoman.generators.NamedBase.extend({
 
@@ -10,14 +11,39 @@ var AddbowerGenerator = yeoman.generators.NamedBase.extend({
     this.on('end', function () {
 
       this.log('\n');
-      this.log('Added component ' + this.name + ' to components/libs/');
-      this.log('Don\'t forget to wire this into your requirejs config (components/' + this.pkg.name + '.js)');
+      this.log('You might need to add ' + this.name + '\'s dependencies to your requireJS config: ');
+      this.log(chalk.yellow.bold(JSON.stringify(this.bowerJSON.dependencies)));
       this.log('\n');
+
     });
   },
+
   addBower: function () {
     var done = this.async();
     this.bowerInstall([this.name], { 'save': true }, done);
+  },
+
+  addToRequireJS: function () {
+
+    var
+
+    bowerFile = 'components/bower/' + this.name + '/bower.json',
+    bowerJSON = this.dest.readJSON(bowerFile),
+    bowerMain = bowerJSON.main.replace(".js", ""),
+
+    pathToRequireJSConfig = 'components/' + this.pkg.name + '.js',
+    requireJSConfig = this.readFileAsString(pathToRequireJSConfig),
+
+    match = '//{{libs}}',
+    newcontent = '//{{libs}}\n    \'' + this.name + '\': \'' + 'bower/' + this.name + '/' + bowerMain + '\',',
+    newRequireJSConfig = requireJSConfig.replace(match, newcontent);
+
+    this.bowerJSON = bowerJSON;
+
+    this.write(pathToRequireJSConfig, newRequireJSConfig);
+
+    // change path to libs/
+
   }
 });
 
