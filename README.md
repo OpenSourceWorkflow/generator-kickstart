@@ -62,6 +62,7 @@ This is your working environment:
 └── .gitignore
 └── bower.json
 └── gruntfile.js
+└── favicon.ico
 └── package.json
 └── README.md
 └── sandbox.html (main template)
@@ -78,6 +79,7 @@ build/
 |       └── _deferred/
 |       └── libs/
 |── img/
+└── favicon.ico
 └── sandbox.html
 ```
 
