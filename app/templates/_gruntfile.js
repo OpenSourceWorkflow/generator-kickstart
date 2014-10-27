@@ -223,6 +223,16 @@ module.exports = function(grunt) {
           dest: 'build/assets/font'
         }],
         verbose: true
+      },
+      json: {
+        files: [{
+          flatten: true,
+          expand: true,
+          cwd: 'components/app',
+          src: ['**/*.json'],
+          dest: 'build/assets/json'
+        }],
+        verbose: true
       }
     }<% if (includeModernizr) { %>,
 
