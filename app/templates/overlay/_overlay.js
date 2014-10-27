@@ -7,10 +7,14 @@ define(['jquery', 'jquery.exists'], function() {
   *************************************************************/
   var Overlay = {
     _cacheElements: function() {
+      this.$overlay = $('.overlay');
     },
     init: function() {
-      this.cacheElements();
-      this.bindEvents();
+      Overlay._cacheElements();
+
+      Overlay.$overlay.exists(function() {
+        Overlay._bindEvents();
+      });
     },
     _bindEvents: function() {
     }

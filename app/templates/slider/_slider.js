@@ -7,10 +7,14 @@ define(['jquery', 'jquery.exists'], function() {
   *************************************************************/
   var Slider = {
     _cacheElements: function() {
+      this.$slider = $('.slider');
     },
     init: function() {
-      this.cacheElements();
-      this.bindEvents();
+      Slider._cacheElements();
+
+      Slider.$slider.exists(function() {
+        Slider._bindEvents();
+      });
     },
     _bindEvents: function() {
     }

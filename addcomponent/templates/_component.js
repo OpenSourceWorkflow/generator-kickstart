@@ -7,10 +7,10 @@ define(['jquery', 'jquery.exists'], function() {
       this.$<%= _.underscored(name) %> = $('.<%= _.slugify(name) %>');
     },
     init: function() {
-      this.cacheElements();
+      <%= _.classify(name) %>._cacheElements();
 
-      this.$<%= _.underscored(name) %>.exists(function() {
-        this.bindEvents();
+      <%= _.classify(name) %>.$<%= _.underscored(name) %>.exists(function() {
+        <%= _.classify(name) %>._bindEvents();
       });
     },
     _bindEvents: function() {
