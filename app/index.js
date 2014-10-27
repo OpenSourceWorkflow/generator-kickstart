@@ -189,6 +189,10 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     this.template('_sandbox.html', 'sandbox.html');
   },
 
+  images: function () {
+    this.copy('_favicon.ico', 'favicon.ico');
+  },
+
   components: function () {
 
     // colors

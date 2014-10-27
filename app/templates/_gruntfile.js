@@ -233,6 +233,16 @@ module.exports = function(grunt) {
           dest: 'build/assets/json'
         }],
         verbose: true
+      },
+      favicon: {
+        files: [{
+          flatten: true,
+          expand: true,
+          cwd: '.',
+          src: ['favicon.ico'],
+          dest: 'build'
+        }],
+        verbose: true
       }
     }<% if (includeModernizr) { %>,
 
