@@ -1,7 +1,11 @@
 /* Load Modules */
 @import "compass";
-<% if (includeGridLayout) { %>@import "libs/grid-layout/grid-layout"; <% } %>
-<% if (includeBase64BackgroundImages) { %>@import "libs/base64-background-image/base64-background-image"; <% } %>
+
+// libs:
+<% if (includeGridLayout) { %>@import "libs/grid-layout/grid-layout";<% } %>
+<% if (includeBase64BackgroundImages) { %>@import "libs/base64-background-image/base64-background-image";<% } %>
+
+// app:
 @import "app/colors/colors";
 @import "app/common/common";
 @import "app/rte/rte";
