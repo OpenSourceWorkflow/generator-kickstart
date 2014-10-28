@@ -28,20 +28,22 @@ var AddbowerGenerator = yeoman.generators.NamedBase.extend({
     var
 
     bowerFile = 'components/libs/' + this.name + '/bower.json',
-    bowerJSON = this.dest.readJSON(bowerFile),
-    bowerMain = bowerJSON.main.replace(".js", ""),
+    bowerJSON = this.dest.readJSON(bowerFile);
 
-    pathToRequireJSConfig = 'components/' + this.pkg.name + '.js',
-    requireJSConfig = this.readFileAsString(pathToRequireJSConfig),
+  //   bowerMain = bowerJSON.main.replace('.js', ''),
 
-    match = '//{{libs}}',
-    newcontent = '//{{libs}}\n    \'' + this.name + '\': \'' + 'libs/' + this.name + '/' + bowerMain + '\',',
-    newRequireJSConfig = requireJSConfig.replace(match, newcontent);
+  //   pathToRequireJSConfig = 'components/' + this.pkg.name + '.js',
+  //   requireJSConfig = this.readFileAsString(pathToRequireJSConfig),
+
+  //   match = '//{{libs}}',
+  //   newcontent = '//{{libs}}\n    \'' + this.name + '\': \'' + 'libs/' + this.name + '/' + bowerMain + '\',',
+  //   newRequireJSConfig = requireJSConfig.replace(match, newcontent);
 
     this.bowerJSON = bowerJSON;
 
-    this.write(pathToRequireJSConfig, newRequireJSConfig);
+  //   this.write(pathToRequireJSConfig, newRequireJSConfig);
   }
+
 });
 
 module.exports = AddbowerGenerator;

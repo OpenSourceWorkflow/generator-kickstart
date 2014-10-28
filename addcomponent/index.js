@@ -106,7 +106,6 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   addApp: function () {
 
-
     this.mkdir(this.directory + this.name);
 
     if (this.includeJS) {
@@ -142,19 +141,22 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   addToRequireJS: function () {
 
-    var
-    path = 'components/' + this.pkg.name + '.js',
-    file = this.readFileAsString(path);
-
     if(this.includeJS) {
+
       var
-      match = '//{{app}}',
-      newcontent = '//{{app}}\n    \'' + this._.slugify(this.name) + '\': \'' + 'app/' + this._.slugify(this.name) + '/'+ this._.slugify(this.name) + '\',';
-      var newfile = file.replace(match, newcontent);
+      path = 'components/' + this.pkg.name + '.js',
+      file = this.readFileAsString(path);
+
+      if(this.includeJS) {
+        var
+        match = '//{{app}}',
+        newcontent = '//{{app}}\n    \'' + this._.slugify(this.name) + '\': \'' + 'app/' + this._.slugify(this.name) + '/'+ this._.slugify(this.name) + '\',';
+        var newfile = file.replace(match, newcontent);
+      }
+
+      this.write(path, newfile);
+
     }
-
-    this.write(path, newfile);
-
   }
 
 });
