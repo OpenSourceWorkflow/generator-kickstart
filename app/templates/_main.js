@@ -8,7 +8,15 @@ require([
   'jquery.equal-height',<% } %><% if (oldIE) { %>
   'respondJS',<% } %>
   'jquery.exists'
-  ], function(<% if (includeAccordion) { %>, Accordion<% } %><% if (includeAnythingSlider) { %>, Slider<% } %><% if (includeColorbox) { %>, Overlay<% } %><% if (includeElementSwitcher) { %>, ElementSwitcher<% } %><% if (includeTabs) { %>, Tabs<% } %>) {
+  ], function(
+
+    <% if (includeAccordion) { %>Accordion<% } %>
+    <% if (includeAnythingSlider) { %>, Slider<% } %>
+    <% if (includeColorbox) { %>, Overlay<% } %>
+    <% if (includeElementSwitcher) { %>, ElementSwitcher<% } %>
+    <% if (includeTabs) { %>, Tabs<% } %>
+
+    ) {
 
   'use strict';
 
