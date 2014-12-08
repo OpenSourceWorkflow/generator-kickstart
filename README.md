@@ -96,11 +96,21 @@ In your HTML you need to use one of the following placeholders for the 2 types o
 
 ## Assets
 
-As you can see in the 'foo' example. Save images used for styling to the img/ subfolder of your component. There the grunt task expects an SVG and a PNG. If you choose to use the 'Base64BackgroundImages' mixin the SVG is inlined into your CSS and the png is saved to assets/img as fallback.
+### Images
+
+Save images used for styling to the img/ subfolder of your component.
+
+There the grunt task expects an SVG and a PNG. If you choose to use the 'Base64BackgroundImages' mixin the SVG is inlined into your CSS and the png is saved to assets/img as fallback.
+
+### Webfonts
+
+Save your webfonts to font/ subfolder of your component.
+
+You could use a 'common' or 'webfonts' component to seperate styles for your webfonts.
 
 ## Example for component 'Foo'
 
-Here is a complete setup for the 'Foo' component:
+Here is an example setup for 'Foo' component:
 
 ```bash
 .
@@ -110,6 +120,9 @@ Here is a complete setup for the 'Foo' component:
 |   └── app/
 |       └── main.js
 |       └── foo/
+|           └── font/
+|               └── webfonts.woff
+|               └── ...
 |           └── img/
 |               └── arrow.svg
 |               └── arrow.png
