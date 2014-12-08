@@ -1,3 +1,15 @@
+<%
+
+  var components = [];
+
+  if(includeAccordion) { components.push('Accordion'); }
+  if(includeAnythingSlider) { components.push('Slider'); }
+  if(includeColorbox) { components.push('Overlay'); }
+  if(includeElementSwitcher) { components.push('ElementSwitcher'); }
+  if(includeTabs) { components.push('Tabs'); }
+
+  components = _.toSentence(components, ', ', ', ');
+%>
 require([
   'jquery',<% if (includeAccordion) { %>
   'accordion',<% } %><% if (includeAnythingSlider) { %>
@@ -8,7 +20,7 @@ require([
   'jquery.equal-height',<% } %><% if (oldIE) { %>
   'respondJS',<% } %>
   'jquery.exists'
-  ], function(<% if (includeAccordion) { %>Accordion<% } %> <% if (includeAnythingSlider) { %>, Slider<% } %> <% if (includeColorbox) { %>, Overlay<% } %> <% if (includeElementSwitcher) { %>, ElementSwitcher<% } %> <% if (includeTabs) { %>, Tabs<% } %>) {
+  ], function(<%= components %>) {
 
   'use strict';
 
