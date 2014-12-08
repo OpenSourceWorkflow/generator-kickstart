@@ -172,7 +172,7 @@ require([
   'jquery',
   'foo',
   'jquery.exists'
-  ], function() {
+  ], function(Foo) {
 
   'use strict';
 
