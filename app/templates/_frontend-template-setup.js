@@ -4,6 +4,9 @@ requirejs.config({
   'paths': {
 
   	//{{app}}
+    <% if (includeColorbox) { %>'overlay': 'app/overlay/overlay',<% } %>
+
+    //{{libs}}
     <% if (includeAccordion) { %>'accordion': 'libs/accordion/accordion',<% } %>
     <% if (includeAnythingSlider) { %>'slider': 'libs/anythingslider/js/jquery.anythingslider.min',<% } %>
     <% if (includeColorbox) { %>'colorbox': 'libs/colorbox/jquery.colorbox-min',<% } %>
@@ -11,8 +14,6 @@ requirejs.config({
     <% if (includeEqualHeight) { %>'jquery.equal-height': 'libs/jquery.equal-height/jquery.equal-height',<% } %>
     <% if (includeTabs) { %>'tabs': 'libs/tabs/tabs',<% } %>
     <% if (oldIE) { %>'respondJS': 'libs/respondJS/dest/respond.min',<% } %>
-
-		//{{libs}}
 		'jquery.exists': 'libs/jquery.exists/jquery.exists',
 		'jquery': 'libs/jquery/dist/jquery.min'
   },
