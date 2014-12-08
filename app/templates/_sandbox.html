@@ -1,51 +1,54 @@
-<!DOCTYPE html>
+<% if (oldIE) { %>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="de"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="de"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="de"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="de"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title><%= ProjectName %></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="assets/css/<%= _.slugify(ProjectName) %>.css">
-  <% if (includeModernizr) { %><script src="assets/js/libs/modernizr.js"></script><% } %>
-</head>
-<body>
+<% } %>
+<% if (!oldIE) { %><html class="no-js" lang="de"><% } %>
 
-  <header class="header"></header>
+  <head>
+    <meta charset="utf-8">
+    <title><%= ProjectName %></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="assets/css/<%= _.slugify(ProjectName) %>.css">
+    <% if (includeModernizr) { %><script src="assets/js/libs/modernizr.js"></script><% } %>
+  </head>
+  <body>
 
-  <main class="wrapper">
+    <header class="header"></header>
 
-    <h1 class="heading style1"><%= ProjectName %></h1>
+    <main class="wrapper">
 
-    {app:{rte}}
+      <h1 class="heading style1"><%= ProjectName %></h1>
 
-    <% if (includeAccordion) { %>
-    {app:{accordion}}
-    <% } %>
+      {app:{rte}}
 
-    <% if (includeTabs) { %>
-    {app:{tabs}}
-    <% } %>
+      <% if (includeAccordion) { %>
+      {app:{accordion}}
+      <% } %>
 
-    <% if (includeElementSwitcher) { %>
-    {app:{element-switcher}}
-    <% } %>
+      <% if (includeTabs) { %>
+      {app:{tabs}}
+      <% } %>
 
-    <% if (includeColorbox) { %>
-    {app:{overlay}}
-    <% } %>
+      <% if (includeElementSwitcher) { %>
+      {app:{element-switcher}}
+      <% } %>
 
-    <% if (includeAnythingSlider) { %>
-    {app:{slider}}
-    <% } %>
+      <% if (includeColorbox) { %>
+      {app:{overlay}}
+      <% } %>
 
-  </main> <!-- wrapper -->
+      <% if (includeAnythingSlider) { %>
+      {app:{slider}}
+      <% } %>
 
-  <footer class="footer"></footer>
+    </main> <!-- wrapper -->
 
-  <script data-main="assets/js/<%= _.slugify(ProjectName) %>" src="assets/js/libs/require.js"></script>
+    <footer class="footer"></footer>
 
-</body>
+    <script data-main="assets/js/<%= _.slugify(ProjectName) %>" src="assets/js/libs/require.js"></script>
+
+  </body>
 </html>
