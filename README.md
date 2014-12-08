@@ -211,10 +211,8 @@ base file for styling (project-name.scss):
 @import "app/common/common";
 @import "app/rte/rte";
 @import "app/foo/foo";
-/*
-or CSS files via [sass-css-importer](https://github.com/chriseppstein/sass-css-importer)
-in case a lib has no scss file
-*/
+
+/* import CSS from a lib */
 @import "CSS:libs/abc/styling";
 
 ```
@@ -366,7 +364,9 @@ define(['<component-name>'], function(Foo) {
 $ grunt qunit
 ```
 
-## Getting Started
+## Getting started with generator-kickstart
+
+### Installation
 
 Install Yeoman & Kickstart generator ([Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started))
 
@@ -375,23 +375,37 @@ $ npm install -g yo
 $ npm install -g generator-kickstart
 ```
 
-Your are ready to use the generator with:
+### Start new project
+
+Navigate to an **empty** folder where you want to setup your new project. Then use the following command to start the generator and answer a few questions. It will ask for a few things put to a README.md and what libs you might want to use.
 
 ```bash
 $ yo kickstart
 ```
 
-Adding a module to app/.
+### Adding a new component
+
+You can automatically add components. The command will add your styles to the <project-name>.scss and to the requireJS config file. It will ask if the component is a 'standard module' or 'deferred module'. If the component uses JS this will do the following:
+
+* **standard**: add requireJS module to main and add component to app/
+* **deferred**: you will have to require the module yourself and the component is added to app/_deferred/
 
 ```bash
 $ yo kickstart:addcomponent <name>
 ```
 
-Adding a Bower package.
+You can also use this command multiple times on the same component to add HTML, SCSS or JS as you need it.
+
+### Adding a Bower package
+
+With this command you can add bower packages to your project. it will download and install it to the lib/ folder and save it to the project's bower.json.
 
 ```bash
 $ yo kickstart:addbower <name>
 ```
+
+Don't forget to add your lib to <project-name>.scss or <project-name>.js if needed.
+Kickstart uses [sass-css-importer](https://github.com/chriseppstein/sass-css-importer) which lets you import CSS with 'CSS:'-prefix. See example for more Details.
 
 ### Example workflow
 
@@ -422,16 +436,12 @@ $ grunt
 $ grunt watch
 ```
 
-## FAQ
-
-* Where do I put webfonts? app/common/font (can be font/ in any component).
-
 ## Customization
 
 There are a few customizable options for you to consider:
 
-* [.csslintrc](https://github.com/CSSLint/csslint/wiki/Rules)
-* [.jshintrc](http://www.jshint.com/docs/options/)
+* For the OOCSS-Linter: [.csslintrc](https://github.com/CSSLint/csslint/wiki/Rules)
+* For the JSHint-Linter: [.jshintrc](http://www.jshint.com/docs/options/)
 
 ## License
 
