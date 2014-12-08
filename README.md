@@ -230,9 +230,7 @@ Your inital styling (foo.scss):
 Your inital markup (foo.html):
 
 ```html
-<div class="foo">
-  <p>Foo!</p>
-</div> <!-- foo -->
+<div class="foo"></div> <!-- foo -->
 ```
 
 Your inital script (foo.js):
