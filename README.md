@@ -404,8 +404,10 @@ With this command you can add bower packages to your project. it will download a
 $ yo kickstart:addbower <name>
 ```
 
-Don't forget to add your lib to <project-name>.scss or <project-name>.js if needed.
+Don't forget to add your lib to <project-name>.scss or <project-name>.js if needed*.
 Kickstart uses [sass-css-importer](https://github.com/chriseppstein/sass-css-importer) which lets you import CSS with 'CSS:'-prefix. See example for more Details.
+
+* You can always use bower install as well
 
 ### Example workflow
 
