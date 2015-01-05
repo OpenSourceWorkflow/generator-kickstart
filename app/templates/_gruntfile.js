@@ -187,16 +187,14 @@ module.exports = function(grunt) {
     accessibility: {
       options : {
         accessibilityLevel: 'WCAG2<%= WCAG2 %>',
-        outputFormat: 'txt',
+        accessibilityrc: true,
         domElement: true
       },
       development : {
         files: [{
           expand  : true,
           cwd     : 'build/',
-          src     : ['*.html'],
-          dest    : 'build/WCAG2-reports/',
-          ext     : '-report.txt'
+          src     : ['*.html']
         }]
       }
     },
