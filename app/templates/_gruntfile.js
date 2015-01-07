@@ -194,7 +194,9 @@ module.exports = function(grunt) {
         files: [{
           expand  : true,
           cwd     : 'build/',
-          src     : ['*.html']
+          src     : ['*.html'],
+          dest    : 'WCAG2-reports/',
+          ext     : '-report.txt'
         }]
       }
     },
