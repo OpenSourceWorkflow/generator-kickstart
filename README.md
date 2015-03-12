@@ -1,4 +1,4 @@
-# generator-kickstart
+# generator-kickstart [![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart)
 
 The generator-kickstart is an opinionated setup for front end development designed to make use of the following technologies and paradigms:
 
