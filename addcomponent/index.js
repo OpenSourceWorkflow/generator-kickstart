@@ -7,7 +7,7 @@ var chalk = require('chalk');
 var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   init: function () {
-    this.pkg = this.dest.readJSON('package.json');
+    this.pkg = this.fs.readJSON('package.json');
 
     this.on('end', function () {
 

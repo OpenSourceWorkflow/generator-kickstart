@@ -6,7 +6,7 @@ var chalk = require('chalk');
 var AddbowerGenerator = yeoman.generators.NamedBase.extend({
 
   init: function () {
-    this.pkg = this.dest.readJSON('package.json');
+    this.pkg = this.fs.readJSON('package.json');
 
     this.on('end', function () {
 
@@ -28,7 +28,7 @@ var AddbowerGenerator = yeoman.generators.NamedBase.extend({
     var
 
     bowerFile = 'components/libs/' + this.name + '/bower.json',
-    bowerJSON = this.dest.readJSON(bowerFile);
+    bowerJSON = this.fs.readJSON(bowerFile);
 
   //   bowerMain = bowerJSON.main.replace('.js', ''),
 
