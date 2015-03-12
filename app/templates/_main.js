@@ -1,6 +1,6 @@
 <%
 
-  var components = [];
+  var components = ['$'];
 
   if(includeAccordion) { components.push('Accordion'); }
   if(includeAnythingSlider) { components.push('Slider'); }

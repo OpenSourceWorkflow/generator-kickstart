@@ -16,22 +16,7 @@ Level: <%= WCAG2 %>
 
 ## Usage
 
-This is a kickstarted project (https://github.com/markusfalk/generator-kickstart).
-
-```bash
-$ npm install -g yo
-$ npm install -g generator-kickstart
-```
-
-Adding a module to app:
-```bash
-$ yo kickstart:addcomponent <name>
-```
-
-Adding a Bower package:
-```bash
-$ yo kickstart:addbower <name>
-```
+This is a kickstarted project:  https://github.com/markusfalk/generator-kickstart
 
 ## Customization
 
