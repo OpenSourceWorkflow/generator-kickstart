@@ -169,10 +169,10 @@ App entry point:
 
 ```javascript
 require([
-  'jquery',
-  'foo',
-  'jquery.exists'
-  ], function(Foo) {
+  'jquery', // local jquery for jQuery.noConflict
+  'foo', // your required modules
+  'jquery.exists' // jquery plugins should be last
+  ], function($, Foo) { // watch out for the right order
 
   'use strict';
 
@@ -234,7 +234,7 @@ Your inital markup (foo.html):
 Your inital script (foo.js):
 
 ```javascript
-define(['jquery', 'jquery.exists'], function() {
+define(['jquery', 'jquery.exists'], function($) {
 
   'use strict';
 
