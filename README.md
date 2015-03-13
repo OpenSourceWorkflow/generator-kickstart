@@ -459,9 +459,9 @@ $ grunt watch
 
 There are a few customizable options for you to consider:
 
-* For the OOCSS-Linter: [.csslintrc](https://github.com/CSSLint/csslint/wiki/Rules)
-* For the JSHint-Linter: [.jshintrc](http://www.jshint.com/docs/options/)
-* For the accessibility-Task: [.accessibilityrc](https://github.com/yargalot/grunt-accessibility/)
+* OOCSS-Linter: [.csslintrc](https://github.com/CSSLint/csslint/wiki/Rules)
+* JSHint-Linter: [.jshintrc](http://www.jshint.com/docs/options/)
+* accessibility-task: [.accessibilityrc](https://github.com/yargalot/grunt-accessibility/)
 
 ## License
 
