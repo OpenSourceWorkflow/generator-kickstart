@@ -414,7 +414,7 @@ $ yo kickstart:removecomponent <name>
 
 ### Adding a Bower package
 
-It is reccomended to use bower itself to add new packages.
+It is recomended to use bower itself to add new packages.
 
 ```bash
 $ bower install <package-name> --save
