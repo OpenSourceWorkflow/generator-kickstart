@@ -396,16 +396,14 @@ You can also use this command multiple times on the same component to add HTML, 
 
 ### Adding a Bower package
 
-With this command you can add bower packages to your project. it will download and install it to the lib/ folder and save it to the project's bower.json.
+It is reccomended to use bower itself to add new packages.
 
 ```bash
-$ yo kickstart:addbower <name>
+$ bower install <package-name> --save
 ```
 
-Don't forget to add your lib to <project-name>.scss or <project-name>.js if needed*.
+Don't forget to add your lib to <project-name>.scss or <project-name>.js if needed.
 Kickstart uses [sass-css-importer](https://github.com/chriseppstein/sass-css-importer) which lets you import CSS with 'CSS:'-prefix. See example for more Details.
-
-*You can always use bower install as well
 
 ### Example workflow
 
@@ -424,14 +422,6 @@ This is for extending the project with another component:
 
 ```bash
 $ yo kickstart:addcomponent accordion
-$ grunt
-$ grunt watch
-```
-
-This is for extending the project with another bower package:
-
-```bash
-$ yo kickstart:addbower accordion
 $ grunt
 $ grunt watch
 ```
