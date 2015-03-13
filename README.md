@@ -57,6 +57,7 @@ This is your working environment:
 |── img/ (images rendered by CMS)
 └── .bowerrc
 └── .csslintrc
+└── .editorconfig
 └── .gitignore
 └── bower.json
 └── gruntfile.js
@@ -364,6 +365,17 @@ $ grunt qunit
 
 ## Getting started with generator-kickstart
 
+### Requirements
+
+* [Node](https://nodejs.org/)
+* [Yeoman](http://yeoman.io)
+* [Grunt](http://gruntjs.com)
+* [Bower](http://bower.io)
+* [Ruby](https://www.ruby-lang.org/)
+* [Compass](http://compass-style.org/)
+* [Sass](http://sass-lang.com/)
+* [Sass CSS Importer Plugin](https://github.com/chriseppstein/sass-css-importer)
+
 ### Installation
 
 Install Yeoman & Kickstart generator ([Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started))
@@ -383,7 +395,7 @@ $ yo kickstart
 
 ### Adding a new component
 
-You can automatically add components. The command will add your styles to the <project-name>.scss and to the requireJS config file. It will ask if the component is a 'standard module' or 'deferred module'. If the component uses JS this will do the following:
+The command will add your styles to the <project-name>.scss and to the requireJS config file. It will ask if the component is a 'standard module' or 'deferred module'. If the component uses JS this will do the following:
 
 * **standard**: add requireJS module to main and add component to app/
 * **deferred**: you will have to require the module yourself and the component is added to app/_deferred/
@@ -393,6 +405,14 @@ $ yo kickstart:addcomponent <name>
 ```
 
 You can also use this command multiple times on the same component to add HTML, SCSS or JS as you need it.
+
+### Removing a component
+
+This command removes a component, all its files and references in <project-name>.scss and <project-name>.js.
+
+```bash
+$ yo kickstart:removecomponent <name>
+```
 
 ### Adding a Bower package
 
@@ -405,14 +425,17 @@ $ bower install <package-name> --save
 Don't forget to add your lib to <project-name>.scss or <project-name>.js if needed.
 Kickstart uses [sass-css-importer](https://github.com/chriseppstein/sass-css-importer) which lets you import CSS with 'CSS:'-prefix. See example for more Details.
 
+### Grunt Tasks
+
+There are 2 task predefined task: 'default' and 'production'.
+
+The 'production'-task
+
 ### Example workflow
 
 Here is what you need to get a new project working:
 
 ```bash
-$ npm install -g yo
-$ npm install -g generator-kickstart
-
 $ yo kickstart
 $ grunt
 $ grunt watch
@@ -426,12 +449,21 @@ $ grunt
 $ grunt watch
 ```
 
+This is for removing a component:
+
+```bash
+$ yo kickstart:removecomponent accordion
+$ grunt
+$ grunt watch
+```
+
 ## Customization
 
 There are a few customizable options for you to consider:
 
 * For the OOCSS-Linter: [.csslintrc](https://github.com/CSSLint/csslint/wiki/Rules)
 * For the JSHint-Linter: [.jshintrc](http://www.jshint.com/docs/options/)
+* For the accessibility-Task: [.accessibilityrc](https://github.com/yargalot/grunt-accessibility/)
 
 ## License
 
