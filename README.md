@@ -33,7 +33,6 @@ The generator installs many commonly used components ready for you to customize 
 
 * [Accordion](https://github.com/markusfalk/accordion)
 * [Base64 Background Images](https://github.com/markusfalk/base64-background-image)
-* [Colorbox](http://www.jacklmoore.com/colorbox/)
 * [Element-Switcher](https://github.com/markusfalk/element-switcher)
 * [Grid Layout](https://github.com/markusfalk/grid-layout)
 * [jquery.equal-height Plugin](https://github.com/markusfalk/jquery.equal-height)

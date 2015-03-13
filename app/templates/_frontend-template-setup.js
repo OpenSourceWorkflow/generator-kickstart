@@ -4,11 +4,9 @@ requirejs.config({
   'paths': {
 
   	//{{app}}
-    <% if (includeColorbox) { %>'overlay': 'app/overlay/overlay',<% } %>
 
     //{{libs}}
     <% if (includeAccordion) { %>'accordion': 'libs/accordion/accordion',<% } %>
-    <% if (includeColorbox) { %>'colorbox': 'libs/colorbox/jquery.colorbox-min',<% } %>
     <% if (includeElementSwitcher) { %>'element-switcher': 'libs/element-switcher/element-switcher',<% } %>
     <% if (includeEqualHeight) { %>'jquery.equal-height': 'libs/jquery.equal-height/jquery.equal-height',<% } %>
     <% if (includeTabs) { %>'tabs': 'libs/tabs/tabs',<% } %>
@@ -18,8 +16,7 @@ requirejs.config({
   },
   'shim': {
     'jquery.exists': ['jquery'],
-    <% if (includeEqualHeight) { %>'jquery.equal-height': ['jquery'],<% } %>
-    <% if (includeColorbox) { %>'jquery.colorbox-min': ['jquery']<% } %>
+    <% if (includeEqualHeight) { %>'jquery.equal-height': ['jquery']<% } %>
   }
 });
 

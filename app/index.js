@@ -60,11 +60,6 @@ var KickstartGenerator = yeoman.generators.Base.extend({
         message: 'What more would you like?',
         choices: [
           {
-            name: 'Colorbox',
-            value: 'includeColorbox',
-            checked: false
-          },
-          {
             name: 'Accordion',
             value: 'includeAccordion',
             checked: false
@@ -133,7 +128,6 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
       this.includeAccordion = this._hasFeature('includeAccordion');
       this.includeBase64BackgroundImages = this._hasFeature('includeBase64BackgroundImages');
-      this.includeColorbox = this._hasFeature('includeColorbox');
       this.includeElementSwitcher = this._hasFeature('includeElementSwitcher');
       this.includeEqualHeight = this._hasFeature('includeEqualHeight');
       this.includeGridLayout = this._hasFeature('includeGridLayout');
@@ -220,13 +214,6 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     if (this.includeAccordion) {
       this.template('accordion/_accordion.html', 'components/app/accordion/accordion.html');
       this.template('accordion/_accordion.scss', 'components/app/accordion/_accordion.scss');
-    }
-
-    // Colorbox
-    if (this.includeColorbox) {
-      this.template('overlay/_overlay.html', 'components/app/overlay/overlay.html');
-      this.template('overlay/_overlay.js', 'components/app/overlay/overlay.js');
-      this.template('overlay/_overlay.scss', 'components/app/overlay/_overlay.scss');
     }
 
   }

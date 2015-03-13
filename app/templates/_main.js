@@ -3,7 +3,6 @@
   var components = ['$'];
 
   if(includeAccordion) { components.push('Accordion'); }
-  if(includeColorbox) { components.push('Overlay'); }
   if(includeElementSwitcher) { components.push('ElementSwitcher'); }
   if(includeTabs) { components.push('Tabs'); }
 
@@ -11,8 +10,7 @@
 %>
 require([
   'jquery',<% if (includeAccordion) { %>
-  'accordion',<% } %><% if (includeColorbox) { %>
-  'overlay',<% } %><% if (includeElementSwitcher) { %>
+  'accordion',<% } %><% if (includeElementSwitcher) { %>
   'element-switcher',<% } %><% if (includeTabs) { %>
   'tabs',<% } %><% if (includeEqualHeight) { %>
   'jquery.equal-height',<% } %><% if (oldIE) { %>
@@ -32,7 +30,6 @@ require([
 
       // Modules
       <% if (includeAccordion) { %>Accordion.init();<% } %>
-      <% if (includeColorbox) { %>Overlay.init();<% } %>
       <% if (includeElementSwitcher) { %>ElementSwitcher.init();<% } %>
       <% if (includeTabs) { %>Tabs.init();<% } %>
 
