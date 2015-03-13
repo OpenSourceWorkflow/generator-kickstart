@@ -11,8 +11,7 @@
     "tabs": "~2",<% } %><% if (includeColorbox) { %>
     "colorbox": "~1",<% } %><% if (includeGridLayout) { %>
     "grid-layout": "~2",<% } %><% if (includeBase64BackgroundImages) { %>
-    "base64-background-image": "~2",<% } %><% if (includeAnythingSlider) { %>
-    "anythingslider": "~1",<% } %><% if (oldIE) { %>
+    "base64-background-image": "~2",<% } %><% if (oldIE) { %>
     "respondJS": "~1",<% } %>
     "jquery.exists": "~1",
     "requirejs": "~2"

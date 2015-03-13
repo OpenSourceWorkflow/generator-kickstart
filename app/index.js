@@ -65,11 +65,6 @@ var KickstartGenerator = yeoman.generators.Base.extend({
             checked: false
           },
           {
-            name: 'AnythingSlider',
-            value: 'includeAnythingSlider',
-            checked: false
-          },
-          {
             name: 'Accordion',
             value: 'includeAccordion',
             checked: false
@@ -137,7 +132,6 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       this.features = answers.ContentElements;
 
       this.includeAccordion = this._hasFeature('includeAccordion');
-      this.includeAnythingSlider = this._hasFeature('includeAnythingSlider');
       this.includeBase64BackgroundImages = this._hasFeature('includeBase64BackgroundImages');
       this.includeColorbox = this._hasFeature('includeColorbox');
       this.includeElementSwitcher = this._hasFeature('includeElementSwitcher');
@@ -233,13 +227,6 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       this.template('overlay/_overlay.html', 'components/app/overlay/overlay.html');
       this.template('overlay/_overlay.js', 'components/app/overlay/overlay.js');
       this.template('overlay/_overlay.scss', 'components/app/overlay/_overlay.scss');
-    }
-
-    // AnythingSlider
-    if (this.includeAnythingSlider) {
-      this.template('slider/_slider.html', 'components/app/slider/slider.html');
-      this.template('slider/_slider.js', 'components/app/slider/slider.js');
-      this.template('slider/_slider.scss', 'components/app/slider/_slider.scss');
     }
 
   }

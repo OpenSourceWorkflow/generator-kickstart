@@ -13,4 +13,3 @@
 <% if (includeTabs) { %>@import "app/tabs/tabs";<% } %>
 <% if (includeAccordion) { %>@import "app/accordion/accordion";<% } %>
 <% if (includeColorbox) { %>@import "app/overlay/overlay";<% } %>
-<% if (includeAnythingSlider) { %>@import "app/overlay/overlay";<% } %>
