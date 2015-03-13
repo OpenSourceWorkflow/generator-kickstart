@@ -60,9 +60,9 @@ module.exports = yeoman.generators.Base.extend({
 
     var
     path = 'components/' + this.pkg.name + '.scss',
-    file = this.readFileAsString(path)
+    file = this.readFileAsString(path),
     match,
-    newcontent '';
+    newcontent = '';
 
     if (this.ComponentType === 'standardModule') {
       match = '@import \"app\/' + this._.slugify(this.name) + '\/' + this._.slugify(this.name) + '\";\n';
@@ -80,15 +80,15 @@ module.exports = yeoman.generators.Base.extend({
     path = 'components/' + this.pkg.name + '.js',
     file = this.readFileAsString(path),
     newcontent = '',
-    match,
-    newfile = file.replace(match, newcontent);
+    match;
 
     if (this.ComponentType === 'standardModule') {
-      match = '\'foo\': \'app/' + this._.slugify(this.name)+ '/' + this._.slugify(this.name) + '\',\n',
+      match = '\'' + this._.slugify(this.name) + '\': \'app/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '\',\n';
     } else {
-      match = '\'foo\': \'app/_deferred/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '\',\n',
+      match = '\'' + this._.slugify(this.name) + '\': \'app/_deferred/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '\',\n';
     }
 
+    var newfile = file.replace(match, newcontent);
     this.fs.write(path, newfile);
   }
 

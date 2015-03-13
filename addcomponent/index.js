@@ -149,7 +149,7 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
       if(this.includeJS) {
         var
-        match = '//{{app}}'
+        match = '//{{app}}',
         newcontent;
 
         if (this.ComponentType === 'standardModule') {
