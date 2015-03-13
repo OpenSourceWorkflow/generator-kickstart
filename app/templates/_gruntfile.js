@@ -22,7 +22,7 @@ module.exports = function(grunt) {
       },
       js_deferred: {
         files: ['components/app/_deferred/**/*.js'],
-        tasks: ['uglify:deferred', <% if (includeModernizr) { %>'modernizr',<% } %> 'jshint'],
+        tasks: ['uglify:deferred_development', <% if (includeModernizr) { %>'modernizr',<% } %> 'jshint'],
       },
       js_bower: {
         files: ['components/libs/**/*.js'],
@@ -55,11 +55,11 @@ module.exports = function(grunt) {
         noLineComments: true,
         require: 'sass-css-importer',
         sassDir: 'components',
-        sourcemap: true,
         specify: 'components/*.scss'
       },
       development: {
         options: {
+          sourcemap: true,
           environment: 'development'
         }
       },
@@ -122,22 +122,28 @@ module.exports = function(grunt) {
     },
 
     uglify: {
-      deferred: {
+      deferred_development: {
         options: {
-          beautify: true
+          sourceMap: true
         },
         files: [{
-            expand: true,
-            flatten: true,
-            cwd: 'components/app/_deferred',
-            src: ['**/*.js'],
-            dest: 'build/assets/js/deferred'
+          expand: true,
+          flatten: true,
+          cwd: 'components/app/_deferred',
+          src: ['**/*.js'],
+          dest: 'build/assets/js/deferred'
+        }]
+      },
+      deferred_production: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'components/app/_deferred',
+          src: ['**/*.js'],
+          dest: 'build/assets/js/deferred'
         }]
       },
       external: {
-        options: {
-          beautify: true
-        },
         files: {
           <% if (includeModernizr) { %>'build/assets/js/libs/modernizr.js': ['components/libs/modernizr-shim/modernizr.min.js'],<% } %>
           'build/assets/js/libs/require.js': ['components/libs/requirejs/require.js']
@@ -194,19 +200,20 @@ module.exports = function(grunt) {
         files: [{
           expand  : true,
           cwd     : 'build/',
-          src     : ['*.html'],
-          dest    : 'WCAG2-reports/',
-          ext     : '-report.txt'
+          src     : ['*.html']
         }]
       }
     },
 
     clean: {
-      development: {
+      svg: {
         src: ["build/assets/img/**/*.svg"]
       },
       css: {
         src: ["build/assets/css/**/*.css"]
+      },
+      build: {
+        src: ["build"]
       }
     },
 
@@ -280,6 +287,32 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-sync');
 
-  grunt.registerTask('default', ['replace', 'imagemin', 'sync',  'compass:development', 'requirejs:development', 'uglify', 'clean:development', <% if (includeModernizr) { %>'modernizr',<% } %> 'csslint', 'jshint', 'accessibility']);
+  grunt.registerTask('default', [
+    'replace',
+    'imagemin',
+    'sync',
+    'compass:development',
+    'requirejs:development',
+    'uglify:deferred_development',
+    'uglify:external',
+    'clean',
+    <% if (includeModernizr) { %>'modernizr',<% } %>
+    'csslint',
+    'jshint',
+    'accessibility'
+  ]);
+
+  grunt.registerTask('production', [
+    'clean:build',
+    'replace',
+    'imagemin',
+    'sync',
+    'compass:production',
+    'requirejs:production',
+    'uglify:deferred_production',
+    'uglify:external',
+    'clean',
+    <% if (includeModernizr) { %>'modernizr'<% } %>
+   ]);
 
 };
