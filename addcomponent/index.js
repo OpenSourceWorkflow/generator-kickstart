@@ -149,8 +149,15 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
       if(this.includeJS) {
         var
-        match = '//{{app}}',
-        newcontent = '//{{app}}\n    \'' + this._.slugify(this.name) + '\': \'' + 'app/' + this._.slugify(this.name) + '/'+ this._.slugify(this.name) + '\',';
+        match = '//{{app}}'
+        newcontent;
+
+        if (this.ComponentType === 'standardModule') {
+          newcontent = '//{{app}}\n    \'' + this._.slugify(this.name) + '\': \'' + 'app/' + this._.slugify(this.name) + '/'+ this._.slugify(this.name) + '\',';
+        } else {
+          newcontent = '//{{app}}\n    \'' + this._.slugify(this.name) + '\': \'' + 'app/_deferred/' + this._.slugify(this.name) + '/'+ this._.slugify(this.name) + '\',';
+        }
+
         var newfile = file.replace(match, newcontent);
       }
 
