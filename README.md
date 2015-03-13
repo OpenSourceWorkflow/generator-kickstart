@@ -252,11 +252,9 @@ define(['jquery', 'jquery.exists'], function($) {
     }
   };
 
-  Foo.init();
-
-  // return {
-  //   : Foo.
-  // };
+  return {
+    init: Foo.init
+  };
 
 });
 
