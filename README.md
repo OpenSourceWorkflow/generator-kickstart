@@ -370,6 +370,12 @@ During the setup of a new project kickstart will ask you if you want to support 
 * shiv and printshiv is included in the modernizr build
 * jQuery is included as 1.x.x
 
+## Predefined components
+
+* 'common': used for styling the sandbox and all styles that don't belong to a component in app/
+* 'rte': used for extending upon OOCSS classes for html tags coming from a wysiwyg editor that cannot apply classes
+* 'colors': define all your colors in here as sass variables
+
 ## Getting started with generator-kickstart
 
 ### Requirements
