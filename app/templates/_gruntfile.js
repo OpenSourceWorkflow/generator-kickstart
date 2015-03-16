@@ -42,7 +42,7 @@ module.exports = function(grunt) {
       },
       img_background: {
         files: 'components/**/*.{png,gif,jpg,svg}',
-        tasks: ['clean:css', 'newer:imagemin:backgrounds' , 'compass:development', 'clean:development', 'newer:csslint'],
+        tasks: ['clean:css', 'newer:imagemin:backgrounds' , 'compass:development', 'clean:css', 'clean:svg', 'newer:csslint'],
       }
     },
 
@@ -296,7 +296,8 @@ module.exports = function(grunt) {
     'requirejs:development',
     'uglify:deferred_development',
     'uglify:external',
-    'clean',
+    'clean:svg',
+    'clean:css',
     <% if (includeModernizr) { %>'modernizr',<% } %>
     'csslint',
     'jshint',
