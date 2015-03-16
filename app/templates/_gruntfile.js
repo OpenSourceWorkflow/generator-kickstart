@@ -247,7 +247,7 @@ module.exports = function(grunt) {
           flatten: true,
           expand: true,
           cwd: '.',
-          src: ['favicon.ico'],
+          src: ['favicon.ico', 'apple-touch-icon.png'],
           dest: 'build'
         }],
         verbose: true
