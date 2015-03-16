@@ -181,6 +181,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
   images: function () {
     this.copy('_favicon.ico', 'favicon.ico');
+    this.copy('_apple-touch-icon.png', 'apple-touch-icon.png');
   },
 
   components: function () {
