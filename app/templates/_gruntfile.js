@@ -12,37 +12,37 @@ module.exports = function(grunt) {
       // Styling
       scss: {
         files: 'components/**/*.scss',
-        tasks: ['imagemin', 'sync', 'compass:development', <% if (includeModernizr) { %>'modernizr',<% } %> 'csslint']
+        tasks: ['newer:imagemin', 'sync', 'compass:development', <% if (includeModernizr) { %>'modernizr',<% } %> 'newer:csslint']
       },
 
       // Scripting
       js: {
         files: ['components/*.js', 'components/app/**/*.js', '!components/app/_deferred/**/*.js'],
-        tasks: ['requirejs:development', <% if (includeModernizr) { %>'modernizr',<% } %> 'jshint'],
+        tasks: ['requirejs:development', <% if (includeModernizr) { %>'modernizr',<% } %> 'newer:jshint'],
       },
       js_deferred: {
         files: ['components/app/_deferred/**/*.js'],
-        tasks: ['uglify:deferred_development', <% if (includeModernizr) { %>'modernizr',<% } %> 'jshint'],
+        tasks: ['newer:uglify:deferred_development', <% if (includeModernizr) { %>'modernizr',<% } %> 'newer:jshint'],
       },
       js_bower: {
         files: ['components/libs/**/*.js'],
-        tasks: ['uglify:external', 'requirejs:development'],
+        tasks: ['newer:uglify:external', 'requirejs:development'],
       },
 
       // HTML
       html: {
         files: ['*.html', 'components/app/**/*.html' , '!components/libs/**/*.html', '!build/**/*.html'],
-        tasks: ['replace', 'accessibility'],
+        tasks: ['replace', 'newer:accessibility'],
       },
 
       // Images
       img_content: {
         files: 'img/**/*.{png,gif,jpg,svg}',
-        tasks: ['imagemin:content'],
+        tasks: ['newer:imagemin:content'],
       },
       img_background: {
         files: 'components/**/*.{png,gif,jpg,svg}',
-        tasks: ['clean:css', 'imagemin:backgrounds' , 'compass:development', 'clean:development', 'csslint'],
+        tasks: ['clean:css', 'newer:imagemin:backgrounds' , 'compass:development', 'clean:development', 'newer:csslint'],
       }
     },
 
@@ -286,6 +286,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-sync');
+  grunt.loadNpmTasks('grunt-newer');
 
   grunt.registerTask('default', [
     'replace',
