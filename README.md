@@ -361,6 +361,15 @@ define(['<component-name>'], function(Foo) {
 $ grunt qunit
 ```
 
+## Legacy Browsers
+
+During the setup of a new project kickstart will ask you if you want to support legacy IE (<9). Here is what happens if you choose to support legacy IE.
+
+* Conditional comments are added to the html tag with IE classes
+* RespondJS is added to bower.json to polyfill mediaqueries
+* shiv and printshiv is included in the modernizr build
+* jQuery is included as 1.x.x
+
 ## Getting started with generator-kickstart
 
 ### Requirements
