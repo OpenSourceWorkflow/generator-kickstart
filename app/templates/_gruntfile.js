@@ -255,7 +255,7 @@ module.exports = function(grunt) {
 
     modernizr: {
       dist: {
-        "devFile" : "components/libs/modernizr-shim/modernizr.min.js",
+        "devFile" : "components/libs/modernizr/modernizr.js",
         "outputFile" : "build/assets/js/libs/modernizr.js",
         "extra" : {
           "shiv" : <% if (oldIE) { %>true<% } else { %>false<% } %>,
