@@ -11,8 +11,14 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     this.pkg = require('../package.json');
 
     this.on('end', function () {
+
       if (!this.options['skip-install']) {
         this.installDependencies();
+      }
+
+      if(this.wysiwygCMS) {
+        this.log('Don\'t forget run: ' + chalk.yellow('yo kickstart:addcomponent backend'));
+        this.log('\n');
       }
     });
   },
@@ -46,6 +52,12 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       },
       {
         type: 'confirm',
+        name: 'wysiwygCMS',
+        message: 'Do you need additional setup for your wysiwyg CMS?',
+        default: false
+      },
+      {
+        type: 'confirm',
         name: 'oldIE',
         message: 'Would you like to support legacy IE (<9)?',
         default: false
@@ -76,6 +88,9 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       this.HTMLDeveloper = answers.HTMLDeveloper;
       this.ProjectManager = answers.ProjectManager;
       this.ProjectName = answers.ProjectName;
+
+      // wysiwygCMS
+      this.wysiwygCMS = answers.wysiwygCMS;
 
       // Support level
       this.oldIE = answers.oldIE;

@@ -355,6 +355,27 @@ define(['<component-name>'], function(Foo) {
 
 });
 ```
+
+### WYSIWYG CMS
+
+If you have CMS that uses some sort of front-end editing Kickstart will add this to enable deferred modules for your backend only.
+
+```HTML
+<!-- wysiwyg:
+<link rel="stylesheet" href="assets/css/backend.css">
+<script src="assets/js/libs/require.js"></script>
+<script charset="utf-8">
+  require(['assets/js/<%= _.slugify(ProjectName) %>'], function() {
+    require(['assets/js/deferred/backend'], function(Backend) {
+      Backend.init();
+    });
+  });
+</script>
+-->
+```
+
+All you have to do is add a deferred component with the name 'backend': ```yo kickstart:addcomponent backend```
+
 ### Grunt Task
 
 ```bash

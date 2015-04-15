@@ -296,7 +296,6 @@ module.exports = function(grunt) {
     'uglify:deferred_development',
     'uglify:external',
     'clean:svg',
-    'clean:css',
     'modernizr',
     'csslint',
     'jshint',
