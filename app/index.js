@@ -125,20 +125,6 @@ var KickstartGenerator = yeoman.generators.Base.extend({
   images: function () {
     this.copy('_favicon.ico', 'favicon.ico');
     this.copy('_apple-touch-icon.png', 'apple-touch-icon.png');
-  },
-
-  components: function () {
-
-    // colors
-    this.template('colors/_colors.scss', 'components/app/colors/_colors.scss');
-
-    // common
-    this.template('common/_common.scss', 'components/app/common/_common.scss');
-
-    // rte
-    this.template('rte/_rte.html', 'components/app/rte/rte.html');
-    this.template('rte/_rte.scss', 'components/app/rte/_rte.scss');
-
   }
 
 });
