@@ -3,7 +3,8 @@
 var util = require('util');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
-var lodash = require('lodash');
+// var _ = require('lodash');
+var string = require('underscore.string');
 
 var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
@@ -15,11 +16,11 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
       this.log('\n');
 
       if (this.ComponentType === 'standardModule') {
-        this.log('Added component ' + this.name + ' to components/app/' + _.slugify(this.name));
-        this.log('You can use it in your HTML with ' + chalk.blue('{app:{' + _.slugify(this.name) + '}}'));
+        this.log('Added component ' + this.name + ' to components/app/' + string.slugify(this.name));
+        this.log('You can use it in your HTML with ' + chalk.blue('{app:{' + string.slugify(this.name) + '}}'));
       } else {
-        this.log('Added component ' + this.name + ' to components/app/_deferred/' + _.slugify(this.name));
-        this.log('You can use it in your HTML with ' + chalk.blue('{deferred:{' + _.slugify(this.name) + '}}'));
+        this.log('Added component ' + this.name + ' to components/app/_deferred/' + string.slugify(this.name));
+        this.log('You can use it in your HTML with ' + chalk.blue('{deferred:{' + string.slugify(this.name) + '}}'));
       }
 
       if(this.includeJS) {
@@ -105,13 +106,13 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     this.mkdir(this.directory + this.name);
 
     if (this.includeJS) {
-      this.template('_component.js', this.directory + _.slugify(this.name) + '/' + _.slugify(this.name) + '.js');
+      this.template('_component.js', this.directory + string.slugify(this.name) + '/' + string.slugify(this.name) + '.js');
     }
     if (this.includeSCSS) {
-      this.template('_component.scss', this.directory + _.slugify(this.name) + '/_' + _.slugify(this.name) + '.scss');
+      this.template('_component.scss', this.directory + string.slugify(this.name) + '/_' + string.slugify(this.name) + '.scss');
     }
     if (this.includeHTML) {
-      this.template('_component.html', this.directory + _.slugify(this.name) + '/' + _.slugify(this.name) + '.html');
+      this.template('_component.html', this.directory + string.slugify(this.name) + '/' + string.slugify(this.name) + '.html');
     }
   },
 
@@ -122,9 +123,9 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
           file = this.readFileAsString(path);
 
       if (this.ComponentType === 'standardModule') {
-        file += '@import "app/' + _.slugify(this.name) + '/' + _.slugify(this.name) + '";\n';
+        file += '@import "app/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '";\n';
       } else {
-        file += '@import "app/_deferred/' + _.slugify(this.name) + '/' + _.slugify(this.name) + '";\n';
+        file += '@import "app/_deferred/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '";\n';
       }
 
       this.write(path, file);

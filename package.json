@@ -32,10 +32,10 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.19",
     "chalk": "^1.0.0",
-    "yosay": "^1.0.2",
-    "lodash": "^3.6.0"
+    "underscore.string": "^3.0.3",
+    "yeoman-generator": "^0.19",
+    "yosay": "^1.0.2"
   },
   "devDependencies": {
     "mocha": "*"
