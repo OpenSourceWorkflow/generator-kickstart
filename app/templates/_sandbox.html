@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="assets/css/<%= _.slugify(ProjectName) %>.css">
-    <% if (includeModernizr) { %><script src="assets/js/libs/modernizr.js"></script><% } %>
+    <script src="assets/js/libs/modernizr.js"></script>
   </head>
   <body>
     <% if (oldIE) { %>
@@ -30,18 +30,6 @@
       <h1 class="heading style1"><%= ProjectName %></h1>
 
       {app:{rte}}
-
-      <% if (includeAccordion) { %>
-      {app:{accordion}}
-      <% } %>
-
-      <% if (includeTabs) { %>
-      {app:{tabs}}
-      <% } %>
-
-      <% if (includeElementSwitcher) { %>
-      {app:{element-switcher}}
-      <% } %>
 
     </main> <!-- wrapper -->
 

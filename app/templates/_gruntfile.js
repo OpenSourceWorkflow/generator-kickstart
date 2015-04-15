@@ -12,17 +12,17 @@ module.exports = function(grunt) {
       // Styling
       scss: {
         files: 'components/**/*.scss',
-        tasks: ['newer:imagemin', 'sync', 'compass:development', <% if (includeModernizr) { %>'modernizr',<% } %> 'newer:csslint']
+        tasks: ['newer:imagemin', 'sync', 'compass:development', 'modernizr', 'newer:csslint']
       },
 
       // Scripting
       js: {
         files: ['components/*.js', 'components/app/**/*.js', '!components/app/_deferred/**/*.js'],
-        tasks: ['requirejs:development', <% if (includeModernizr) { %>'modernizr',<% } %> 'newer:jshint'],
+        tasks: ['requirejs:development', 'modernizr', 'newer:jshint'],
       },
       js_deferred: {
         files: ['components/app/_deferred/**/*.js'],
-        tasks: ['newer:uglify:deferred_development', <% if (includeModernizr) { %>'modernizr',<% } %> 'newer:jshint'],
+        tasks: ['newer:uglify:deferred_development', 'modernizr', 'newer:jshint'],
       },
       js_bower: {
         files: ['components/libs/**/*.js'],
@@ -145,7 +145,7 @@ module.exports = function(grunt) {
       },
       external: {
         files: {
-          <% if (includeModernizr) { %>'build/assets/js/libs/modernizr.js': ['components/libs/modernizr-shim/modernizr.min.js'],<% } %>
+          'build/assets/js/libs/modernizr.js': ['components/libs/modernizr-shim/modernizr.min.js'],
           'build/assets/js/libs/require.js': ['components/libs/requirejs/require.js']
         }
       }
@@ -252,15 +252,15 @@ module.exports = function(grunt) {
         }],
         verbose: true
       }
-    }<% if (includeModernizr) { %>,
+    },
 
     modernizr: {
       dist: {
         "devFile" : "components/libs/modernizr-shim/modernizr.min.js",
         "outputFile" : "build/assets/js/libs/modernizr.js",
         "extra" : {
-          "shiv" : <% if (oldIE) { %>true<% }  else { %>false<% } %>,
-          "printshiv" : <% if (oldIE) { %>true<% }  else { %>false<% } %>,
+          "shiv" : <% if (oldIE) { %>true<% } else { %>false<% } %>,
+          "printshiv" : <% if (oldIE) { %>true<% } else { %>false<% } %>,
           "load" : false,
           "mq" : false,
           "cssclasses" : true
@@ -269,7 +269,7 @@ module.exports = function(grunt) {
           "src": ['components/app/**/*.js', 'build/**/*.css']
         }
       }
-    }<% } %>
+    }
 
   });
 
@@ -279,7 +279,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  <% if (includeModernizr) { %>grunt.loadNpmTasks("grunt-modernizr");<% } %>
+  grunt.loadNpmTasks("grunt-modernizr");
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -298,7 +298,7 @@ module.exports = function(grunt) {
     'uglify:external',
     'clean:svg',
     'clean:css',
-    <% if (includeModernizr) { %>'modernizr',<% } %>
+    'modernizr',
     'csslint',
     'jshint',
     'accessibility'
@@ -314,7 +314,7 @@ module.exports = function(grunt) {
     'uglify:deferred_production',
     'uglify:external',
     'clean',
-    <% if (includeModernizr) { %>'modernizr'<% } %>
+    'modernizr'
    ]);
 
 };

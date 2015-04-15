@@ -3,15 +3,9 @@
   "version": "0",
   "main": "sandbox.html",
   "dependencies": {<% if (oldIE) { %>
-    "jquery": "~1",<% } %><% if (includeModernizr) { %>
-    "modernizr-shim": "~0.0.1",<% } %><% if (includeAccordion) { %>
-    "accordion": "~2",<% } %><% if (includeElementSwitcher) { %>
-    "element-switcher": "~2",<% } %><% if (includeEqualHeight) { %>
-    "jquery.equal-height": "~1",<% } %><% if (includeTabs) { %>
-    "tabs": "~2",<% } %><% if (includeGridLayout) { %>
-    "grid-layout": "~2",<% } %><% if (includeBase64BackgroundImages) { %>
-    "base64-background-image": "~2",<% } %><% if (oldIE) { %>
+    "jquery": "~1",
     "respondJS": "~1",<% } %>
+    "modernizr-shim": "~0.0.1",
     "jquery.exists": "~1",
     "qunit": "~1",
     "requirejs": "~2"

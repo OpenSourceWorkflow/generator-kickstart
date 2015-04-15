@@ -17,10 +17,6 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     });
   },
 
-  _hasFeature: function (feature) {
-    return this.features && this.features.indexOf(feature) !== -1;
-  },
-
   askFor: function () {
     var done = this.async();
 
@@ -55,48 +51,6 @@ var KickstartGenerator = yeoman.generators.Base.extend({
         default: false
       },
       {
-        type: 'checkbox',
-        name: 'ContentElements',
-        message: 'What more would you like?',
-        choices: [
-          {
-            name: 'Accordion',
-            value: 'includeAccordion',
-            checked: false
-          },
-          {
-            name: 'ElementSwitcher',
-            value: 'includeElementSwitcher',
-            checked: false
-          },
-          {
-            name: 'Tabs',
-            value: 'includeTabs',
-            checked: false
-          },
-          {
-            name: 'jquery equal-height Plugin',
-            value: 'includeEqualHeight',
-            checked: false
-          },
-          {
-            name: 'GridLayout',
-            value: 'includeGridLayout',
-            checked: true
-          },
-          {
-            name: 'Base64BackgroundImages',
-            value: 'includeBase64BackgroundImages',
-            checked: true
-          },
-          {
-            name: 'Modernizr',
-            value: 'includeModernizr',
-            checked: true
-          }
-        ]
-      },
-      {
         type: 'list',
         name: 'WCAG2',
         message: 'What WCAG2A level would you like to develop for?',
@@ -122,17 +76,6 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       this.HTMLDeveloper = answers.HTMLDeveloper;
       this.ProjectManager = answers.ProjectManager;
       this.ProjectName = answers.ProjectName;
-
-      // Bower components
-      this.features = answers.ContentElements;
-
-      this.includeAccordion = this._hasFeature('includeAccordion');
-      this.includeBase64BackgroundImages = this._hasFeature('includeBase64BackgroundImages');
-      this.includeElementSwitcher = this._hasFeature('includeElementSwitcher');
-      this.includeEqualHeight = this._hasFeature('includeEqualHeight');
-      this.includeGridLayout = this._hasFeature('includeGridLayout');
-      this.includeModernizr = this._hasFeature('includeModernizr');
-      this.includeTabs = this._hasFeature('includeTabs');
 
       // Support level
       this.oldIE = answers.oldIE;
@@ -195,28 +138,6 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     // rte
     this.template('rte/_rte.html', 'components/app/rte/rte.html');
     this.template('rte/_rte.scss', 'components/app/rte/_rte.scss');
-
-  },
-
-  optionalComponents: function () {
-
-    // element-switcher
-    if (this.includeElementSwitcher) {
-      this.template('element-switcher/_element-switcher.html', 'components/app/element-switcher/element-switcher.html');
-      this.template('element-switcher/_element-switcher.scss', 'components/app/element-switcher/_element-switcher.scss');
-    }
-
-    // Tabs
-    if (this.includeTabs) {
-      this.template('tabs/_tabs.html', 'components/app/tabs/tabs.html');
-      this.template('tabs/_tabs.scss', 'components/app/tabs/_tabs.scss');
-    }
-
-    // Accordion
-    if (this.includeAccordion) {
-      this.template('accordion/_accordion.html', 'components/app/accordion/accordion.html');
-      this.template('accordion/_accordion.scss', 'components/app/accordion/_accordion.scss');
-    }
 
   }
 

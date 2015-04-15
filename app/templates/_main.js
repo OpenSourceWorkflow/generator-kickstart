@@ -1,22 +1,8 @@
-<%
-
-  var components = ['$'];
-
-  if(includeAccordion) { components.push('Accordion'); }
-  if(includeElementSwitcher) { components.push('ElementSwitcher'); }
-  if(includeTabs) { components.push('Tabs'); }
-
-  components = _.toSentence(components, ', ', ', ');
-%>
 require([
-  'jquery',<% if (includeAccordion) { %>
-  'accordion',<% } %><% if (includeElementSwitcher) { %>
-  'element-switcher',<% } %><% if (includeTabs) { %>
-  'tabs',<% } %><% if (includeEqualHeight) { %>
-  'jquery.equal-height',<% } %><% if (oldIE) { %>
+  'jquery',<% if (oldIE) { %>
   'respondJS',<% } %>
   'jquery.exists'
-  ], function(<%= components %>) {
+], function($) {
 
   'use strict';
 
@@ -27,12 +13,6 @@ require([
     init: function() {
       this.cacheElements();
       // this.loadDynamicModules();
-
-      // Modules
-      <% if (includeAccordion) { %>Accordion.init();<% } %>
-      <% if (includeElementSwitcher) { %>ElementSwitcher.init();<% } %>
-      <% if (includeTabs) { %>Tabs.init();<% } %>
-
     }
     // loadDynamicModules: function() {
       // this.$bar.exists(function() {
