@@ -1,12 +1,8 @@
 'use strict';
-var util = require('util');
-var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
 var string = require('underscore.string');
-
-console.log(_);
 
 var KickstartGenerator = yeoman.generators.Base.extend({
 

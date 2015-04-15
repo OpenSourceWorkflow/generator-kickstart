@@ -1,11 +1,17 @@
 'use strict';
 var yeoman = require('yeoman-generator');
 
+var memFs = require('mem-fs');
+var editor = require('mem-fs-editor');
+
+var store = memFs.create();
+var fs = editor.create(store);
+
 module.exports = yeoman.generators.Base.extend({
 
   initializing: function () {
 
-    this.pkg = this.fs.readJSON('package.json');
+    this.pkg = fs.readJSON('package.json');
 
     this.argument('name', {
       required: true,
@@ -23,7 +29,7 @@ module.exports = yeoman.generators.Base.extend({
       {
         type: 'list',
         name: 'ComponentType',
-        message: 'What type of module would you like to add?',
+        message: 'What type of module would you like to remove?',
         choices: [{
           name: 'Standard module (compiled to main file)',
           value: 'standardModule'
@@ -53,7 +59,7 @@ module.exports = yeoman.generators.Base.extend({
 
   removeApp: function () {
     // remove folder from app/
-    this.fs.delete(this.directory + this.name);
+    fs.delete(this.directory + this.name);
   },
 
   removeStyling: function () {
@@ -71,7 +77,7 @@ module.exports = yeoman.generators.Base.extend({
     }
 
     var newfile = file.replace(match, newcontent);
-    this.fs.write(path, newfile);
+    fs.write(path, newfile);
   },
 
   removeFromRequireJS: function () {
@@ -89,7 +95,7 @@ module.exports = yeoman.generators.Base.extend({
     }
 
     var newfile = file.replace(match, newcontent);
-    this.fs.write(path, newfile);
+    fs.write(path, newfile);
   }
 
 });
