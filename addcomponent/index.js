@@ -10,8 +10,6 @@ var editor = require('mem-fs-editor');
 var store = memFs.create();
 var fs = editor.create(store);
 
-fs.write('somefile.js', 'var a = 1;');
-
 var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   init: function () {

@@ -3,6 +3,13 @@ var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
 var string = require('underscore.string');
+var mkdirp = require('mkdirp');
+
+var memFs = require('mem-fs');
+var editor = require('mem-fs-editor');
+
+var store = memFs.create();
+var fs = editor.create(store);
 
 var KickstartGenerator = yeoman.generators.Base.extend({
 
@@ -105,12 +112,18 @@ var KickstartGenerator = yeoman.generators.Base.extend({
   },
 
   packagefiles: function () {
-    this.copy('_accessibilityrc', '.accessibilityrc');
-    this.copy('_bowerrc', '.bowerrc');
-    this.copy('_gitignore', '.gitignore');
-    this.copy('_editorconfig', '.editorconfig');
+    // this.copy('_accessibilityrc', '.accessibilityrc');
+    // this.copy('_bowerrc', '.bowerrc');
+    // this.copy('_gitignore', '.gitignore');
+    // this.copy('_editorconfig', '.editorconfig');
 
-    this.template('_bower.json', 'bower.json');
+    this.fs.copyTpl(
+      this.templatePath('_bower.json'),
+      this.destinationPath('bower.json'),
+      { ProjectName: this.ProjectName }
+    );
+
+    // this.template('_bower.json', 'bower.json');
     this.template('_csslintrc', '.csslintrc');
     this.template('_gruntfile.js', 'gruntfile.js');
     this.template('_jshintrc', '.jshintrc');
