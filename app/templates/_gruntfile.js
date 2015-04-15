@@ -130,7 +130,7 @@ module.exports = function(grunt) {
           expand: true,
           flatten: true,
           cwd: 'components/app/_deferred',
-          src: ['**/*.js'],
+          src: ['**/*.js', '!**/test-*.js'],
           dest: 'build/assets/js/deferred'
         }]
       },
@@ -139,13 +139,12 @@ module.exports = function(grunt) {
           expand: true,
           flatten: true,
           cwd: 'components/app/_deferred',
-          src: ['**/*.js'],
+          src: ['**/*.js', '!**/test-*.js'],
           dest: 'build/assets/js/deferred'
         }]
       },
       external: {
         files: {
-          'build/assets/js/libs/modernizr.js': ['components/libs/modernizr-shim/modernizr.min.js'],
           'build/assets/js/libs/require.js': ['components/libs/requirejs/require.js']
         }
       }
