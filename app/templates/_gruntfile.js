@@ -55,7 +55,7 @@ module.exports = function(grunt) {
         noLineComments: true,
         require: 'sass-css-importer',
         sassDir: 'components',
-        specify: 'components/*.scss'
+        specify: ['components/*.scss', 'components/app/_deferred/**/*.scss']
       },
       development: {
         options: {
