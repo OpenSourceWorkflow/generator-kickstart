@@ -21,8 +21,9 @@ For development it uses:
 
 It aimes at creating frontend templates with high quality standards by continuously testing your work in progress:
 
-* checks for WCAG2 compliance at different levels (A, AA, AAA)
-* uses JSHint to check your java script
+* test your code with [qUnit]()
+* uses JSHint to check your Java Script
+* checks your HTML for WCAG2 compliance at different levels (A, AA, AAA)
 * CSSLint monitores your styling
 
 ## Main goal
@@ -35,11 +36,11 @@ The generator installs many commonly used components ready for you to customize 
 * [Base64 Background Images](https://github.com/markusfalk/base64-background-image)
 * [Element-Switcher](https://github.com/markusfalk/element-switcher)
 * [Grid Layout](https://github.com/markusfalk/grid-layout)
-* [jquery.equal-height Plugin](https://github.com/markusfalk/jquery.equal-height)
-* [jquery.exists Plugin](https://github.com/markusfalk/jquery.exists)
 * [Modernizr](http://modernizr.com/)
 * [Respond.js](https://github.com/scottjehl/Respond)
 * [Tabs](https://github.com/markusfalk/tabs)
+* [jquery.equal-height Plugin](https://github.com/markusfalk/jquery.equal-height)
+* [jquery.exists Plugin](https://github.com/markusfalk/jquery.exists)
 
 ## The setup
 

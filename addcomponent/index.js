@@ -3,26 +3,27 @@
 var util = require('util');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
+var lodash = require('lodash');
 
 var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   init: function () {
-    this.pkg = this.fs.readJSON('package.json');
+    this.pkg = this.dest.readJSON('package.json');
 
     this.on('end', function () {
 
       this.log('\n');
 
       if (this.ComponentType === 'standardModule') {
-        this.log('Added component ' + this.name + ' to components/app/' + this._.slugify(this.name));
-        if(this.includeHTML) {
-          this.log('You can use it in your HTML with ' + chalk.yellow('{app:{' + this._.slugify(this.name) + '}}'));
-        }
+        this.log('Added component ' + this.name + ' to components/app/' + _.slugify(this.name));
+        this.log('You can use it in your HTML with ' + chalk.blue('{app:{' + _.slugify(this.name) + '}}'));
       } else {
-        this.log('Added component ' + this.name + ' to components/app/_deferred/' + this._.slugify(this.name));
-        if(this.includeHTML) {
-          this.log('You can use it in your HTML with ' + chalk.yellow('{deferred:{' + this._.slugify(this.name) + '}}'));
-        }
+        this.log('Added component ' + this.name + ' to components/app/_deferred/' + _.slugify(this.name));
+        this.log('You can use it in your HTML with ' + chalk.blue('{deferred:{' + _.slugify(this.name) + '}}'));
+      }
+
+      if(this.includeJS) {
+        this.log('Don\'t forget to wire this into your requirejs config (components/' + this.pkg.name + '.js)');
       }
 
       this.log('\n');
@@ -69,11 +70,6 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
             name: 'JS',
             value: 'includeJS',
             checked: true
-          },
-          {
-            name: 'QUnit Test',
-            value: 'includeQUnit',
-            checked: false
           }
         ]
       }
@@ -84,9 +80,8 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
       this.features = answers.whatFiles;
 
       this.includeHTML = this._hasFeature('includeHTML');
-      this.includeJS = this._hasFeature('includeJS');
-      this.includeQUnit = this._hasFeature('includeQUnit');
       this.includeSCSS = this._hasFeature('includeSCSS');
+      this.includeJS = this._hasFeature('includeJS');
 
       this.ComponentType = answers.ComponentType;
 
@@ -106,63 +101,40 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   addApp: function () {
 
+
     this.mkdir(this.directory + this.name);
 
     if (this.includeJS) {
-      this.template('_component.js', this.directory + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '.js');
+      this.template('_component.js', this.directory + _.slugify(this.name) + '/' + _.slugify(this.name) + '.js');
     }
     if (this.includeSCSS) {
-      this.template('_component.scss', this.directory + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '.scss');
+      this.template('_component.scss', this.directory + _.slugify(this.name) + '/_' + _.slugify(this.name) + '.scss');
     }
     if (this.includeHTML) {
-      this.template('_component.html', this.directory + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '.html');
-    }
-    if (this.includeQUnit) {
-      this.template('_qunit-test.js', this.directory + this._.slugify(this.name) + '/test-' + this._.slugify(this.name) + '.js');
+      this.template('_component.html', this.directory + _.slugify(this.name) + '/' + _.slugify(this.name) + '.html');
     }
   },
 
   addStyling: function () {
     if (this.includeSCSS) {
 
-      var
-      path = 'components/' + this.pkg.name + '.scss',
-      file = this.readFileAsString(path);
+      var path = 'components/' + this.pkg.name + '.scss',
+          file = this.readFileAsString(path);
 
       if (this.ComponentType === 'standardModule') {
-        file += '@import "app/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '";\n';
+        file += '@import "app/' + _.slugify(this.name) + '/' + _.slugify(this.name) + '";\n';
+      } else {
+        file += '@import "app/_deferred/' + _.slugify(this.name) + '/' + _.slugify(this.name) + '";\n';
       }
 
       this.write(path, file);
     }
-  },
-
-  addToRequireJS: function () {
-
-    if(this.includeJS) {
-
-      var
-      path = 'components/' + this.pkg.name + '.js',
-      file = this.readFileAsString(path);
-
-      if(this.includeJS) {
-        var
-        match = '//{{app}}',
-        newcontent;
-
-        if (this.ComponentType === 'standardModule') {
-          newcontent = '//{{app}}\n    \'' + this._.slugify(this.name) + '\': \'' + 'app/' + this._.slugify(this.name) + '/'+ this._.slugify(this.name) + '\',';
-        } else {
-          newcontent = '//{{app}}\n    \'' + this._.slugify(this.name) + '\': \'' + 'app/_deferred/' + this._.slugify(this.name) + '/'+ this._.slugify(this.name) + '\',';
-        }
-
-        var newfile = file.replace(match, newcontent);
-      }
-
-      this.write(path, newfile);
-
-    }
   }
+
+  // end: function () {
+  //   this.log('done');
+  //   // this.spawnCommand('composer', ['install']);
+  // }
 
 });
 

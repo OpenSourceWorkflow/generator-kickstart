@@ -4,6 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
+var lodash = require('lodash');
 
 var KickstartGenerator = yeoman.generators.Base.extend({
 
@@ -120,7 +121,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
   },
 
   javascript: function () {
-    this.template('_frontend-template-setup.js', 'components/' + this._.slugify(this.ProjectName) + '.js');
+    this.template('_frontend-template-setup.js', 'components/' + _.slugify(this.ProjectName) + '.js');
     this.template('_main.js', 'components/app/main.js');
   },
 
@@ -130,7 +131,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
   },
 
   styles: function () {
-    this.copy('_frontend-template-setup.scss', 'components/' + this._.slugify(this.ProjectName) + '.scss');
+    this.copy('_frontend-template-setup.scss', 'components/' + _.slugify(this.ProjectName) + '.scss');
   },
 
   html: function () {
