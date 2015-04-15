@@ -3,6 +3,7 @@ define(['<%= _.slugify(name) %>'], function(<%= _.classify(name) %>) {
   'use strict';
 
   var Test<%= _.classify(name) %> = {
+
     startTests: function() {
 
       module("<%= _.classify(name) %>");
@@ -20,7 +21,7 @@ define(['<%= _.slugify(name) %>'], function(<%= _.classify(name) %>) {
       //     QUnit.start();
       //   });
 
-      });
+      // });
 
     }
   };

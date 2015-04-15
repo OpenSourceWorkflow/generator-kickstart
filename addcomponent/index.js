@@ -112,7 +112,7 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
       this.template('_component.js', this.directory + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '.js');
     }
     if (this.includeSCSS) {
-      this.template('_component.scss', this.directory + this._.slugify(this.name) + '/_' + this._.slugify(this.name) + '.scss');
+      this.template('_component.scss', this.directory + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '.scss');
     }
     if (this.includeHTML) {
       this.template('_component.html', this.directory + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '.html');
@@ -131,8 +131,6 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
       if (this.ComponentType === 'standardModule') {
         file += '@import "app/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '";\n';
-      } else {
-        file += '@import "app/_deferred/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '";\n';
       }
 
       this.write(path, file);
