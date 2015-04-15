@@ -13,6 +13,7 @@
     "base64-background-image": "~2",<% } %><% if (oldIE) { %>
     "respondJS": "~1",<% } %>
     "jquery.exists": "~1",
+    "qunit": "~1",
     "requirejs": "~2"
   }
 }
