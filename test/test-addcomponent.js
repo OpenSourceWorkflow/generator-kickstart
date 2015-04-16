@@ -6,15 +6,15 @@ var helpers = require('yeoman-generator').test;
 
 describe('Kickstart:removecomponent', function () {
   before(function (done) {
-    helpers.run(path.join(__dirname, '../removecomponent'))
+    helpers.run(path.join(__dirname, '../addcomponent'))
       .withArguments('name', '--force')
       .withOptions({ 'skip-install': true })
       .on('end', done);
   });
 
-  // it('creates files', function () {
-  //   assert.file([
-  //     'somefile.js'
-  //   ]);
-  // });
+  it('creates files', function () {
+    assert.file([
+      'somefile.js'
+    ]);
+  });
 });

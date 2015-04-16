@@ -21,7 +21,25 @@ describe('kickstart generator', function () {
     var expected = [
       // add files you expect to exist here.
       '.jshintrc',
-      '.editorconfig'
+      '.editorconfig',
+      'bower.json',
+      'package.json',
+      '.accessibilityrc',
+      '.bowerrc',
+      '.gitignore',
+      '.editorconfig',
+      '.csslintrc',
+      '.jshintrc',
+      'gruntfile.js',
+      'README.md',
+      'components/.js',
+      'components/app/main.js',
+      'qunit/qunit-test-suite.html',
+      'qunit/qunit.js',
+      'components/.scss',
+      'sandbox.html',
+      'favicon.ico',
+      'apple-touch-icon.png'
     ];
 
     helpers.mockPrompt(this.app, {

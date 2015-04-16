@@ -4,4 +4,3 @@ node_js:
 before_install:
   - currentfolder=${PWD##*/}
   - if [ "$currentfolder" != 'generator-kickstart' ]; then cd .. && eval "mv $currentfolder generator-kickstart" && cd generator-kickstart; fi
-
