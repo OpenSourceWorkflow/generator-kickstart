@@ -32,11 +32,11 @@ describe('kickstart generator', function () {
       '.jshintrc',
       'gruntfile.js',
       'README.md',
-      'components/.js',
+      'components/foo.js',
       'components/app/main.js',
       'qunit/qunit-test-suite.html',
       'qunit/qunit.js',
-      'components/.scss',
+      'components/foo.scss',
       'sandbox.html',
       'favicon.ico',
       'apple-touch-icon.png'
@@ -49,6 +49,6 @@ describe('kickstart generator', function () {
     this.app.run({}, function () {
       helpers.assertFile(expected);
       done();
-    });
+    }).withArguments('foo');
   });
 });
