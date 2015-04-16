@@ -6,3 +6,4 @@ node_modules
 .DS_Store
 .ftppass
 temp
+test/tmp/

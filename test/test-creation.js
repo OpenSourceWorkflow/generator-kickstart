@@ -1,25 +1,18 @@
-/*global describe, beforeEach, it */
 'use strict';
 var path = require('path');
 var helpers = require('yeoman-generator').test;
+var assert = require('yeoman-generator').assert;
 
-describe('kickstart generator', function () {
-  beforeEach(function (done) {
-    helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
-      if (err) {
-        return done(err);
-      }
+describe('kickstart:app', function () {
 
-      this.app = helpers.createGenerator('kickstart:app', [
-        '../../app'
-      ]);
-      done();
-    }.bind(this));
+  // not testing the actual run of generators yet
+  it('the generator can be required without throwing', function () {
+    this.app = require('../app');
   });
 
-  it('creates expected files', function (done) {
-    var expected = [
-      // add files you expect to exist here.
+  describe('run test', function () {
+
+    var files = [
       '.jshintrc',
       '.editorconfig',
       'bower.json',
@@ -42,13 +35,42 @@ describe('kickstart generator', function () {
       'apple-touch-icon.png'
     ];
 
-    helpers.mockPrompt(this.app, {
-      'someOption': true
+    var prompts = {
+      ProjectName: 'Foo',
+      ProjectManager: 'Phil',
+      GraphicDesigner: 'Sascha',
+      HTMLDeveloper: 'Markus',
+      wysiwygCMS: false,
+      oldIE: true,
+      WCAG2: 'A'
+    };
+
+    var options = {
+      'skip-install-message': true,
+      'skip-install': true,
+      'skip-welcome-message': true,
+      'skip-message': true
+    };
+
+    var runKickstart;
+
+    before(function (done) {
+      runKickstart = helpers.run(path.join( __dirname, '../app'))
+      .inDir(path.join( __dirname, './tmp'))
+      .on('end', done);
     });
-    this.app.options['skip-install'] = true;
-    this.app.run({}, function () {
-      helpers.assertFile(expected);
-      done();
+
+    it('have all files been created?', function () {
+      runKickstart.
+        withOptions(options).
+        withArguments('foo').
+        // withPrompt(prompts).
+        on('end', function () {
+          // have all files been created?
+          assert.file(files);
+        });
     });
+
   });
+
 });

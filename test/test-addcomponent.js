@@ -1,8 +1,7 @@
 'use strict';
-
 var path = require('path');
-var assert = require('yeoman-generator').assert;
 var helpers = require('yeoman-generator').test;
+var assert = require('yeoman-generator').assert;
 
 describe('Kickstart:removecomponent', function () {
   before(function (done) {
