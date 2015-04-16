@@ -15,7 +15,7 @@ var fs = editor.create(store);
 var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   init: function () {
-    this.pkg = fs.readJSON('package.json');
+    this.pkg = this.fs.readJSON('package.json');
 
     this.on('end', function () {
 
@@ -183,7 +183,7 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
         file += '@import "app/_deferred/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '";\n';
       }
 
-      this.write(path, file);
+      this.fs.write(path, file);
     }
   },
 
@@ -209,7 +209,7 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
         var newfile = file.replace(match, newcontent);
       }
 
-      this.write(path, newfile);
+      this.fs.write(path, newfile);
 
     }
   }

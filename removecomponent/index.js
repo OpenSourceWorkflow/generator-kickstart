@@ -1,9 +1,10 @@
 'use strict';
 var yeoman = require('yeoman-generator');
+var string = require('underscore.string');
+var wire = require("html-wiring");
 
 var memFs = require('mem-fs');
 var editor = require('mem-fs-editor');
-
 var store = memFs.create();
 var fs = editor.create(store);
 
@@ -11,7 +12,7 @@ module.exports = yeoman.generators.Base.extend({
 
   initializing: function () {
 
-    this.pkg = fs.readJSON('package.json');
+    this.pkg = this.fs.readJSON('package.json');
 
     this.argument('name', {
       required: true,
@@ -19,7 +20,7 @@ module.exports = yeoman.generators.Base.extend({
       desc: 'The app name'
     });
 
-    this.log('You called the Kickstart subgenerator with the argument ' + this.name + '.');
+    // this.log('You called the Kickstart subgenerator with the argument ' + this.name + '.');
   },
 
   askForApp: function () {
@@ -59,43 +60,43 @@ module.exports = yeoman.generators.Base.extend({
 
   removeApp: function () {
     // remove folder from app/
-    fs.delete(this.directory + this.name);
+    this.fs.delete(this.directory + this.name);
   },
 
   removeStyling: function () {
 
     var
     path = 'components/' + this.pkg.name + '.scss',
-    file = this.readFileAsString(path),
+    file = wire.readFileAsString(path),
     match,
     newcontent = '';
 
     if (this.ComponentType === 'standardModule') {
-      match = '@import \"app\/' + this._.slugify(this.name) + '\/' + this._.slugify(this.name) + '\";\n';
+      match = '@import \"app\/' + string.slugify(this.name) + '\/' + string.slugify(this.name) + '\";\n';
     } else {
-      match = '@import \"app\/_deferred\/' + this._.slugify(this.name) + '\/' + this._.slugify(this.name) + '\";\n';
+      match = '@import \"app\/_deferred\/' + string.slugify(this.name) + '\/' + string.slugify(this.name) + '\";\n';
     }
 
     var newfile = file.replace(match, newcontent);
-    fs.write(path, newfile);
+    this.fs.write(path, newfile);
   },
 
   removeFromRequireJS: function () {
 
     var
     path = 'components/' + this.pkg.name + '.js',
-    file = this.readFileAsString(path),
+    file = wire.readFileAsString(path),
     newcontent = '',
     match;
 
     if (this.ComponentType === 'standardModule') {
-      match = '\'' + this._.slugify(this.name) + '\': \'app/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '\',\n';
+      match = '\'' + string.slugify(this.name) + '\': \'app/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '\',\n';
     } else {
-      match = '\'' + this._.slugify(this.name) + '\': \'app/_deferred/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '\',\n';
+      match = '\'' + string.slugify(this.name) + '\': \'app/_deferred/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '\',\n';
     }
 
     var newfile = file.replace(match, newcontent);
-    fs.write(path, newfile);
+    this.fs.write(path, newfile);
   }
 
 });

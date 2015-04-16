@@ -240,12 +240,12 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
   images: function () {
 
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath('_favicon.ico'),
       this.destinationPath('favicon.ico')
     );
 
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath('_apple-touch-icon.png'),
       this.destinationPath('apple-touch-icon.png')
     );
