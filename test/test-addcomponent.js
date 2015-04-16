@@ -12,9 +12,9 @@ describe('Kickstart:removecomponent', function () {
       .on('end', done);
   });
 
-  it('creates files', function () {
-    assert.file([
-      'somefile.js'
-    ]);
-  });
+  // it('creates files', function () {
+  //   assert.file([
+  //     'somefile.js'
+  //   ]);
+  // });
 });

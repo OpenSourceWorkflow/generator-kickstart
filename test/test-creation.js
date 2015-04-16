@@ -49,6 +49,6 @@ describe('kickstart generator', function () {
     this.app.run({}, function () {
       helpers.assertFile(expected);
       done();
-    }).withArguments('foo');
+    });
   });
 });
