@@ -102,9 +102,9 @@ module.exports = function(grunt) {
 
     requirejs: {
       options: {
-        mainConfigFile: "components/<%= _.slugify(ProjectName) %>.js",
-        name: "<%= _.slugify(ProjectName) %>",
-        out: "build/assets/js/<%= _.slugify(ProjectName) %>.js",
+        mainConfigFile: "components/<%= ProjectName %>.js",
+        name: "<%= ProjectName %>",
+        out: "build/assets/js/<%= ProjectName %>.js",
         useStrict: true
       },
       development: {

@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="assets/css/<%= _.slugify(ProjectName) %>.css">
+    <link rel="stylesheet" href="assets/css/<%= ProjectName %>.css">
     <script src="assets/js/libs/modernizr.js"></script>
   </head>
   <body>
@@ -33,13 +33,13 @@
 
     <footer class="footer"></footer>
 
-    <script data-main="assets/js/<%= _.slugify(ProjectName) %>" src="assets/js/libs/require.js"></script>
+    <script data-main="assets/js/<%= ProjectName %>" src="assets/js/libs/require.js"></script>
     <% if (wysiwygCMS) { %>
     <!-- for wysiwyg CMS:
     <link rel="stylesheet" href="assets/css/app/_deferred/backend/backend.css">
     <script src="assets/js/libs/require.js"></script>
     <script charset="utf-8">
-      require(['assets/js/<%= _.slugify(ProjectName) %>'], function() {
+      require(['assets/js/<%= ProjectName %>'], function() {
         require(['assets/js/deferred/backend'], function(Backend) {
           Backend.init();
         });

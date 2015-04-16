@@ -93,7 +93,7 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       this.GraphicDesigner = answers.GraphicDesigner;
       this.HTMLDeveloper = answers.HTMLDeveloper;
       this.ProjectManager = answers.ProjectManager;
-      this.ProjectName = answers.ProjectName;
+      this.ProjectName = string.slugify(answers.ProjectName);
 
       // wysiwygCMS
       this.wysiwygCMS = answers.wysiwygCMS;
@@ -107,51 +107,150 @@ var KickstartGenerator = yeoman.generators.Base.extend({
   },
 
   folders: function () {
-    this.mkdir('components/libs');
-    this.mkdir('img');
+    mkdirp.mkdirp('img');
   },
 
   packagefiles: function () {
-    // this.copy('_accessibilityrc', '.accessibilityrc');
-    // this.copy('_bowerrc', '.bowerrc');
-    // this.copy('_gitignore', '.gitignore');
-    // this.copy('_editorconfig', '.editorconfig');
+
+    this.fs.copyTpl(
+      this.templatePath('_accessibilityrc'),
+      this.destinationPath('.accessibilityrc')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_bowerrc'),
+      this.destinationPath('.bowerrc')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_gitignore'),
+      this.destinationPath('.gitignore')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_editorconfig'),
+      this.destinationPath('.editorconfig')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_csslintrc'),
+      this.destinationPath('.csslintrc')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_jshintrc'),
+      this.destinationPath('.jshintrc')
+    );
 
     this.fs.copyTpl(
       this.templatePath('_bower.json'),
       this.destinationPath('bower.json'),
-      { ProjectName: this.ProjectName }
+      {
+        ProjectName: this.ProjectName,
+        oldIE: this.oldIE
+      }
     );
 
-    // this.template('_bower.json', 'bower.json');
-    this.template('_csslintrc', '.csslintrc');
-    this.template('_gruntfile.js', 'gruntfile.js');
-    this.template('_jshintrc', '.jshintrc');
-    this.template('_package.json', 'package.json');
-    this.template('_readme.md', 'README.md');
+    this.fs.copyTpl(
+      this.templatePath('_gruntfile.js'),
+      this.destinationPath('gruntfile.js'),
+      {
+        ProjectName: this.ProjectName,
+        WCAG2: this.WCAG2,
+        oldIE: this.oldIE
+      }
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_package.json'),
+      this.destinationPath('package.json'),
+      {
+        ProjectName: this.ProjectName
+      }
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_readme.md'),
+      this.destinationPath('README.md'),
+      {
+        ProjectName: this.ProjectName,
+        WCAG2: this.WCAG2,
+        oldIE: this.oldIE,
+        GraphicDesigner: this.GraphicDesigner,
+        HTMLDeveloper: this.HTMLDeveloper,
+        ProjectManager: this.ProjectManager
+      }
+    );
+
   },
 
   javascript: function () {
-    this.template('_frontend-template-setup.js', 'components/' + string.slugify(this.ProjectName) + '.js');
-    this.template('_main.js', 'components/app/main.js');
+
+    this.fs.copyTpl(
+      this.templatePath('_frontend-template-setup.js'),
+      this.destinationPath('components/' + this.ProjectName + '.js'),
+      {
+        oldIE: this.oldIE
+      }
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_main.js'),
+      this.destinationPath('components/app/main.js'),
+      {
+        oldIE: this.oldIE
+      }
+    );
   },
 
   qunit: function () {
-    this.template('qunit/_qunit-test-suite.html', 'qunit/qunit-test-suite.html');
-    this.copy('qunit/_qunit.js', 'qunit/qunit.js');
+
+    this.fs.copyTpl(
+      this.templatePath('qunit/_qunit-test-suite.html'),
+      this.destinationPath('qunit/qunit-test-suite.html'),
+      {
+        ProjectName: this.ProjectName
+      }
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('qunit/_qunit.js'),
+      this.destinationPath('qunit/qunit.js')
+    );
+
   },
 
   styles: function () {
-    this.copy('_frontend-template-setup.scss', 'components/' + string.slugify(this.ProjectName) + '.scss');
+    this.fs.copyTpl(
+      this.templatePath('_frontend-template-setup.scss'),
+      this.destinationPath('components/' + this.ProjectName + '.scss')
+    );
   },
 
   html: function () {
-    this.template('_sandbox.html', 'sandbox.html');
+    this.fs.copyTpl(
+      this.templatePath('_sandbox.html'),
+      this.destinationPath('sandbox.html'),
+      {
+        ProjectName: this.ProjectName,
+        oldIE: this.oldIE,
+        wysiwygCMS: this.wysiwygCMS
+      }
+    );
   },
 
   images: function () {
-    this.copy('_favicon.ico', 'favicon.ico');
-    this.copy('_apple-touch-icon.png', 'apple-touch-icon.png');
+
+    this.fs.copyTpl(
+      this.templatePath('_favicon.ico'),
+      this.destinationPath('favicon.ico')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_apple-touch-icon.png'),
+      this.destinationPath('apple-touch-icon.png')
+    );
+
   }
 
 });

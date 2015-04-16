@@ -1,5 +1,5 @@
 {
-  "name": "<%= _.slugify(ProjectName) %>",
+  "name": "<%= ProjectName %>",
   "version": "0",
   "main": "sandbox.html",
   "dependencies": {<% if (oldIE) { %>
