@@ -1,12 +1,14 @@
 'use strict';
-
 var util = require('util');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
+var string = require('underscore.string');
 
+var wire = require("html-wiring");
+
+var mkdirp = require('mkdirp');
 var memFs = require('mem-fs');
 var editor = require('mem-fs-editor');
-
 var store = memFs.create();
 var fs = editor.create(store);
 
@@ -20,14 +22,14 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
       this.log('\n');
 
       if (this.ComponentType === 'standardModule') {
-        this.log('Added component ' + this.name + ' to components/app/' + this._.slugify(this.name));
+        this.log('Added component ' + this.name + ' to components/app/' + string.slugify(this.name));
         if(this.includeHTML) {
-          this.log('You can use it in your HTML with ' + chalk.yellow('{app:{' + this._.slugify(this.name) + '}}'));
+          this.log('You can use it in your HTML with ' + chalk.yellow('{app:{' + string.slugify(this.name) + '}}'));
         }
       } else {
-        this.log('Added component ' + this.name + ' to components/app/_deferred/' + this._.slugify(this.name));
+        this.log('Added component ' + this.name + ' to components/app/_deferred/' + string.slugify(this.name));
         if(this.includeHTML) {
-          this.log('You can use it in your HTML with ' + chalk.yellow('{deferred:{' + this._.slugify(this.name) + '}}'));
+          this.log('You can use it in your HTML with ' + chalk.yellow('{deferred:{' + string.slugify(this.name) + '}}'));
         }
       }
 
@@ -112,19 +114,59 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   addApp: function () {
 
-    this.mkdir(this.directory + this.name);
+    // set path
+    var
+    path = this.directory + string.slugify(this.name);
+
+    // create directory
+    mkdirp.mkdirp(path);
+
+
 
     if (this.includeJS) {
-      this.template('_component.js', this.directory + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '.js');
+      this.fs.copyTpl(
+        this.templatePath('_component.js'),
+        this.destinationPath(path + '/' + string.slugify(this.name) + '.js'),
+        {
+          class_name: string.classify(this.name),
+          _name: string.underscored(this.name),
+          slug_name: string.slugify(this.name)
+
+        }
+      );
     }
+
     if (this.includeSCSS) {
-      this.template('_component.scss', this.directory + this._.slugify(this.name) + '/_' + this._.slugify(this.name) + '.scss');
+      this.fs.copyTpl(
+        this.templatePath('_component.scss'),
+        this.destinationPath(path + '/' + string.slugify(this.name) + '.scss'),
+        {
+          slug_name: string.slugify(this.name)
+
+        }
+      );
     }
+
     if (this.includeHTML) {
-      this.template('_component.html', this.directory + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '.html');
+      this.fs.copyTpl(
+        this.templatePath('_component.html'),
+        this.destinationPath(path + '/' + string.slugify(this.name) + '.html'),
+        {
+          slug_name: string.slugify(this.name)
+
+        }
+      );
     }
+
     if (this.includeQUnit) {
-      this.template('_qunit-test.js', this.directory + this._.slugify(this.name) + '/test-' + this._.slugify(this.name) + '.js');
+      this.fs.copyTpl(
+        this.templatePath('_qunit-test.js'),
+        this.destinationPath(path + '/test-' + string.slugify(this.name) + '.js'),
+        {
+          class_name: string.classify(this.name),
+          slug_name: string.slugify(this.name)
+        }
+      );
     }
   },
 
@@ -133,12 +175,12 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
       var
       path = 'components/' + this.pkg.name + '.scss',
-      file = this.readFileAsString(path);
+      file = wire.readFileAsString(path);
 
       if (this.ComponentType === 'standardModule') {
-        file += '@import "app/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '";\n';
+        file += '@import "app/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '";\n';
       } else {
-        file += '@import "app/_deferred/' + this._.slugify(this.name) + '/' + this._.slugify(this.name) + '";\n';
+        file += '@import "app/_deferred/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '";\n';
       }
 
       this.write(path, file);
@@ -151,7 +193,7 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
       var
       path = 'components/' + this.pkg.name + '.js',
-      file = this.readFileAsString(path);
+      file = wire.readFileAsString(path);
 
       if(this.includeJS) {
         var
@@ -159,9 +201,9 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
         newcontent;
 
         if (this.ComponentType === 'standardModule') {
-          newcontent = '//{{app}}\n    \'' + this._.slugify(this.name) + '\': \'' + 'app/' + this._.slugify(this.name) + '/'+ this._.slugify(this.name) + '\',';
+          newcontent = '//{{app}}\n    \'' + string.slugify(this.name) + '\': \'' + 'app/' + string.slugify(this.name) + '/'+ string.slugify(this.name) + '\',';
         } else {
-          newcontent = '//{{app}}\n    \'' + this._.slugify(this.name) + '\': \'' + 'app/_deferred/' + this._.slugify(this.name) + '/'+ this._.slugify(this.name) + '\',';
+          newcontent = '//{{app}}\n    \'' + string.slugify(this.name) + '\': \'' + 'app/_deferred/' + string.slugify(this.name) + '/'+ string.slugify(this.name) + '\',';
         }
 
         var newfile = file.replace(match, newcontent);

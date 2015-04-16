@@ -1,23 +1,23 @@
-define(['<%= _.slugify(name) %>'], function(<%= _.classify(name) %>) {
+define(['<%= slug_name %>'], function(<%= class_name %>) {
 
   'use strict';
 
-  var Test<%= _.classify(name) %> = {
+  var Test<%= class_name %> = {
 
     startTests: function() {
 
-      module("<%= _.classify(name) %>");
+      module("<%= class_name %>");
 
-      // test("<%= _.classify(name) %> Test", function() {
+      // test("<%= class_name %> Test", function() {
       //   equal(Foo.greet(), "Hello", "Function should return 'Hello'");
       // });
 
-      // asyncTest("<%= _.classify(name) %> Test", function() {
+      // asyncTest("<%= class_name %> Test", function() {
       //   expect(1);
 
-      //   $('#qunit-fixture').load('../components/app/<%= _.slugify(name) %>/<%= _.slugify(name) %>.html', function(data) {
-      //     <%= _.classify(name) %>.init();
-      //     ok($('.<%= _.classify(name) %>').hasClass('lorem'), ".<%= _.classify(name) %> should have class 'lorem'");
+      //   $('#qunit-fixture').load('../components/app/<%= slug_name %>/<%= slug_name %>.html', function(data) {
+      //     <%= class_name %>.init();
+      //     ok($('.<%= class_name %>').hasClass('lorem'), ".<%= class_name %> should have class 'lorem'");
       //     QUnit.start();
       //   });
 
@@ -27,7 +27,7 @@ define(['<%= _.slugify(name) %>'], function(<%= _.classify(name) %>) {
   };
 
   return {
-    startTests: Test<%= _.classify(name) %>.startTests
+    startTests: Test<%= class_name %>.startTests
   };
 
 });
