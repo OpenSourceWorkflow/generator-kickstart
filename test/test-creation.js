@@ -63,7 +63,7 @@ describe('kickstart:app', function () {
     it('have all files been created?', function () {
       runKickstart.
         withOptions(options).
-        withArguments('foo').
+        withArguments('bar').
         // withPrompt(prompts).
         on('end', function () {
           // have all files been created?
