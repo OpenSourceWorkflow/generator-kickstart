@@ -38,9 +38,10 @@ describe('Kickstart:addcomponent', function () {
       helpers.run(path.join( __dirname, '../addcomponent'))
       .inDir(path.join( __dirname, './tmp'), function(dir) {
 
-        fs.copy(
-          path.join(__dirname, 'templates/package.json'),
-          dir + 'package.json'
+        fs.copyTpl(
+          path.join(__dirname, '../app/templates/_package.json'),
+          dir + 'package.json',
+          { ProjectName: 'foo' }
         );
 
         var test = fs.readJSON(dir + 'package.json');
