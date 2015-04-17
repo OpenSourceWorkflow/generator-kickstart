@@ -67,17 +67,9 @@ module.exports = yeoman.generators.Base.extend({
 
     var
     path = 'components/' + this.pkg.name + '.scss',
+    file = wire.readFileAsString(path),
     match,
     newcontent = '';
-
-    // also enable to use hidden scss with _
-    // this way project-name.scss can be imported
-    // for theming support
-    if(!fs.exists(path)) {
-      path = 'components/_' + this.pkg.name + '.scss';
-    }
-
-    var file = wire.readFileAsString(path);
 
     if (this.ComponentType === 'standardModule') {
       match = '@import \"app\/' + string.slugify(this.name) + '\/' + string.slugify(this.name) + '\";\n';
