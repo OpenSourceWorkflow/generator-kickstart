@@ -17,6 +17,8 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
   init: function () {
     this.pkg = this.fs.readJSON('package.json');
 
+    console.log('this.pkg: ' + this.pkg);
+
     this.on('end', function () {
 
       this.log('\n');
@@ -120,8 +122,6 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
     // create directory
     mkdirp.mkdirp(path);
-
-
 
     if (this.includeJS) {
       this.fs.copyTpl(
