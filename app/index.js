@@ -212,9 +212,14 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       }
     );
 
-    this.fs.copyTpl(
-      this.templatePath('qunit/_qunit.js'),
-      this.destinationPath('qunit/qunit.js')
+    this.fs.copy(
+      this.templatePath('qunit/_unit.js'),
+      this.destinationPath('qunit/unit.js')
+    );
+
+    this.fs.copy(
+      this.templatePath('qunit/_config.js'),
+      this.destinationPath('qunit/config.js')
     );
 
   },
