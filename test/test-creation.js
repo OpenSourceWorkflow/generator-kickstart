@@ -28,8 +28,6 @@ describe('Kickstart:app', function () {
       'gruntfile.js',
       'img/',
       'package.json',
-      'qunit/qunit-test-suite.html',
-      'qunit/qunit.js',
       'sandbox.html'
     ];
 

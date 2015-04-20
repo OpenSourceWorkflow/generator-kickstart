@@ -3,5 +3,6 @@ require([
 ],
 
 function(qunit) {
+  // call test script here
   qunit.start();
 });
