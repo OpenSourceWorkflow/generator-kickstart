@@ -151,4 +151,57 @@ describe('Kickstart:removecomponent', function () {
 
   });
 
+  describe('yo kickstart:removecomponent bar (hidden _project-name.scss)', function () {
+
+    var prompts = {
+      ComponentType: 'standardModule',
+      whatFiles: ['includeHTML', 'includeSCSS', 'includeJS', 'includeQUnit']
+    };
+
+    var options = {
+      'skip-install-message': true,
+      'skip-install': true,
+      'skip-welcome-message': true,
+      'skip-message': true
+    };
+
+    before(function (done) {
+
+      helpers.run(path.join( __dirname, '../removecomponent'))
+      .inDir(path.join( __dirname, './tmp'))
+      .withArguments(['bar'])
+      .withPrompts(prompts)
+      .withOptions(options)
+      .on('ready', function(generator) {
+
+        // create dummy package.json
+        generator.fs.copyTpl(
+          generator.templatePath('../../app/templates/_package.json'),
+          generator.destinationPath('package.json'),
+          { ProjectName: 'bar' }
+        );
+
+        // create dummy hidden _project-name.scss
+        generator.fs.copy(
+          generator.templatePath('../../app/templates/_frontend-template-setup.scss'),
+          generator.destinationPath('components/_bar.scss')
+        );
+
+        // create dummy project-name.js
+        generator.fs.copyTpl(
+          generator.templatePath('../../app/templates/_frontend-template-setup.scss'),
+          generator.destinationPath('components/bar.js'),
+          { oldIE: false }
+        );
+
+      })
+      .on('end', done);
+
+    });
+
+    it('is the new module deleted from _project-name.scss?', function () {
+      assert.noFileContent('components/_bar.scss', /@import \"app\/bar\/bar\";/);
+    });
+
+  });
 });

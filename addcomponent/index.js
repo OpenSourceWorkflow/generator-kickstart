@@ -176,7 +176,8 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
       // also enable to use hidden scss with _
       // this way project-name.scss can be imported
       // for theming support
-      if(!fs.exists(path)) {
+
+      if(!this.fs.exists(path)) {
         path = 'components/_' + this.pkg.name + '.scss';
       }
 
