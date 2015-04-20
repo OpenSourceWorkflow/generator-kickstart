@@ -66,8 +66,8 @@ module.exports = yeoman.generators.Base.extend({
   removeStyling: function () {
 
     var
-    path = 'components/' + this.pkg.name + '.scss',
-    file = wire.readFileAsString(path),
+    path = 'components/' + this.pkg.name + '.js',
+    file = this.fs.read(path),
     match,
     newcontent = '';
 
@@ -85,7 +85,7 @@ module.exports = yeoman.generators.Base.extend({
 
     var
     path = 'components/' + this.pkg.name + '.js',
-    file = wire.readFileAsString(path),
+    file = this.fs.read(path),
     newcontent = '',
     match;
 
