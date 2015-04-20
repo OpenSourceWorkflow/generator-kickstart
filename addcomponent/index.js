@@ -17,8 +17,6 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
   init: function () {
     this.pkg = this.fs.readJSON('package.json');
 
-    console.log('this.pkg: ' + this.pkg);
-
     this.on('end', function () {
 
       this.log('\n');
@@ -175,7 +173,7 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
       var
       path = 'components/' + this.pkg.name + '.scss',
-      file = wire.readFileAsString(path);
+      file = this.fs.read(path);
 
       if (this.ComponentType === 'standardModule') {
         file += '@import "app/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '";\n';
@@ -193,7 +191,7 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
       var
       path = 'components/' + this.pkg.name + '.js',
-      file = wire.readFileAsString(path);
+      file = this.fs.read(path);
 
       if(this.includeJS) {
         var

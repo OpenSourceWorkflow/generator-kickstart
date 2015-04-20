@@ -17,13 +17,14 @@ describe('Kickstart:addcomponent', function () {
 
     var files = [
       'components/app/foo/foo.js',
+      'components/app/foo/test-foo.js',
       'components/app/foo/foo.scss',
       'components/app/foo/foo.html'
     ];
 
     var prompts = {
       ComponentType: 'standardModule',
-      whatFiles: ['includeHTML', 'includeSCSS', 'includeJS']
+      whatFiles: ['includeHTML', 'includeSCSS', 'includeJS', 'includeQUnit']
     };
 
     var options = {
@@ -38,20 +39,43 @@ describe('Kickstart:addcomponent', function () {
       helpers.run(path.join( __dirname, '../addcomponent'))
       .inDir(path.join( __dirname, './tmp'), function(dir) {
 
-        fs.copyTpl(
-          path.join(__dirname, '../app/templates/_package.json'),
-          dir + 'package.json',
-          { ProjectName: 'foo' }
-        );
-
-        var test = fs.readJSON(dir + 'package.json');
-        console.log('test: ' + test);
-        console.log('test.name: ' + test.name);
+        // fs.copyTpl(
+        //   path.join(__dirname, '../app/templates/_package.json'),
+        //   dir + 'package.json',
+        //   { ProjectName: 'foo' }
+        // );
+        //
+        // var test = fs.readJSON(dir + 'package.json');
+        // console.log('test: ' + test);
+        // console.log('test.name: ' + test.name);
 
       })
       .withArguments(['foo'])
       .withPrompts(prompts)
       .withOptions(options)
+      .on('ready', function(generator) {
+
+        // create dummy package.json
+        generator.fs.copyTpl(
+          generator.templatePath('../../app/templates/_package.json'),
+          generator.destinationPath('package.json'),
+          { ProjectName: 'foo' }
+        );
+
+        // create dummy project-name.scss
+        generator.fs.copy(
+          generator.templatePath('../../app/templates/_frontend-template-setup.scss'),
+          generator.destinationPath('components/foo.scss')
+        );
+
+        // create dummy project-name.js
+        generator.fs.copyTpl(
+          generator.templatePath('../../app/templates/_frontend-template-setup.scss'),
+          generator.destinationPath('components/foo.js'),
+          { oldIE: false }
+        );
+
+      })
       .on('end', done);
 
     });
