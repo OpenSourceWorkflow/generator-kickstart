@@ -121,8 +121,6 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     // create directory
     mkdirp.mkdirp(path);
 
-
-
     if (this.includeJS) {
       this.fs.copyTpl(
         this.templatePath('_component.js'),
@@ -173,7 +171,6 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
   addStyling: function () {
     if (this.includeSCSS) {
 
-
       var path = 'components/' + this.pkg.name + '.scss';
 
       // also enable to use hidden scss with _
@@ -183,7 +180,7 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
         path = 'components/_' + this.pkg.name + '.scss';
       }
 
-      var file = wire.readFileAsString(path);
+      var file = this.fs.read(path);
 
       if (this.ComponentType === 'standardModule') {
         file += '@import "app/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '";\n';
@@ -201,7 +198,7 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
       var
       path = 'components/' + this.pkg.name + '.js',
-      file = wire.readFileAsString(path);
+      file = this.fs.read(path);
 
       if(this.includeJS) {
         var

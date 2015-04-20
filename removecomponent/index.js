@@ -66,7 +66,9 @@ module.exports = yeoman.generators.Base.extend({
   removeStyling: function () {
 
     var
-    path = 'components/' + this.pkg.name + '.scss',
+<<<<<<< HEAD
+    path = 'components/' + this.pkg.name + '.scss';
+>>>>>>> master
     match,
     newcontent = '';
 
@@ -77,7 +79,7 @@ module.exports = yeoman.generators.Base.extend({
       path = 'components/_' + this.pkg.name + '.scss';
     }
 
-    var file = wire.readFileAsString(path);
+    var file = this.fs.read(path),
 
     if (this.ComponentType === 'standardModule') {
       match = '@import \"app\/' + string.slugify(this.name) + '\/' + string.slugify(this.name) + '\";\n';
@@ -93,7 +95,7 @@ module.exports = yeoman.generators.Base.extend({
 
     var
     path = 'components/' + this.pkg.name + '.js',
-    file = wire.readFileAsString(path),
+    file = this.fs.read(path),
     newcontent = '',
     match;
 
