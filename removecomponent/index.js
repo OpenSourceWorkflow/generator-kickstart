@@ -20,7 +20,6 @@ module.exports = yeoman.generators.Base.extend({
       desc: 'The app name'
     });
 
-    // this.log('You called the Kickstart subgenerator with the argument ' + this.name + '.');
   },
 
   askForApp: function () {
@@ -67,9 +66,17 @@ module.exports = yeoman.generators.Base.extend({
 
     var
     path = 'components/' + this.pkg.name + '.scss',
-    file = wire.readFileAsString(path),
     match,
     newcontent = '';
+
+    // also enable to use hidden scss with _
+    // this way project-name.scss can be imported
+    // for theming support
+    if(!this.fs.exists(path)) {
+      path = 'components/_' + this.pkg.name + '.scss';
+    }
+
+    var file = this.fs.read(path);
 
     if (this.ComponentType === 'standardModule') {
       match = '@import \"app\/' + string.slugify(this.name) + '\/' + string.slugify(this.name) + '\";\n';
@@ -78,6 +85,7 @@ module.exports = yeoman.generators.Base.extend({
     }
 
     var newfile = file.replace(match, newcontent);
+
     this.fs.write(path, newfile);
   },
 
@@ -85,7 +93,7 @@ module.exports = yeoman.generators.Base.extend({
 
     var
     path = 'components/' + this.pkg.name + '.js',
-    file = wire.readFileAsString(path),
+    file = this.fs.read(path),
     newcontent = '',
     match;
 
