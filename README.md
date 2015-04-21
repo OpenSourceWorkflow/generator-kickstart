@@ -1,4 +1,6 @@
-# generator-kickstart [![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart)
+# ![Generator Kickstart](https://raw.githubusercontent.com/markusfalk/generator-kickstart/20150417_falk_release-v2.3.0/app/templates/_apple-touch-icon.png =50x50) generator-kickstart [![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart)
+
+
 
 The generator-kickstart is an opinionated setup for front end development designed to make use of the following technologies and paradigms:
 
@@ -15,8 +17,6 @@ The generator-kickstart is an opinionated setup for front end development design
 * [Modernizr](http://modernizr.com/)
 * [Respond.js](https://github.com/scottjehl/Respond) (legacy IE only)
 * [jquery.exists Plugin](https://github.com/markusfalk/jquery.exists)
-
-<img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/20150417_falk_release-v2.3.0/app/templates/_apple-touch-icon.png" alt=""/ style="float: left; margin: 0 20px 20px 0;">
 
 The main goal of the project is to incorporate dependency management for the web using [Bower](http://bower.io) to enable you to reuse great projects easily and streamline your everday workflow. It adds a unit testing environment and provides a number of quality assurance features. With the generator you can setup new projects and add or remove components.
 
