@@ -13,33 +13,15 @@ The generator-kickstart is an opinionated setup for front end development design
 * [SASS](http://sass-lang.com/)
 * [WCAG2](http://www.w3.org/TR/WCAG20/)
 
-For development it uses:
-
-* [Yeoman](http://yeoman.io)
-* [Grunt](http://gruntjs.com)
-* [Bower](http://bower.io)
-
-It aimes at creating frontend templates with high quality standards by continuously testing your work in progress:
-
-* test your code with [QUnit](http://qunitjs.com/)
-* uses JSHint to check your Java Script
-* checks your HTML for WCAG2 compliance at different levels (A, AA, AAA)
-* CSSLint monitores your styling
 
 ## Main goal
 
 The main goal of the project is to incorporate dependency management for the web using [Bower](http://bower.io) to enable you to reuse great projects easily and streamline your everday workflow.
 
-The generator installs many commonly used components ready for you to customize to your needs:
+The generator installs a few commonly used components:
 
-* [Accordion](https://github.com/markusfalk/accordion)
-* [Base64 Background Images](https://github.com/markusfalk/base64-background-image)
-* [Element-Switcher](https://github.com/markusfalk/element-switcher)
-* [Grid Layout](https://github.com/markusfalk/grid-layout)
 * [Modernizr](http://modernizr.com/)
-* [Respond.js](https://github.com/scottjehl/Respond)
-* [Tabs](https://github.com/markusfalk/tabs)
-* [jquery.equal-height Plugin](https://github.com/markusfalk/jquery.equal-height)
+* [Respond.js](https://github.com/scottjehl/Respond) (legacy only)
 * [jquery.exists Plugin](https://github.com/markusfalk/jquery.exists)
 
 ## The setup
