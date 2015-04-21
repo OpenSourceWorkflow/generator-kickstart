@@ -321,10 +321,7 @@ name.
 └──         └── test-<component-name>.js
 ```
 
-The test-* file then contains your actual tests. It comes with 2 exmample test cases.
-One is a simple call to a public function of the module.
-The other loads HTML and then fires a public function so that you could test on
-DOM manipulation.
+The test-* file then contains your actual tests.
 
 ```javascript
 // Example for foo
@@ -337,7 +334,7 @@ define(['qunit', 'foo'], function(qunit, Foo) {
     qunit.module("Foo");
 
     qunit.test("Foo return Test", function() {
-      equal(true, false, "Function should return 'false'");
+      equal(Foo.falsify(), false, "Function should return 'false'");
     });
 
   };
