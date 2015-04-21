@@ -193,7 +193,12 @@ module.exports = function(grunt) {
       options : {
         accessibilityLevel: 'WCAG2<%= WCAG2 %>',
         accessibilityrc: true,
-        domElement: true
+        domElement: true,
+        reportLevels: {
+          notice: false,
+          warning: true,
+          error: true
+        }
       },
       development : {
         files: [{

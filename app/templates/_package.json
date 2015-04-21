@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "devDependencies": {
     "grunt": "^0.4",
-    "grunt-accessibility": "^2",
+    "grunt-accessibility": "^3",
     "grunt-contrib-clean": "^0.6",
     "grunt-contrib-compass": "^1",
     "grunt-contrib-copy": "^0.8",
