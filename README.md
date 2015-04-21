@@ -13,9 +13,6 @@ The generator-kickstart is an opinionated setup for front end development design
 * [SASS](http://sass-lang.com/)
 * [WCAG2](http://www.w3.org/TR/WCAG20/)
 
-
-## Main goal
-
 The main goal of the project is to incorporate dependency management for the web using [Bower](http://bower.io) to enable you to reuse great projects easily and streamline your everday workflow.
 
 The generator installs a few commonly used components:
