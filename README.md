@@ -21,7 +21,7 @@ For development it uses:
 
 It aimes at creating frontend templates with high quality standards by continuously testing your work in progress:
 
-* test your code with [qUnit]()
+* test your code with [QUnit](http://qunitjs.com/)
 * uses JSHint to check your Java Script
 * checks your HTML for WCAG2 compliance at different levels (A, AA, AAA)
 * CSSLint monitores your styling
@@ -258,51 +258,55 @@ define(['jquery', 'jquery.exists'], function($) {
   };
 
 });
-
 ```
 
 ## Unit Tests
 
 The Kickstart Generator uses [QUnit](http://qunitjs.com/) for Unit Tests.
-To make it work with requireJS it sets up a parallel requireJS project and loads
-HTML and JS into the test suite via jQuery.
+To make it work with requireJS it sets up a parallel requireJS project.
 
-To get things going the main entry point for your unit tests is **/qunit.js**.
-There you have to add paths to all modules used by the tests. Then you load the
-test module and start the tests.
+The test suite consists of these files:
+
+* qunit/unit.js
+* qunit/config.js
+* qunit/qunit-test-suite.html
+* component/app/&lt;component-name&gt;/test-&lt;component-name&gt;.js
+
+### qunit/config.js
+
+This file contains the requireJS configuration.
 
 ```javascript
-require.config({
+var requirejs = {
     baseUrl: "../",
     paths: {
+      'unit': 'qunit/unit',
+      'qunit': 'components/libs/qunit/qunit/qunit',
       'jquery': 'components/libs/jquery/dist/jquery.min',
 
-      // 'test-YOUR_MODULE': 'components/app/YOUR_MODULE/test-YOUR_MODULE',
-      // 'YOUR_MODULE': 'components/app/YOUR_MODULE/YOUR_MODULE',
-
-      // 'test-YOUR_DEFERRED_MODULE': 'components/app/_deferred/YOUR_DEFERRED_MODULE/test-YOUR_DEFERRED_MODULE',
-      // 'YOUR_DEFERRED_MODULE': 'components/app/_deferred/YOUR_DEFERRED_MODULE/YOUR_DEFERRED_MODULE'
-    },
-    shim: {
-     'QUnit': {
-        exports: 'QUnit'
-      }
+      // Example Foo
+      'foo': 'components/app/foo/foo',
+      'test-foo': 'components/app/foo/test-foo'
     }
-});
+};
+```
 
-require([
-  // 'test-YOUR_MODULE',
-  ], function(
-    // YOUR_MODULE,
-    ) {
+### qunit/unit.js
 
-  // YOUR_MODULE.startTests();
+This file starts the tests you want to run.
 
-  QUnit.load();
-  QUnit.start();
+```javascript
+// Example with Foo as module
+// component/app/foo/foo.js
+// component/app/foo/test-foo.js
 
+require(['qunit', 'test-foo'], function(qunit, Foo) {
+  Foo();
+  qunit.start();
 });
 ```
+
+### component/app/&lt;component-name&gt;/test-&lt;component-name&gt;.js
 
 Tests are put into the component folder right next to the module you want to test.
 Kickstart assumes that this file is prefixed with **test-** and then contains the module's
@@ -323,41 +327,26 @@ The other loads HTML and then fires a public function so that you could test on
 DOM manipulation.
 
 ```javascript
-define(['<component-name>'], function(Foo) {
+// Example for foo
+define(['qunit', 'foo'], function(qunit, Foo) {
 
   'use strict';
 
-  var TestFoo = {
-    startTests: function() {
+  return function() {
 
-      module("<component-name>");
+    qunit.module("Foo");
 
-      // test("<component-name> Test", function() {
-      //   equal(<component-name>.publicFunction(), "Foo", "Function should return 'Foo'");
-      // });
+    qunit.test("Foo return Test", function() {
+      equal(true, false, "Function should return 'false'");
+    });
 
-      // asyncTest("<component-name> Test", function() {
-      //   expect(1);
-
-      //   $('#qunit-fixture').load('../components/app/<component-name>/<component-name>.html', function(data) {
-      //     <component-name>.init();
-      //     ok($('.<component-name>').hasClass('lorem'), ".<component-name> should have class 'lorem'");
-      //     QUnit.start();
-      //   });
-
-      // });
-
-    }
-  };
-
-  return {
-    startTests: TestFoo.startTests
   };
 
 });
+
 ```
 
-### WYSIWYG CMS
+## WYSIWYG CMS
 
 If you have CMS that uses some sort of front-end editing Kickstart will add this to enable deferred modules for your backend only.
 
