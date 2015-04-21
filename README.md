@@ -31,6 +31,13 @@ This is your working environment:
 |   └── libs/ (all 3rd party components)
 |   └── app/ (all own components in folders containing JS, SCSS, HTML)
 |   |   └── _deferred/ (modules that are loaded dynamically)
+|   |   └── <component-name>/
+|   |       └── img/ (background-images used by this component)
+|   |       └── font/ (webfonts used by this component)
+|   |       └── <component-name>.js
+|   |       └── test-<component-name>.js
+|   |       └── <component-name>.scss
+|   |       └── <component-name>.html
 |   |   └── main.js (main requirejs module)
 |   └── <project-name>.js (require config)
 |   └── <project-name>.scss (base file for SCSS)
@@ -68,14 +75,9 @@ build/
 
 Save images used for styling to the img/ subfolder of your component.
 
-There the grunt task expects an SVG and a PNG. If you choose to use the 'Base64BackgroundImages' mixin the SVG is inlined into your CSS and the png is saved to assets/img as fallback.
-
 #### Webfonts
 
 Save your webfonts to font/ subfolder of your component.
-
-You could use a 'common' or 'webfonts' component to seperate styles for your webfonts.
-
 
 ## HTML Placeholders
 
