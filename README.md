@@ -12,14 +12,11 @@ The generator-kickstart is an opinionated setup for front end development design
 * [requireJS](http://requirejs.org/)
 * [SASS](http://sass-lang.com/)
 * [WCAG2](http://www.w3.org/TR/WCAG20/)
-
-The main goal of the project is to incorporate dependency management for the web using [Bower](http://bower.io) to enable you to reuse great projects easily and streamline your everday workflow.
-
-The generator installs a few commonly used components:
-
 * [Modernizr](http://modernizr.com/)
 * [Respond.js](https://github.com/scottjehl/Respond) (legacy IE only)
 * [jquery.exists Plugin](https://github.com/markusfalk/jquery.exists)
+
+The main goal of the project is to incorporate dependency management for the web using [Bower](http://bower.io) to enable you to reuse great projects easily and streamline your everday workflow.
 
 ## The setup
 
@@ -193,12 +190,6 @@ If you have CMS that uses some sort of front-end editing Kickstart will add this
 
 All you have to do is add a deferred component with the name 'backend': ```yo kickstart:addcomponent backend```
 
-### Grunt Task
-
-```bash
-$ grunt qunit
-```
-
 ## Legacy Browsers
 
 During the setup of a new project kickstart will ask you if you want to support legacy IE (<9). Here is what happens if you choose to support legacy IE.
@@ -271,37 +262,12 @@ $ bower install <package-name> --save
 Don't forget to add your lib to <project-name>.scss or <project-name>.js if needed.
 Kickstart uses [sass-css-importer](https://github.com/chriseppstein/sass-css-importer) which lets you import CSS with 'CSS:'-prefix. See example for more Details.
 
-### Grunt Tasks
+## Grunt Tasks
 
-There are 2 task predefined task: 'default' and 'production'.
-
-The 'production'-task
-
-### Example workflow
-
-Here is what you need to get a new project working:
-
-```bash
-$ yo kickstart
-$ grunt
-$ grunt watch
-```
-
-This is for extending the project with another component:
-
-```bash
-$ yo kickstart:addcomponent accordion
-$ grunt
-$ grunt watch
-```
-
-This is for removing a component:
-
-```bash
-$ yo kickstart:removecomponent accordion
-$ grunt
-$ grunt watch
-```
+* grunt (produces assets with sourcemaps used for development)
+* grunt watch (used for development)
+* grunt production (produces minified and optimized assets for deployment)
+* grunt test (runs all quality assurance tasks)
 
 ## Customization
 
