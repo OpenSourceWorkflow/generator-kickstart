@@ -76,7 +76,7 @@ Save images used for styling to the img/ subfolder of your component.
 
 Save your webfonts to font/ subfolder of your component.
 
-## HTML Placeholders
+### HTML Placeholders
 
 Include your modules via placeholder into your main template files. This gives you great overview on your templates and makes it easy to git log your components.
 
@@ -87,7 +87,7 @@ In your HTML you need to use one of the following placeholders for the 2 types o
 {deferred:{component-name}}
 ```
 
-## Unit Tests
+### Unit Tests
 
 The Kickstart Generator uses [QUnit](http://qunitjs.com/) for Unit Tests.
 To make it work with requireJS it sets up a parallel requireJS project.
@@ -99,7 +99,7 @@ The test suite consists of these files:
 * qunit/qunit-test-suite.html
 * component/app/&lt;component-name&gt;/test-&lt;component-name&gt;.js
 
-### qunit/config.js
+#### qunit/config.js
 
 This file contains the requireJS configuration.
 
@@ -118,7 +118,7 @@ var requirejs = {
 };
 ```
 
-### qunit/unit.js
+#### qunit/unit.js
 
 This file starts the tests you want to run.
 
@@ -133,7 +133,7 @@ require(['qunit', 'test-foo'], function(qunit, Foo) {
 });
 ```
 
-### component/app/&lt;component-name&gt;/test-&lt;component-name&gt;.js
+#### component/app/&lt;component-name&gt;/test-&lt;component-name&gt;.js
 
 Tests are put into the component folder right next to the module you want to test.
 Kickstart assumes that this file is prefixed with **test-** and then contains the module's
@@ -169,6 +169,22 @@ define(['qunit', 'foo'], function(qunit, Foo) {
 });
 
 ```
+
+### Grunt Tasks
+
+* grunt (produces assets with sourcemaps used for development)
+* grunt watch (used for development)
+* grunt production (produces minified and optimized assets for deployment)
+* grunt test (runs all quality assurance tasks)
+
+### Customization
+
+There are a few customizable options for you to consider:
+
+* OOCSS-Linter: [.csslintrc](https://github.com/CSSLint/csslint/wiki/Rules)
+* JSHint-Linter: [.jshintrc](http://www.jshint.com/docs/options/)
+* accessibility-task: [.accessibilityrc](https://github.com/yargalot/grunt-accessibility/)
+
 
 ## WYSIWYG CMS
 
@@ -261,21 +277,6 @@ $ bower install <package-name> --save
 
 Don't forget to add your lib to <project-name>.scss or <project-name>.js if needed.
 Kickstart uses [sass-css-importer](https://github.com/chriseppstein/sass-css-importer) which lets you import CSS with 'CSS:'-prefix. See example for more Details.
-
-## Grunt Tasks
-
-* grunt (produces assets with sourcemaps used for development)
-* grunt watch (used for development)
-* grunt production (produces minified and optimized assets for deployment)
-* grunt test (runs all quality assurance tasks)
-
-## Customization
-
-There are a few customizable options for you to consider:
-
-* OOCSS-Linter: [.csslintrc](https://github.com/CSSLint/csslint/wiki/Rules)
-* JSHint-Linter: [.jshintrc](http://www.jshint.com/docs/options/)
-* accessibility-task: [.accessibilityrc](https://github.com/yargalot/grunt-accessibility/)
 
 ## License
 
