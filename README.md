@@ -62,6 +62,21 @@ build/
 └── sandbox.html
 ```
 
+### Assets
+
+#### Images
+
+Save images used for styling to the img/ subfolder of your component.
+
+There the grunt task expects an SVG and a PNG. If you choose to use the 'Base64BackgroundImages' mixin the SVG is inlined into your CSS and the png is saved to assets/img as fallback.
+
+#### Webfonts
+
+Save your webfonts to font/ subfolder of your component.
+
+You could use a 'common' or 'webfonts' component to seperate styles for your webfonts.
+
+
 ## HTML Placeholders
 
 Include your modules via placeholder into your main template files. This gives you great overview on your templates and makes it easy to git log your components.
@@ -72,20 +87,6 @@ In your HTML you need to use one of the following placeholders for the 2 types o
 {app:{component-name}}
 {deferred:{component-name}}
 ```
-
-## Assets
-
-### Images
-
-Save images used for styling to the img/ subfolder of your component.
-
-There the grunt task expects an SVG and a PNG. If you choose to use the 'Base64BackgroundImages' mixin the SVG is inlined into your CSS and the png is saved to assets/img as fallback.
-
-### Webfonts
-
-Save your webfonts to font/ subfolder of your component.
-
-You could use a 'common' or 'webfonts' component to seperate styles for your webfonts.
 
 ## Unit Tests
 
