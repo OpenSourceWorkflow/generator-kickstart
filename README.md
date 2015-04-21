@@ -280,4 +280,4 @@ Kickstart uses [sass-css-importer](https://github.com/chriseppstein/sass-css-imp
 
 ## License
 
-MIT
+[MIT](https://tldrlegal.com/license/mit-license)
