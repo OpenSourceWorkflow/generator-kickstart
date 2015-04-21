@@ -28,20 +28,20 @@ This is your working environment:
 ```bash
 .
 |── components/
-|   └── libs/ (all 3rd party components)
-|   └── app/ (all own components in folders containing JS, SCSS, HTML)
-|   |   └── _deferred/ (modules that are loaded dynamically)
+|   └── libs/ #(all 3rd party components)
+|   └── app/ #(all own components in folders containing JS, SCSS, HTML)
+|   |   └── _deferred/ #(modules that are loaded dynamically)
 |   |   └── <component-name>/
-|   |   |   └── img/ (background-images used by this component)
-|   |   |   └── font/ (webfonts used by this component)
+|   |   |   └── img/ #(background-images used by this component)
+|   |   |   └── font/ #(webfonts used by this component)
 |   |   |   └── <component-name>.js
 |   |   |   └── test-<component-name>.js
 |   |   |   └── <component-name>.scss
 |   |   |   └── <component-name>.html
-|   |   └── main.js (main requirejs module)
-|   └── <project-name>.js (require config)
-|   └── <project-name>.scss (base file for SCSS)
-|── img/ (images rendered by CMS)
+|   |   └── main.js #(main requirejs module)
+|   └── <project-name>.js #(require config)
+|   └── <project-name>.scss #(base file for SCSS)
+|── img/ #(images rendered by CMS)
 └── .bowerrc
 └── .csslintrc
 └── .editorconfig
@@ -51,7 +51,7 @@ This is your working environment:
 └── favicon.ico
 └── package.json
 └── README.md
-└── sandbox.html (main template)
+└── sandbox.html #(main template)
 ```
 
 This is what it builds into:
