@@ -1,8 +1,7 @@
 'use strict';
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
-var chalk = require('chalk');la
-g
+var chalk = require('chalk');
 var string = require('underscore.string');
 var mkdirp = require('mkdirp');
 
