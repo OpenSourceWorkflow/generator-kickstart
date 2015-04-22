@@ -12,9 +12,20 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
     this.on('end', function () {
 
-      if (!this.options['skip-install']) {
-        this.installDependencies();
-      }
+      this.on('end', function () {
+          this.installDependencies({
+              skipInstall: options['skip-install'],
+              callback: function() {
+                  // Emit a new event - dependencies installed
+                  this.emit('dependenciesInstalled');
+              }.bind(this)
+          });
+      });
+
+      // Now you can bind to the dependencies installed event
+      this.on('dependenciesInstalled', function() {
+          this.spawnCommand('grunt', ['build']);
+      });
 
       if(this.wysiwygCMS) {
         this.log('Don\'t forget run: ' + chalk.yellow('yo kickstart:addcomponent backend'));
