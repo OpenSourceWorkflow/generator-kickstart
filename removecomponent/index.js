@@ -7,13 +7,13 @@ module.exports = yeoman.generators.Base.extend({
 
   initializing: function () {
 
-    this.pkg = this.fs.readJSON('package.json');
-
     this.argument('name', {
       required: true,
       type: String,
-      desc: 'The app name'
+      desc: 'The component name'
     });
+
+    this.pkg = this.fs.readJSON('package.json');
 
   },
 

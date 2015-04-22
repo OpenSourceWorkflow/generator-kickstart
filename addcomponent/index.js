@@ -9,6 +9,13 @@ var mkdirp = require('mkdirp');
 var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   init: function () {
+
+    this.argument('name', {
+      required: true,
+      type: String,
+      desc: 'The component name'
+    });
+
     this.pkg = this.fs.readJSON('package.json');
 
     this.on('end', function () {
