@@ -302,7 +302,7 @@ module.exports = function(grunt) {
 
     githooks: {
       all: {
-        'pre-commit': 'csslint', 'jshint', 'accessibility', 'connect', 'qunit:all'
+        'pre-commit': 'csslint jshint accessibility connect qunit:all'
       }
     }
 
