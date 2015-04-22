@@ -3,12 +3,7 @@ var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
 var string = require('underscore.string');
-
 var mkdirp = require('mkdirp');
-var memFs = require('mem-fs');
-var editor = require('mem-fs-editor');
-var store = memFs.create();
-var fs = editor.create(store);
 
 var KickstartGenerator = yeoman.generators.Base.extend({
 

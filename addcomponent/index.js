@@ -3,14 +3,8 @@ var util = require('util');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var string = require('underscore.string');
-
 var wire = require("html-wiring");
-
 var mkdirp = require('mkdirp');
-var memFs = require('mem-fs');
-var editor = require('mem-fs-editor');
-var store = memFs.create();
-var fs = editor.create(store);
 
 var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 

@@ -3,11 +3,6 @@ var yeoman = require('yeoman-generator');
 var string = require('underscore.string');
 var wire = require("html-wiring");
 
-var memFs = require('mem-fs');
-var editor = require('mem-fs-editor');
-var store = memFs.create();
-var fs = editor.create(store);
-
 module.exports = yeoman.generators.Base.extend({
 
   initializing: function () {
