@@ -298,12 +298,6 @@ module.exports = function(grunt) {
           destination: 'documentation'
         }
       }
-    },
-
-    githooks: {
-      all: {
-        'pre-commit': 'csslint jshint accessibility connect qunit:all'
-      }
     }
 
   });
@@ -324,7 +318,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sync');
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-jsdoc');
-  grunt.loadNpmTasks('grunt-githooks');
 
   grunt.registerTask('default', [
     'replace',

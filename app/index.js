@@ -1,7 +1,8 @@
 'use strict';
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
-var chalk = require('chalk');
+var chalk = require('chalk');la
+g
 var string = require('underscore.string');
 var mkdirp = require('mkdirp');
 
@@ -12,33 +13,23 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
     this.on('end', function () {
 
-      this.on('end', function () {
-          this.installDependencies({
-              skipInstall: options['skip-install'],
-              callback: function() {
-                  // Emit a new event - dependencies installed
-                  this.emit('dependenciesInstalled');
-              }.bind(this)
-          });
-      });
-
-      // Now you can bind to the dependencies installed event
-      this.on('dependenciesInstalled', function() {
-          this.spawnCommand('grunt', ['build']);
-      });
+      if (!this.options['skip-install']) {
+        this.installDependencies();
+      }
 
       if(this.wysiwygCMS) {
         this.log('Don\'t forget run: ' + chalk.yellow('yo kickstart:addcomponent backend'));
         this.log('\n');
       }
     });
+
   },
 
   askFor: function () {
     var done = this.async();
 
     // Have Yeoman greet the user.
-    this.log(yosay('Thank you for choosing Kickstart. Sit back and relax while I setup your project. '));
+    this.log(yosay('Thank you for choosing Kickstart. Sit back and relax while I setup your project.'));
 
     var prompts = [
       {

@@ -17,7 +17,6 @@
     "grunt-contrib-watch": "^0.6",
     "grunt-jsdoc": "^0.6",
     "grunt-modernizr": "^0.6",
-    "grunt-githooks": "^0.3",
     "grunt-replace": "^0.8",
     "grunt-sync": "0.2",
     "grunt-newer": "^1",
