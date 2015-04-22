@@ -8,6 +8,7 @@ var mkdirp = require('mkdirp');
 var KickstartGenerator = yeoman.generators.Base.extend({
 
   init: function () {
+
     this.pkg = require('../package.json');
 
     this.on('end', function () {
