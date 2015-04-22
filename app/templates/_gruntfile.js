@@ -335,10 +335,7 @@ module.exports = function(grunt) {
     'uglify:deferred_development',
     'uglify:external',
     'clean:svg',
-    'modernizr',
-    'csslint',
-    'jshint',
-    'accessibility'
+    'modernizr'
   ]);
 
   grunt.registerTask('production', [
@@ -355,6 +352,9 @@ module.exports = function(grunt) {
    ]);
 
   grunt.registerTask('test', [
+    'csslint',
+    'jshint',
+    'accessibility',
     'connect',
     'qunit:all'
   ]);
