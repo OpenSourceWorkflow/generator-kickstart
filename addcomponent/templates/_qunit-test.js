@@ -1,7 +1,20 @@
+/**
+ * TODO: add description
+ * @module <%= class_name %>
+ * @requires jquery
+ * @requires qunit
+ * @requires <%= slug_name %>
+ * @author TODO: add author
+ */
 define(['jquery', 'qunit', '<%= slug_name %>'], function($, qunit, <%= class_name %>) {
 
   'use strict';
 
+  /**
+   * Runs all QUnit tests.
+   * @public
+   * @returns {Function} QUnit assertions
+   */
   return function() {
 
     qunit.module("<%= class_name %>");

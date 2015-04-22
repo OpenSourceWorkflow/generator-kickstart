@@ -289,7 +289,16 @@ module.exports = function(grunt) {
           "src": ['components/app/**/*.js', 'build/**/*.css']
         }
       }
-    }
+    },
+
+    jsdoc : {
+      dist : {
+        src: ['components/app/**/*.js'],
+        options: {
+          destination: 'documentation'
+        }
+      }
+    },
 
   });
 
@@ -308,6 +317,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-sync');
   grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-jsdoc');
 
   grunt.registerTask('default', [
     'replace',
@@ -340,6 +350,10 @@ module.exports = function(grunt) {
   grunt.registerTask('test', [
     'connect',
     'qunit:all'
+  ]);
+
+  grunt.registerTask('doc', [
+    'jsdoc'
   ]);
 
 };

@@ -7,6 +7,7 @@ The generator-kickstart is an opinionated setup for front end development design
 * [HTML5](http://www.html5rocks.com/)
 * [jQuery](http://jquery.com/)
 * [JSHint](http://www.jshint.com/)
+* [JSDoc](http://usejsdoc.org/)
 * [OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
 * [QUnit](http://qunitjs.com/)
 * [requireJS](http://requirejs.org/)
@@ -176,6 +177,7 @@ define(['qunit', 'foo'], function(qunit, Foo) {
 * grunt watch (used for development)
 * grunt production (produces minified and optimized assets for deployment)
 * grunt test (runs all quality assurance tasks)
+* grunt doc (creates JavaScript documentation)
 
 ### Customization
 
