@@ -197,7 +197,7 @@ If you have CMS that uses some sort of front-end editing Kickstart will add this
 <link rel="stylesheet" href="assets/css/backend.css">
 <script src="assets/js/libs/require.js"></script>
 <script charset="utf-8">
-  require(['assets/js/<%= _.slugify(ProjectName) %>'], function() {
+  require(['assets/js/projectName'], function() {
     require(['assets/js/deferred/backend'], function(Backend) {
       Backend.init();
     });
@@ -271,7 +271,7 @@ $ yo kickstart:removecomponent <name>
 
 ### Adding a Bower package
 
-It is recomended to use bower itself to add new packages.
+It is recommended to use bower itself to add new packages.
 
 ```bash
 $ bower install <package-name> --save
