@@ -124,6 +124,11 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     );
 
     this.fs.copyTpl(
+      this.templatePath('_gemfile'),
+      this.destinationPath('Gemfile')
+    );
+
+    this.fs.copyTpl(
       this.templatePath('_editorconfig'),
       this.destinationPath('.editorconfig')
     );

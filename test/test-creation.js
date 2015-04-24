@@ -16,6 +16,7 @@ describe('Kickstart:app', function () {
       '.gitignore',
       '.jshintrc',
       '.jshintrc',
+      'Gemfile',
       'README.md',
       'apple-touch-icon.png',
       'bower.json',
