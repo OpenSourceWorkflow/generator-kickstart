@@ -44,6 +44,7 @@ This is your working environment:
 └── .csslintrc
 └── .editorconfig
 └── .gitignore
+└── Gemfile
 └── bower.json
 └── gruntfile.js
 └── favicon.ico
@@ -230,6 +231,8 @@ During the setup of a new project kickstart will ask you if you want to support 
 * [Compass](http://compass-style.org/)
 * [Sass](http://sass-lang.com/)
 * [Sass CSS Importer Plugin](https://github.com/chriseppstein/sass-css-importer)
+
+Kickstart generates a Gemfile with the needed ruby gems. You can install with bundler into .bundles if you like. The folder is already included in .gitignore.
 
 ### Installation
 
