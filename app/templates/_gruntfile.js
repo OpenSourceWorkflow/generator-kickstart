@@ -158,7 +158,7 @@ module.exports = function(grunt) {
           flatten: true,
           expand: true,
           cwd: 'img',
-          src: ['**/*.{png,jpg,gif,svg}'],
+          src: ['**/*.{gif,ico,jpg,png,svg}'],
           dest: 'build/img'
         }]
       },
@@ -167,7 +167,7 @@ module.exports = function(grunt) {
           flatten: true,
           expand: true,
           cwd: 'components/app',
-          src: ['**/*.{jpg,gif,png,svg}'],
+          src: ['**/*.{gif,jpg,png,svg}'],
           dest: 'build/assets/img'
         }]
       }
