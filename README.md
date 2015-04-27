@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/20150417_falk_release-v2.3.0/app/templates/_apple-touch-icon.png" height="100"> Kickstart [![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart)
+# <img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/master/app/templates/_apple-touch-icon.png" height="100"> Kickstart [![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart)
 
 The generator-kickstart is an opinionated setup for front end development designed to make use of the following technologies and paradigms:
 
