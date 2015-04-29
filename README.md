@@ -1,4 +1,4 @@
-# Kickstart - the open source workflow for the web [![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart)
+# Kickstart<br>the open source workflow for the web [![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart)
 
 <img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/20150425_falk_release-v3.2.0/kickstart.png">
 
