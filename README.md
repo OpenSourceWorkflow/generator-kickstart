@@ -1,6 +1,14 @@
-# <img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/master/app/templates/_apple-touch-icon.png" height="100"> Kickstart [![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart)
+# Kickstart - the open source workflow for the web [![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart)
 
-The generator-kickstart is an opinionated setup for front end development designed to make use of the following technologies and paradigms:
+<img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/20150425_falk_release-v3.2.0/kickstart.png">
+
+## What is Kickstart?
+
+The Kickstart project is more than just a yeoman generator. It is an open source workflow for creating **websites** or **single page applications**. It is continuously tested and improved in an web agency environment.
+
+## Technologies
+
+The Kickstart is an opinionated setup for front end development designed to make use of the following technologies and paradigms:
 
 * [Compass](http://compass-style.org/)
 * [CSSLint](http://csslint.net/)
@@ -286,3 +294,7 @@ Kickstart uses [sass-css-importer](https://github.com/chriseppstein/sass-css-imp
 ## License
 
 [MIT](https://tldrlegal.com/license/mit-license)
+
+### Images
+
+All the shiny artwork is provided by [creeight – kustom graphics](http://creeight.de/)
