@@ -1,14 +1,25 @@
-# Kickstart<br>the open source workflow for the web [![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart)
+# Kickstart<br>The open source workflow for the web<br>[![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart)
 
 <img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/20150425_falk_release-v3.2.0/kickstart.png">
 
 ## What is Kickstart?
 
-The Kickstart project is more than just a yeoman generator. It is an open source workflow for creating **websites** or **single page applications**. It is continuously tested and improved in an web agency environment.
+The Kickstart project is more than just a yeoman generator. It is an open source workflow for creating the front-end of **websites** or **single page applications**. It is continuously tested and improved in an web agency environment.
 
-## Technologies
+### Why use Kickstart?
 
-The Kickstart is an opinionated setup for front end development designed to make use of the following technologies and paradigms:
+The power of many can be used to solve problems quickly and automate the setup of new projects in a very profound way. Besides that Kickstart has many best practices built in:
+
+* Linters ensure a high quality of code
+* Components and documentation standards makes it easy for teams to work together on a project
+* Dependency management makes it easy to work with an unified set of 3rd party libraries
+* Kickstart promotes test driven development for your java script
+* The whole setup is fully adjustable to fit your needs
+* and many more
+
+### What technologies does Kickstart use?
+
+Kickstart makes use of the following technologies and paradigms:
 
 * [Compass](http://compass-style.org/)
 * [CSSLint](http://csslint.net/)
@@ -24,8 +35,6 @@ The Kickstart is an opinionated setup for front end development designed to make
 * [Modernizr](http://modernizr.com/)
 * [Respond.js](https://github.com/scottjehl/Respond) (legacy IE only)
 * [jquery.exists Plugin](https://github.com/markusfalk/jquery.exists)
-
-The main goal of the project is to incorporate dependency management for the web using [Bower](http://bower.io) to enable you to reuse great projects easily and streamline your everday workflow. It adds a unit testing environment and provides a number of quality assurance features. With the generator you can setup new projects and add or remove components.
 
 ## The setup
 
@@ -45,8 +54,8 @@ This is your working environment:
 |   |   |   └── <component-name>.scss
 |   |   |   └── <component-name>.html
 |   |   └── main.js #(main requirejs module)
-|   └── <project-name>.js #(require config)
-|   └── <project-name>.scss #(base file for SCSS)
+|   └── .js #(require config)
+|   └── .scss #(base file for SCSS)
 |── img/ #(images rendered by CMS)
 └── .bowerrc
 └── .csslintrc
@@ -261,7 +270,7 @@ $ yo kickstart
 
 ### Adding a new component
 
-The command will add your styles to the <project-name>.scss and to the requireJS config file. It will ask if the component is a 'standard module' or 'deferred module'. If the component uses JS this will do the following:
+The command will add your styles to the .scss and to the requireJS config file. It will ask if the component is a 'standard module' or 'deferred module'. If the component uses JS this will do the following:
 
 * **standard**: add requireJS module to main and add component to app/
 * **deferred**: you will have to require the module yourself and the component is added to app/_deferred/
@@ -274,21 +283,21 @@ You can also use this command multiple times on the same component to add HTML, 
 
 ### Removing a component
 
-This command removes a component, all its files and references in <project-name>.scss and <project-name>.js.
+This command removes a component, all its files and references in .scss and .js.
 
 ```bash
 $ yo kickstart:removecomponent <name>
 ```
 
-### Adding a Bower package
+### Adding a lib
 
-It is recommended to use bower itself to add new packages.
+It is recommended to use bower itself to add new packages to lib.
 
 ```bash
 $ bower install <package-name> --save
 ```
 
-Don't forget to add your lib to <project-name>.scss or <project-name>.js if needed.
+Don't forget to add your lib to &lt;project-name&gt;.scss or &lt;project-name&gt;.js if needed.
 Kickstart uses [sass-css-importer](https://github.com/chriseppstein/sass-css-importer) which lets you import CSS with 'CSS:'-prefix.
 
 ## License
