@@ -1,0 +1,22 @@
+## Getting started with kickstart
+
+### Requirements
+
+* [Node](https://nodejs.org/)
+* [Yeoman](http://yeoman.io)
+* [Grunt](http://gruntjs.com)
+* [Bower](http://bower.io)
+* [Ruby](https://www.ruby-lang.org/)
+* [Compass](http://compass-style.org/)
+* [Sass](http://sass-lang.com/)
+* [Sass CSS Importer Plugin](https://github.com/chriseppstein/sass-css-importer)
+
+Kickstart generates a Gemfile with the needed ruby gems. You can install with bundler into .bundles if you like. The folder is already included in .gitignore.
+
+### Installation
+
+Install Yeoman & Kickstart generator ([Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started))
+
+```bash
+$ npm install -g generator-kickstart
+```
