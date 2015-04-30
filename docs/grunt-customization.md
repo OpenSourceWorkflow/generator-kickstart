@@ -19,6 +19,8 @@ Creates JavaScript documentation in ```documentation/```.
 
 ## Customization of your grunt tasks
 
+For each customizable task there is a ```.*rc```-file that you can use to make these tasks fit your needs.
+
 * OOCSS-Linter: [.csslintrc](https://github.com/CSSLint/csslint/wiki/Rules)
 * JSHint-Linter: [.jshintrc](http://www.jshint.com/docs/options/)
 * accessibility-task: [.accessibilityrc](https://github.com/yargalot/grunt-accessibility/)
