@@ -7,7 +7,7 @@
 ## What is Kickstart?
 
 The Kickstart project is a yeoman generator. But it is also an open source workflow for creating the front-end of **websites** or **single page applications**.
-It is continuously tested and improved in an web agency environment and aims at small to large teams working on the HTML, CSS and JS.
+It is continuously tested and improved in an web agency environment and aims at small to large teams working with HTML, CSS and JS.
 
 ### Why use Kickstart?
 
@@ -16,7 +16,7 @@ The power of many can be used to solve problems quickly and automate the setup o
 * Linters ensure a high quality of code
 * Components and documentation standards makes it easy for teams to work together on a project
 * Dependency management makes it easy to work with an unified set of 3rd party libraries
-* Kickstart promotes test driven development for your java script
+* Kickstart promotes test driven development for your JavaScript
 * The whole setup is fully adjustable to fit your needs
 * and many more
 
