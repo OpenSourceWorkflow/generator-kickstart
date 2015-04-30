@@ -1,4 +1,4 @@
-## Getting started with kickstart
+## Getting started with Kickstart
 
 ### Requirements
 
@@ -11,7 +11,8 @@
 * [Sass](http://sass-lang.com/)
 * [Sass CSS Importer Plugin](https://github.com/chriseppstein/sass-css-importer)
 
-Kickstart generates a Gemfile with the needed ruby gems. You can install with bundler into .bundles if you like. The folder is already included in .gitignore.
+Kickstart generates a Gemfile with the needed ruby gems. You can install with bundler into ```.bundles/``` if you like.
+The folder is already included in .gitignore.
 
 ### Installation
 
