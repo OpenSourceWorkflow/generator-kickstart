@@ -19,11 +19,11 @@ The power of many can be used to solve problems quickly and automate the setup o
 
 ## Documentation
 
-* [Getting started with kickstart]()
-* [Directory structure and HTML placeholders]()
-* [Using kickstart]()
-* [Unit tests]()
-* [Grunt tasks and customization]()
-* [WYSIWYG CMS and legacy browser support]()
-* [Web technologies used]()
-* [License]()
+* [Getting started with kickstart](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/getting-started.md)
+* [Directory structure and HTML placeholders](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/directory-structure.md)
+* [Using kickstart](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/using-kickstart.md)
+* [Unit tests](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/unit-tests.md)
+* [Grunt tasks and customization](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/grunt-customization.md)
+* [WYSIWYG CMS and legacy browser support](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/wysiwyg-legacy.md)
+* [Web technologies used](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/technologies.md)
+* [License](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/license.md)
