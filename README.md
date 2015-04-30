@@ -1,4 +1,4 @@
-# Kickstart<br>The open source workflow for the web
+# Kickstart<br><small>The open source workflow for the web</small>
 
 <img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/20150425_falk_release-v3.2.0/docs/kickstart.png" alt="">
 
