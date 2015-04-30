@@ -1,12 +1,23 @@
-### Grunt Tasks
+## Grunt Tasks
 
-* **grunt** (produces assets with sourcemaps used for development)
-* **grunt watch** (used for development)
-* **grunt production** (produces minified and optimized assets for deployment)
-* **grunt test** (runs all quality assurance tasks, can be used in pre-commit hook)
-* **grunt doc** (creates JavaScript documentation)
+### grunt
+Builds the whole project into ```build/```.
 
-### Customization of your grunt tasks
+### grunt watch
+The ```watch```-task is used during development and smartly builds only what is needed.
+
+### grunt production
+Builds minified and optimized assets for deployment into ```build/```.
+Can be used by other deployment scripts to get the whole front-end production ready.
+
+### grunt test
+Runs all quality assurance tasks. This task can be used in a pre-commit hook to keep
+the repository on a high level of quality.
+
+### grunt doc
+Creates JavaScript documentation in ```documentation/```.
+
+## Customization of your grunt tasks
 
 * OOCSS-Linter: [.csslintrc](https://github.com/CSSLint/csslint/wiki/Rules)
 * JSHint-Linter: [.jshintrc](http://www.jshint.com/docs/options/)
