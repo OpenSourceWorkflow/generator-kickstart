@@ -1,4 +1,4 @@
-# Kickstart<br>The open source workflow for the web<br>[![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart)
+# Kickstart<br>The open source workflow for the web
 
 <img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/20150425_falk_release-v3.2.0/docs/kickstart.png" alt="">
 
@@ -18,7 +18,7 @@ The power of many can be used to solve problems quickly and automate the setup o
 * The whole setup is fully adjustable to fit your needs
 * and many more
 
-## Documentation
+## Documentation [![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart)
 
 * [Getting started with Kickstart](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/getting-started.md)
 * [Directory structure and HTML placeholders](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/directory-structure.md)
