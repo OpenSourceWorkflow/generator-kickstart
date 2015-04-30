@@ -33,9 +33,11 @@
 
     <footer class="footer"></footer>
 
+    <% if (wysiwygCMS) { %><!-- front-end only: --><% } %>
     <script data-main="assets/js/<%= ProjectName %>" src="assets/js/libs/require.js"></script>
+
     <% if (wysiwygCMS) { %>
-    <!-- for wysiwyg CMS:
+    <!-- used in wysiwyg CMS:
     <link rel="stylesheet" href="assets/css/app/_deferred/backend/backend.css">
     <script src="assets/js/libs/require.js"></script>
     <script charset="utf-8">
