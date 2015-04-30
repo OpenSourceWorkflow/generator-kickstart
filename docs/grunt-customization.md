@@ -1,10 +1,10 @@
 ### Grunt Tasks
 
-* grunt (produces assets with sourcemaps used for development)
-* grunt watch (used for development)
-* grunt production (produces minified and optimized assets for deployment)
-* grunt test (runs all quality assurance tasks)
-* grunt doc (creates JavaScript documentation)
+* **grunt** (produces assets with sourcemaps used for development)
+* **grunt watch** (used for development)
+* **grunt production** (produces minified and optimized assets for deployment)
+* **grunt test** (runs all quality assurance tasks)
+* **grunt doc** (creates JavaScript documentation)
 
 ### Customization
 
