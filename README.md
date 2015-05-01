@@ -1,4 +1,4 @@
-# Kickstart<br>
+# Kickstart
 
 <b>The open source workflow for the web</b>
 
@@ -30,3 +30,15 @@ The power of many can be used to solve problems quickly and automate the setup o
 * [WYSIWYG CMS and legacy browser support](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/wysiwyg-legacy.md)
 * [Web technologies used by Kickstart](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/technologies.md)
 * [License](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/license.md)
+
+## Want to contribute?
+
+An open source workflow profits from any contribution. There is many ways you can help:
+
+* [File a ticket](https://github.com/markusfalk/generator-kickstart/issues)
+* [Pull a request](https://github.com/markusfalk/generator-kickstart/pulls)
+* [Ask questions or give feedback on twitter](https://twitter.com/os_workflow)
+
+Thank you!
+
+Need your own custom yeoman generator? [Contact me.](mailto:mail@markus-falk.com)
