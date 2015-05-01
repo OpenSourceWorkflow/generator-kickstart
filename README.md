@@ -15,7 +15,7 @@ The power of many can be used to solve problems quickly and automate the setup o
 
 * Linters ensure a high quality of code
 * Components and documentation standards makes it easy for teams to work together on a project
-* Dependency management makes it easy to work with an unified set of 3rd party libraries
+* Dependency management make it easy to work with an unified set of 3rd party libraries
 * Kickstart promotes test driven development for your JavaScript
 * The whole setup is fully adjustable to fit your needs
 * and many more

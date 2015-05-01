@@ -16,7 +16,7 @@ The folder is already included in .gitignore.
 
 ### Installation
 
-Install Yeoman & Kickstart generator ([Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started))
+Install Yeoman & Kickstart generator ([Yeoman Getting Started Guide](http://yeoman.io/learning/index.html))
 
 ```bash
 $ npm install -g generator-kickstart
