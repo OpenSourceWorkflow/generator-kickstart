@@ -25,7 +25,7 @@ The power of many can be used to solve problems quickly and automate the setup o
 * [Getting started with Kickstart](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/getting-started.md)
 * [Directory structure and HTML placeholders](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/directory-structure.md)
 * [Using Kickstart](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/using-kickstart.md)
-* [Unit tests](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/unit-tests.md)
+* [Test driven development with QUnit and require.js](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/unit-tests.md)
 * [Grunt tasks and customization](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/grunt-customization.md)
 * [WYSIWYG CMS and legacy browser support](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/wysiwyg-legacy.md)
 * [Web technologies used by Kickstart](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/technologies.md)
@@ -33,7 +33,7 @@ The power of many can be used to solve problems quickly and automate the setup o
 
 ## Want to contribute?
 
-An open source workflow profits from any contribution. There is many ways you can help:
+Like any other open source project Kickstart also profits from any contribution.
 
 * [File a ticket](https://github.com/markusfalk/generator-kickstart/issues)
 * [Pull a request](https://github.com/markusfalk/generator-kickstart/pulls)
