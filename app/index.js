@@ -13,12 +13,8 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
     this.on('end', function () {
 
-      if (!this.options['skip-install']) {
-        this.installDependencies();
-      }
-
       if(this.wysiwygCMS) {
-        this.log('Don\'t forget run: ' + chalk.yellow('yo kickstart:addcomponent backend'));
+        this.log('Don\'t forget to run: ' + chalk.yellow('yo kickstart:addcomponent backend'));
         this.log('\n');
       }
     });
@@ -257,8 +253,13 @@ var KickstartGenerator = yeoman.generators.Base.extend({
       this.destinationPath('apple-touch-icon.png')
     );
 
-  }
+  },
 
+  install: function () {
+    if (!this.options['skip-install']) {
+      this.installDependencies();
+    }
+  }
 });
 
 module.exports = KickstartGenerator;
