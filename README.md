@@ -41,4 +41,4 @@ Like any other open source project Kickstart also profits from any contribution.
 
 Thank you!
 
-Need your own custom yeoman generator? [Contact me.](mailto:mail@markus-falk.com)
+Need your own custom yeoman generator? [Contact me.](mailto:kickstart@markus-falk.com)
