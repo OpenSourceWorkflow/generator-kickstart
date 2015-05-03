@@ -2,7 +2,7 @@
 
 <b>The open source workflow for the web</b>
 
-<img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/20150425_falk_release-v3.2.0/docs/kickstart.png" alt="">
+<img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/master/docs/kickstart.png" alt="">
 
 ## What is Kickstart?
 
@@ -22,14 +22,14 @@ The power of many can be used to solve problems quickly and automate the setup o
 
 ## Documentation [![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart)
 
-* [Getting started with Kickstart](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/getting-started.md)
-* [Directory structure and HTML placeholders](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/directory-structure.md)
-* [Using Kickstart](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/using-kickstart.md)
-* [Test driven development with QUnit and require.js](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/unit-tests.md)
-* [Grunt tasks and customization](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/grunt-customization.md)
-* [WYSIWYG CMS and legacy browser support](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/wysiwyg-legacy.md)
-* [Web technologies used by Kickstart](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/technologies.md)
-* [License](https://github.com/markusfalk/generator-kickstart/blob/20150425_falk_release-v3.2.0/docs/license.md)
+* [Getting started with Kickstart](https://github.com/markusfalk/generator-kickstart/blob/master/docs/getting-started.md)
+* [Directory structure and HTML placeholders](https://github.com/markusfalk/generator-kickstart/blob/master/docs/directory-structure.md)
+* [Using Kickstart](https://github.com/markusfalk/generator-kickstart/blob/master/docs/using-kickstart.md)
+* [Test driven development with QUnit and require.js](https://github.com/markusfalk/generator-kickstart/blob/master/docs/unit-tests.md)
+* [Grunt tasks and customization](https://github.com/markusfalk/generator-kickstart/blob/master/docs/grunt-customization.md)
+* [WYSIWYG CMS and legacy browser support](https://github.com/markusfalk/generator-kickstart/blob/master/docs/wysiwyg-legacy.md)
+* [Web technologies used by Kickstart](https://github.com/markusfalk/generator-kickstart/blob/master/docs/technologies.md)
+* [License](https://github.com/markusfalk/generator-kickstart/blob/master/docs/license.md)
 
 ## Want to contribute?
 

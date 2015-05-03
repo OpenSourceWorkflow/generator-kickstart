@@ -27,7 +27,7 @@
 └── favicon.ico
 └── package.json
 └── README.md
-└── sandbox.html #(main template)
+└── sandbox.html #(main template, you can add as many as you want)
 ```
 
 This is what it builds into:
@@ -49,9 +49,23 @@ build/
 
 Include your modules via placeholder into your main template files. This gives you great overview on your templates and makes it easy to git log your components.
 
-In your HTML you need to use one of the following placeholders for the 2 types of compontents. This will include the html from your component folder.
+Here is what you can do with them:
 
 ```html
-{app:{component-name}}
-{deferred:{component-name}}
+<html>
+  <head>Your sandbox.html</head>
+  <body>
+    <!-- insert app/component-name/component-name.html -->
+    {app:{component-name}}
+
+    <!-- insert app/component-name/alternate-file.html -->
+    {app:{component-name:{alternate-file}}}
+
+    <!-- insert app/_deferred/component-name/component-name.html -->
+    {deferred:{component-name}}
+
+    <!-- insert app/_deferred/component-name/alternate-file.html -->
+    {deferred:{component-name:{alternate-file}}}
+  <body>
+<html
 ```
