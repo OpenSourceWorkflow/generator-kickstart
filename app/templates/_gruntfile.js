@@ -76,17 +76,32 @@ module.exports = function(grunt) {
     replace: {
       modules: {
         options: {
+          excludeBuiltins: true,
           patterns: [
             {
-              match: /{app:{(.+)}}/g,
-              replacement: function (match, placeholder) {
-                return grunt.file.read('components/app/' + placeholder + '/' + placeholder + '.html');
+              match: /{(app|deferred):{(\w*|\-*)}}/g,
+              replacement: function (match, type, file) {
+
+                // use regular file
+
+                // add app folder to deferred component
+                type = type === 'deferred' ? 'app/_' + type : type;
+
+                // get file for replacement
+                return grunt.file.read('components/' + type + '/' + file + '/' + file + '.html');
               }
             },
             {
-              match: /{deferred:{(.+)}}/g,
-              replacement: function (match, placeholder) {
-                return grunt.file.read('components/app/_deferred/' + placeholder + '/' + placeholder + '.html');
+              match: /{(app|deferred):{(.+):{(.+)}}}/g,
+              replacement: function (match, type, component, alt_file) {
+
+                // use alternate file
+
+                // add app folder to deferred component
+                type = type === 'deferred' ? 'app/_' + type : type;
+
+                // get file for replacement
+                return grunt.file.read('components/' + type + '/' + component + '/' + alt_file + '.html');
               }
             }
           ]
