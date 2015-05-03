@@ -36,7 +36,7 @@ The power of many can be used to solve problems quickly and automate the setup o
 Like any other open source project Kickstart also profits from any contribution.
 
 * [File a ticket](https://github.com/markusfalk/generator-kickstart/issues)
-* [Pull a request](https://github.com/markusfalk/generator-kickstart/pulls)
+* [Send a pull request](https://github.com/markusfalk/generator-kickstart/pulls)
 * [Ask questions or give feedback on twitter](https://twitter.com/os_workflow)
 
 Thank you!
