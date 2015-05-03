@@ -1,18 +1,17 @@
 requirejs.config({
 	'appdir': '../',
-  'baseUrl': './',
-  'paths': {
+	'baseUrl': './',
+	'paths': {
+		//{{app}}
 
-  	//{{app}}
-
-    //{{libs}}
-    <% if (oldIE) { %>'respondJS': 'libs/respondJS/dest/respond.min',<% } %>
+		//{{libs}}
+		<% if (oldIE) { %>'respondJS': 'libs/respondJS/dest/respond.min',<% } %>
 		'jquery.exists': 'libs/jquery.exists/jquery.exists',
 		'jquery': 'libs/jquery/dist/jquery.min'
-  },
-  'shim': {
-    'jquery.exists': ['jquery']
-  }
+	},
+	'shim': {
+		'jquery.exists': ['jquery']
+	}
 });
 
 requirejs(['app/main']);
