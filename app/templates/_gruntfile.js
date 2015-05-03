@@ -239,7 +239,6 @@ module.exports = function(grunt) {
     },
 
     qunit: {
-      foo: ['qunit/qunit-test-suite.html'],
       all: {
         options: {
           urls: [
