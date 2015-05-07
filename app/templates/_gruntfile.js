@@ -14,37 +14,37 @@ module.exports = function(grunt) {
       // Styling
       scss: {
         files: 'components/**/*.scss',
-        tasks: ['newer:imagemin', 'sync', 'compass:development', 'modernizr', 'newer:csslint']
+        tasks: ['newer:imagemin', 'sync', 'compass:development', 'modernizr']
       },
 
       // Scripting
       js: {
         files: ['components/*.js', 'components/app/**/*.js', '!components/app/_deferred/**/*.js'],
-        tasks: ['requirejs:development', 'modernizr', 'newer:jshint'],
+        tasks: ['requirejs:development', 'modernizr']
       },
       js_deferred: {
         files: ['components/app/_deferred/**/*.js'],
-        tasks: ['newer:uglify:deferred_development', 'modernizr', 'newer:jshint'],
+        tasks: ['newer:uglify:deferred_development', 'modernizr']
       },
       js_bower: {
         files: ['components/libs/**/*.js'],
-        tasks: ['newer:uglify:external', 'requirejs:development'],
+        tasks: ['newer:uglify:external', 'requirejs:development']
       },
 
       // HTML
       html: {
         files: ['*.html', 'components/app/**/*.html' , '!components/libs/**/*.html', '!build/**/*.html'],
-        tasks: ['replace', 'newer:accessibility'],
+        tasks: ['replace']
       },
 
       // Images
       img_content: {
         files: 'img/**/*.{png,gif,jpg,svg}',
-        tasks: ['newer:imagemin:content'],
+        tasks: ['newer:imagemin:content']
       },
       img_background: {
         files: 'components/**/*.{png,gif,jpg,svg}',
-        tasks: ['clean:css', 'newer:imagemin:backgrounds' , 'compass:development', 'clean:css', 'clean:svg', 'newer:csslint'],
+        tasks: ['clean:css', 'newer:imagemin:backgrounds' , 'compass:development', 'clean:css', 'clean:svg']
       }
     },
 
