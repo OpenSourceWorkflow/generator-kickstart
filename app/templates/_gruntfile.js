@@ -336,6 +336,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jsdoc');
 
   grunt.registerTask('default', [
+    'clean:build',
     'replace',
     'imagemin',
     'sync',
@@ -356,7 +357,6 @@ module.exports = function(grunt) {
     'requirejs:production',
     'uglify:deferred_production',
     'uglify:external',
-    'clean',
     'modernizr'
    ]);
 
