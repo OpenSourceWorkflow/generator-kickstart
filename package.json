@@ -1,6 +1,6 @@
 {
   "name": "generator-kickstart",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "Yeoman generator for creating websites and single page applications",
   "license": "MIT",
   "main": "app/index.js",
