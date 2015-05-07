@@ -52,6 +52,7 @@ module.exports = function(grunt) {
       options: {
         asset_cache_buster: false,
         cssDir: 'build/assets/css',
+        httpFontsPath: '/assets/font',
         httpImagesPath: '/assets/img',
         imagesDir: 'build/assets/img',
         noLineComments: true,
@@ -61,14 +62,14 @@ module.exports = function(grunt) {
       },
       development: {
         options: {
-          sourcemap: true,
-          environment: 'development'
+          environment: 'development',
+          sourcemap: true
         }
       },
       production: {
         options: {
-          httpPath: "/", // . = relative
-          environment: 'production'
+          environment: 'production',
+          httpPath: "/" // . = relative
         }
       }
     },
