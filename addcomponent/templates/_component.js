@@ -39,7 +39,7 @@ define(['jquery', 'jquery.exists'], function($) {
     }
   };
 
-  return /** @alias module:Foo */ {
+  return /** @alias module:<%= class_name %> */ {
     /** init */
     init: <%= class_name %>.init
   };
