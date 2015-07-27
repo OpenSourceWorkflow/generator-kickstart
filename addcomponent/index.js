@@ -126,18 +126,24 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
           class_name: string.classify(this.name),
           _name: string.underscored(this.name),
           slug_name: string.slugify(this.name)
-
         }
       );
+    }
+
+    // use underscored file name for standard modules
+    var SCSSFile = path + '/_' + string.slugify(this.name) + '.scss';
+
+    // use normal filename to render deferred file
+    if(this.ComponentType === 'DeferredModule') {
+      SCSSFile = path + '/' + string.slugify(this.name) + '.scss';
     }
 
     if (this.includeSCSS) {
       this.fs.copyTpl(
         this.templatePath('_component.scss'),
-        this.destinationPath(path + '/' + string.slugify(this.name) + '.scss'),
+        this.destinationPath(SCSSFile),
         {
           slug_name: string.slugify(this.name)
-
         }
       );
     }
@@ -148,7 +154,6 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
         this.destinationPath(path + '/' + string.slugify(this.name) + '.html'),
         {
           slug_name: string.slugify(this.name)
-
         }
       );
     }

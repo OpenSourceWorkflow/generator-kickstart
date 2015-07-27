@@ -18,7 +18,7 @@ describe('Kickstart:addcomponent', function () {
     var files = [
       'components/app/foo/foo.js',
       'components/app/foo/test-foo.js',
-      'components/app/foo/foo.scss',
+      'components/app/foo/_foo.scss',
       'components/app/foo/foo.html'
     ];
 
