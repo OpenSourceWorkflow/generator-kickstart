@@ -29,3 +29,4 @@ This is a kickstarted project:  https://github.com/markusfalk/generator-kickstar
 * [Yeoman](http://yeoman.io)
 * [Grunt](http://gruntjs.com)
 * [Bower](http://bower.io)
+* [Bundler](http://bundler.io)
