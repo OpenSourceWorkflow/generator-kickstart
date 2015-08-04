@@ -25,6 +25,7 @@ The power of many can be used to solve problems quickly and automate the setup o
 * [Getting started with Kickstart](https://github.com/markusfalk/generator-kickstart/blob/master/docs/getting-started.md)
 * [Directory structure and HTML placeholders](https://github.com/markusfalk/generator-kickstart/blob/master/docs/directory-structure.md)
 * [Using Kickstart](https://github.com/markusfalk/generator-kickstart/blob/master/docs/using-kickstart.md)
+* [JS Code Style](https://github.com/markusfalk/generator-kickstart/blob/master/docs/js-codestyle.md)
 * [Test driven development with QUnit and require.js](https://github.com/markusfalk/generator-kickstart/blob/master/docs/unit-tests.md)
 * [Grunt tasks and customization](https://github.com/markusfalk/generator-kickstart/blob/master/docs/grunt-customization.md)
 * [WYSIWYG CMS and legacy browser support](https://github.com/markusfalk/generator-kickstart/blob/master/docs/wysiwyg-legacy.md)
