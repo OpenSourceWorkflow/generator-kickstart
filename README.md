@@ -20,7 +20,7 @@ The power of many can be used to solve problems quickly and automate the setup o
 * The whole setup is fully adjustable to fit your needs
 * and many more
 
-## Documentation [![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart)
+## Documentation [![Dependency Status](https://gemnasium.com/markusfalk/generator-kickstart.svg)](https://gemnasium.com/markusfalk/generator-kickstart) [![Build Status](https://travis-ci.org/markusfalk/generator-kickstart.svg?branch=20150416_falk_test-creation-pass)](https://travis-ci.org/markusfalk/generator-kickstart) [![Code Climate](https://codeclimate.com/github/markusfalk/generator-kickstart/badges/gpa.svg)](https://codeclimate.com/github/markusfalk/generator-kickstart)
 
 * [Getting started with Kickstart](https://github.com/markusfalk/generator-kickstart/blob/master/docs/getting-started.md)
 * [Directory structure and HTML placeholders](https://github.com/markusfalk/generator-kickstart/blob/master/docs/directory-structure.md)
