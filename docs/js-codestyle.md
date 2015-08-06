@@ -109,7 +109,7 @@ var foo = ''; // always use descriptive names
 
 
 ```javascript
-// Use '$' to indicate a variables containing a jQuery object
+// Use '$' to indicate variables containing jQuery objects
 var $foo = $('.foo');
 
 $('.bar').on('click', function() {
