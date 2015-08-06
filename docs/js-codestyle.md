@@ -75,7 +75,7 @@ bar = 'StringB';
 ## Naming
 
 * Use camel casing
-* use verb to start describing function
+* use verb to start function names
 
 ### Public functions
 ```javascript
