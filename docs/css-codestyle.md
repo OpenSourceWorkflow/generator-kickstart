@@ -46,7 +46,7 @@ In Kickstart projects all of these properties are set by default. An editorconfi
     color: red;
   }
 
-  // use linebreaks to separat blocks
+  // use linebreaks to seperate blocks
   a {
     color: blue; // alphabetical order
     font-size: 1rem;

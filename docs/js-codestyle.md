@@ -212,3 +212,13 @@ define([ // line break long dependency arrays for readability
   };
 });
 ```
+
+```javascript
+// BAD
+foo === bar && foobar(); // don't short circuit
+
+// GOOD
+if (foo === bar) { // improved readability
+  foobar();
+}
+```
