@@ -38,6 +38,17 @@ foo(arg1, argN);
 foo(function() {
   // code
 });
+
+// In Object literals use empty before and after functions and return
+var Foo = {
+
+  foo: function() {},
+
+  bar: function() {}
+
+  return {};
+
+};
 ```
 
 ### Declarations
@@ -175,4 +186,18 @@ define(['jquery', 'jquery.exists'], function($, exists) {
   };
 
 });
+```
+
+## Misc
+
+```javascript
+var Foo = { // Camel case object literals
+
+  'use strict' / use strict mode
+
+  foo: function() {},
+
+  bar: function() {}
+
+};
 ```
