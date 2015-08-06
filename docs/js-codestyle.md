@@ -1,9 +1,5 @@
 # JS Style Guide
 
-* Idiomatic?
-* jQuery Style?
-* https://www.npmjs.com/package/grunt-jscs
-
 ## White space
 
 In Kickstart projects all of these properties are set by default. An editorconfig file is created with these values.
