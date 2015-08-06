@@ -39,7 +39,7 @@ foo(function() {
   // code
 });
 
-// In Object literals use empty before and after functions and return
+// In Object literals use empty line before and after functions and return
 var Foo = {
 
   foo: function() {},
