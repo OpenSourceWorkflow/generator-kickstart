@@ -191,13 +191,24 @@ define(['jquery', 'jquery.exists'], function($, exists) {
 ## Misc
 
 ```javascript
-var Foo = { // Camel case object literals
+define([ // line break long dependency arrays for readability
+  'jquery',
+  'jquery.exists'
+], function($, exists) { // pass all dependencies to avoid globals, watch order!
 
-  'use strict' / use strict mode
+  'use strict' // use strict mode
 
-  foo: function() {},
+  var Foo = { // Camel case object literals
 
-  bar: function() {}
+    foo: function() {},
 
-};
+    bar: function() {}
+
+    return /** @alias module:Foo */ {
+      /** init */
+      foo: Foo.foo
+    };
+
+  };
+});
 ```
