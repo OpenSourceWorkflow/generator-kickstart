@@ -1,9 +1,10 @@
 'use strict';
+
+var chalk = require('chalk');
+var mkdirp = require('mkdirp');
+var string = require('underscore.string');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
-var chalk = require('chalk');
-var string = require('underscore.string');
-var mkdirp = require('mkdirp');
 
 var KickstartGenerator = yeoman.generators.Base.extend({
 

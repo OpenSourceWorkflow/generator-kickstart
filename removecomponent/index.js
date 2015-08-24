@@ -1,7 +1,7 @@
 'use strict';
-var yeoman = require('yeoman-generator');
+
 var string = require('underscore.string');
-var wire = require("html-wiring");
+var yeoman = require('yeoman-generator');
 
 module.exports = yeoman.generators.Base.extend({
 

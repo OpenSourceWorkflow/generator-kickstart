@@ -1,16 +1,13 @@
 'use strict';
-var util = require('util');
-var yeoman = require('yeoman-generator');
+
 var chalk = require('chalk');
-var string = require('underscore.string');
-var wire = require("html-wiring");
 var mkdirp = require('mkdirp');
+var string = require('underscore.string');
+var yeoman = require('yeoman-generator');
 
 var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   init: function () {
-
-    // this.argument('name');
 
     this.pkg = this.fs.readJSON('package.json');
 

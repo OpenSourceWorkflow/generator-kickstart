@@ -1,15 +1,8 @@
 'use strict';
-var path = require('path');
 
-var memFs = require('mem-fs');
-var editor = require('mem-fs-editor');
-var store = memFs.create();
-var fs = editor.create(store);
-
-var fse = require('fs-extra')
-
-var helpers = require('yeoman-generator').test;
 var assert = require('yeoman-generator').assert;
+var helpers = require('yeoman-generator').test;
+var path = require('path');
 
 describe('Kickstart:removecomponent', function () {
 
