@@ -16,6 +16,7 @@ chalk = require('chalk'),
 mkdirp = require('mkdirp'),
 string = require('underscore.string'),
 yeoman = require('yeoman-generator'),
+lineNumber = require('line-number'),
 
 AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
@@ -30,21 +31,17 @@ AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
     this.on('end', function () {
 
-      this.log('\n');
-
+      // output a little help
       if (this.ComponentType === 'standardModule') {
-        this.log('Added component ' + this.name + ' to components/app/' + string.slugify(this.name));
         if(this.includeHTML) {
           this.log('You can use it in your HTML with ' + chalk.yellow('{app:{' + string.slugify(this.name) + '}}'));
         }
       } else {
-        this.log('Added component ' + this.name + ' to components/app/_deferred/' + string.slugify(this.name));
         if(this.includeHTML) {
           this.log('You can use it in your HTML with ' + chalk.yellow('{deferred:{' + string.slugify(this.name) + '}}'));
         }
       }
 
-      this.log('\n');
     });
   },
 
@@ -213,24 +210,27 @@ AddcomponentGenerator = yeoman.generators.NamedBase.extend({
   addStyling: function () {
     if (this.includeSCSS) {
 
-      var path = 'components/' + this.pkg.name + '.scss';
+      var
+      path = 'components/' + this.pkg.name + '.scss';
 
       // also enable to use hidden scss with _
       // this way project-name.scss can be imported
       // for theming support
-
       if(!this.fs.exists(path)) {
         path = 'components/_' + this.pkg.name + '.scss';
       }
 
+      // read
       var file = this.fs.read(path);
 
+      // compose
       if (this.ComponentType === 'standardModule') {
         file += '@import "app/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '";\n';
       } else {
         file += '@import "app/_deferred/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '";\n';
       }
 
+      // write
       this.fs.write(path, file);
     }
   },
@@ -246,23 +246,29 @@ AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
       var
       path = 'components/' + this.pkg.name + '.js',
-      file = this.fs.read(path);
+      file = this.fs.read(path),
+      match = '//{{app}}',
+      regex = new RegExp(string.slugify(this.name), 'g'),
+      foo = lineNumber(file, regex),
+      newcontent,
+      newfile;
 
-      if(this.includeJS) {
-        var
-        match = '//{{app}}',
-        newcontent;
-
-        if (this.ComponentType === 'standardModule') {
-          newcontent = '//{{app}}\n    \'' + string.slugify(this.name) + '\': \'' + 'app/' + string.slugify(this.name) + '/'+ string.slugify(this.name) + '\',';
-        } else {
-          newcontent = '//{{app}}\n    \'' + string.slugify(this.name) + '\': \'' + 'app/_deferred/' + string.slugify(this.name) + '/'+ string.slugify(this.name) + '\',';
-        }
-
-        var newfile = file.replace(match, newcontent);
+      if (this.ComponentType === 'standardModule') {
+        newcontent = '//{{app}}\n    \'' + string.slugify(this.name) + '\': \'' + 'app/' + string.slugify(this.name) + '/'+ string.slugify(this.name) + '\',';
+      } else {
+        newcontent = '//{{app}}\n    \'' + string.slugify(this.name) + '\': \'' + 'app/_deferred/' + string.slugify(this.name) + '/'+ string.slugify(this.name) + '\',';
       }
 
-      this.fs.write(path, newfile);
+      if(foo.length === 0) {
+
+        // replace and write if component isn't defined in config
+        newfile = file.replace(match, newcontent);
+        this.fs.write(path, newfile);
+
+      } else {
+        // component is already in config file
+        this.log('Component already defined. On line: ' + foo[0].number);
+      }
 
     }
   }
