@@ -1,0 +1,11 @@
+files:
+  # defaults to ["{app,lib}/**/*.rb"]
+  included:
+    - app/**/*.js
+    - addcomponent/**/*.js
+    - removecomponent/**/*.js
+
+  # defaults to []
+  excluded:
+    - app/templates/**/*.js
+    - addcomponent/templates/**/*.js

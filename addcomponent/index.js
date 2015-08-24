@@ -1,12 +1,29 @@
+/**
+ * Adds a new component to the project.
+ * @module AddcomponentGenerator
+ * @requires chalk
+ * @requires mkdirp
+ * @requires underscore.string
+ * @requires yeoman-generator
+ * @author mail@markus-falk.com
+ */
+
 'use strict';
 
-var chalk = require('chalk');
-var mkdirp = require('mkdirp');
-var string = require('underscore.string');
-var yeoman = require('yeoman-generator');
+var
 
-var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
+chalk = require('chalk'),
+mkdirp = require('mkdirp'),
+string = require('underscore.string'),
+yeoman = require('yeoman-generator'),
 
+AddcomponentGenerator = yeoman.generators.NamedBase.extend({
+
+  /**
+   * Loads package.json and waits for callback to finish. Also tells user what happened and gives a little help.
+   * @function init
+   * @private
+   */
   init: function () {
 
     this.pkg = this.fs.readJSON('package.json');
@@ -31,10 +48,21 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     });
   },
 
+  /**
+   * Converts user's answers into Booleans.
+   * @function _hasFeature
+   * @returns {Boolean} Is this feature wanted?
+   * @private
+   */
   _hasFeature: function (feature) {
     return this.features && this.features.indexOf(feature) !== -1;
   },
 
+  /**
+   * Asks user questions about the component.
+   * @function askForApp
+   * @private
+   */
   askForApp: function () {
     var done = this.async();
 
@@ -96,6 +124,11 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     }.bind(this));
   },
 
+  /**
+   * Set paths depending on user's answers.
+   * @function setDefaults
+   * @private
+   */
   setDefaults: function () {
 
     if (this.ComponentType === 'standardModule') {
@@ -106,6 +139,11 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
   },
 
+  /**
+   * Add all wanted files to the new component.
+   * @function addApp
+   * @private
+   */
   addApp: function () {
 
     // set path
@@ -167,6 +205,11 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     }
   },
 
+  /**
+   * Add the new component to the scss base file.
+   * @function addStyling
+   * @private
+   */
   addStyling: function () {
     if (this.includeSCSS) {
 
@@ -192,6 +235,11 @@ var AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     }
   },
 
+  /**
+   * Add the new component to the requirejs config file.
+   * @function addToRequireJS
+   * @private
+   */
   addToRequireJS: function () {
 
     if(this.includeJS) {

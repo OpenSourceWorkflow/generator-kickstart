@@ -1,13 +1,31 @@
+/**
+ * Generates a new project.
+ * @module KickstartGenerator
+ * @requires chalk
+ * @requires mkdirp
+ * @requires underscore.string
+ * @requires yeoman-generator
+ * @requires yosay
+ * @author mail@markus-falk.com
+ */
+
 'use strict';
 
-var chalk = require('chalk');
-var mkdirp = require('mkdirp');
-var string = require('underscore.string');
-var yeoman = require('yeoman-generator');
-var yosay = require('yosay');
+var
 
-var KickstartGenerator = yeoman.generators.Base.extend({
+chalk = require('chalk'),
+mkdirp = require('mkdirp'),
+string = require('underscore.string'),
+yeoman = require('yeoman-generator'),
+yosay = require('yosay'),
 
+KickstartGenerator = yeoman.generators.Base.extend({
+
+  /**
+   * Loads package.json and waits for callback to finish.
+   * @function init
+   * @private
+   */
   init: function () {
 
     this.pkg = require('../package.json');
@@ -22,6 +40,11 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
   },
 
+  /**
+   * Ask user on project details.
+   * @function askFor
+   * @private
+   */
   askFor: function () {
     var done = this.async();
 
@@ -99,10 +122,20 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     }.bind(this));
   },
 
+  /**
+   * Create empty folders needed for project.
+   * @function folders
+   * @private
+   */
   folders: function () {
     mkdirp.mkdirp('img');
   },
 
+  /**
+   * Create all package files from templates.
+   * @function packagefiles
+   * @private
+   */
   packagefiles: function () {
 
     this.fs.copyTpl(
@@ -182,6 +215,11 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
   },
 
+  /**
+   * Create all javascript files from templates.
+   * @function javascript
+   * @private
+   */
   javascript: function () {
 
     this.fs.copyTpl(
@@ -201,6 +239,11 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     );
   },
 
+  /**
+   * Create all files needed for QUnit from templates.
+   * @function qunit
+   * @private
+   */
   qunit: function () {
 
     this.fs.copyTpl(
@@ -223,6 +266,11 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
   },
 
+  /**
+   * Create all scss files from templates.
+   * @function styles
+   * @private
+   */
   styles: function () {
     this.fs.copyTpl(
       this.templatePath('_frontend-template-setup.scss'),
@@ -230,6 +278,11 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     );
   },
 
+  /**
+   * Create all HTML files from templates.
+   * @function html
+   * @private
+   */
   html: function () {
     this.fs.copyTpl(
       this.templatePath('_sandbox.html'),
@@ -242,6 +295,11 @@ var KickstartGenerator = yeoman.generators.Base.extend({
     );
   },
 
+  /**
+   * Create all images from templates.
+   * @function images
+   * @private
+   */
   images: function () {
 
     this.fs.copy(
@@ -256,11 +314,17 @@ var KickstartGenerator = yeoman.generators.Base.extend({
 
   },
 
+  /**
+   * Automatically install all node/bower dependencies.
+   * @function install
+   * @private
+   */
   install: function () {
     if (!this.options['skip-install']) {
       this.installDependencies();
     }
   }
+
 });
 
 module.exports = KickstartGenerator;
