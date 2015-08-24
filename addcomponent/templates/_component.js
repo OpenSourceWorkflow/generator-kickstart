@@ -5,11 +5,12 @@
  * @requires jquery.exists
  * @author TODO: add author
  */
-define(['jquery', 'jquery.exists'], function($) {
+define(['jquery', 'jquery.exists'], function($, exists) {
 
   'use strict';
 
   var <%= class_name %> = {
+
     /**
      * Caches all jQuery Objects for later use.
      * @function _cacheElements
@@ -18,6 +19,7 @@ define(['jquery', 'jquery.exists'], function($) {
     _cacheElements: function() {
       this.$<%= _name %> = $('.<%= slug_name %>');
     },
+
     /**
      * Initiates the module.
      * @function init
@@ -30,6 +32,7 @@ define(['jquery', 'jquery.exists'], function($) {
         <%= class_name %>._bindEvents();
       });
     },
+
     /**
      * Binds all events to jQuery DOM objects.
      * @function _bindEvents
@@ -37,6 +40,7 @@ define(['jquery', 'jquery.exists'], function($) {
      */
     _bindEvents: function() {
     }
+
   };
 
   return /** @alias module:<%= class_name %> */ {
