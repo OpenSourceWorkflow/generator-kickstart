@@ -44,7 +44,7 @@ module.exports = function(grunt) {
       },
       img_background: {
         files: 'components/**/*.{png,gif,jpg,svg}',
-        tasks: ['clean:css', 'newer:imagemin:backgrounds' , 'compass:development', 'clean:css', 'clean:svg']
+        tasks: ['clean:css', 'newer:imagemin:backgrounds' , 'compass:development', 'clean:css']
       },
 
       // JSON
@@ -234,9 +234,6 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      svg: {
-        src: ["build/assets/img/**/*.svg"]
-      },
       css: {
         src: ["build/assets/css/**/*.css"]
       },
@@ -351,7 +348,6 @@ module.exports = function(grunt) {
     'requirejs:development',
     'uglify:deferred_development',
     'uglify:external',
-    'clean:svg',
     'modernizr'
   ]);
 
