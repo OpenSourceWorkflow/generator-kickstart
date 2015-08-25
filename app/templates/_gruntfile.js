@@ -45,6 +45,12 @@ module.exports = function(grunt) {
       img_background: {
         files: 'components/**/*.{png,gif,jpg,svg}',
         tasks: ['clean:css', 'newer:imagemin:backgrounds' , 'compass:development', 'clean:css', 'clean:svg']
+      },
+
+      // JSON
+      json: {
+        files: ['components/app/**/*.json'],
+        tasks: ['sync:json'],
       }
     },
 
