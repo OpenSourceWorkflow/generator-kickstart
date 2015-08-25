@@ -8,25 +8,29 @@ describe('Kickstart:addcomponent', function () {
 
   describe('yo kickstart:addcomponent foo (standardModule)', function () {
 
-    var files = [
+    // environment
+    var
+
+    files = [
       'components/app/foo/foo.js',
       'components/app/foo/test-foo.js',
       'components/app/foo/_foo.scss',
       'components/app/foo/foo.html'
-    ];
+    ],
 
-    var prompts = {
+    prompts = {
       ComponentType: 'standardModule',
       whatFiles: ['includeHTML', 'includeSCSS', 'includeJS', 'includeQUnit']
-    };
+    },
 
-    var options = {
+    options = {
       'skip-install-message': true,
       'skip-install': true,
       'skip-welcome-message': true,
       'skip-message': true
     };
 
+    // setup
     before(function (done) {
 
       helpers.run(path.join( __dirname, '../addcomponent'))
@@ -61,6 +65,7 @@ describe('Kickstart:addcomponent', function () {
 
     });
 
+    // Tests
     it('have all files been created?', function () {
       assert.file(files);
     });
