@@ -315,14 +315,20 @@ KickstartGenerator = yeoman.generators.Base.extend({
   },
 
   /**
-   * Automatically install all node/bower dependencies.
+   * Automatically install all dependencies.
    * @function install
    * @private
    */
   install: function () {
+
     if (!this.options['skip-install']) {
+      // bower & npm
       this.installDependencies();
+
+      // gems
+      this.spawnCommand('bundle', ['install']);
     }
+
   }
 
 });

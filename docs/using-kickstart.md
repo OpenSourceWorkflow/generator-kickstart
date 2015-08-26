@@ -3,8 +3,10 @@
 Navigate to an **empty** folder where you want to setup your new project. Then use the following command to start the generator and answer a few questions. It will ask for a few things put to a README.md and what libs you might want to use.
 
 ```bash
-$ yo kickstart
+$ yo kickstart [--skip-install]
 ```
+
+With 'skip-install' option set Kickstart will not install node, bower or gems.
 
 ### Adding a new component
 

@@ -2,19 +2,19 @@
 
 ### Requirements
 
-* [Node](https://nodejs.org/)
-* [Yeoman](http://yeoman.io)
-* [Grunt](http://gruntjs.com)
 * [Bower](http://bower.io)
-* [Ruby](https://www.ruby-lang.org/)
+* [Bundler](http://bundler.io/)
 * [Compass](http://compass-style.org/)
-* [Sass](http://sass-lang.com/)
+* [Grunt](http://gruntjs.com)
+* [Node](https://nodejs.org/)
+* [Ruby](https://www.ruby-lang.org/)
 * [Sass CSS Importer Plugin](https://github.com/chriseppstein/sass-css-importer)
+* [Sass](http://sass-lang.com/)
+* [Yeoman](http://yeoman.io)
 
-Kickstart generates a Gemfile with the needed ruby gems. You can install with bundler into ```.bundles/``` if you like.
-The folder is already included in .gitignore.
+Kickstart generates a Gemfile with the needed ruby gems.
 
-### Installation
+### Install Kickstart
 
 Install Yeoman & Kickstart generator ([Yeoman Getting Started Guide](http://yeoman.io/learning/index.html))
 
