@@ -154,8 +154,8 @@ KickstartGenerator = yeoman.generators.Base.extend({
     );
 
     this.fs.copyTpl(
-      this.templatePath('_gemfile'),
-      this.destinationPath('Gemfile')
+      this.templatePath('_gems.rb'),
+      this.destinationPath('gems.rb')
     );
 
     this.fs.copyTpl(
