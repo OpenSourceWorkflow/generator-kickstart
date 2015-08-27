@@ -38,6 +38,7 @@ describe('Kickstart:app', function () {
       GraphicDesigner: 'Sascha',
       HTMLDeveloper: 'Markus',
       wysiwygCMS: false,
+      livereload: true,
       oldIE: false,
       WCAG2: 'A'
     };
@@ -67,6 +68,10 @@ describe('Kickstart:app', function () {
 
     it('is the right JS wired to sandbox.html?', function () {
       assert.fileContent('sandbox.html', /data-main="assets\/js\/foo"/);
+    });
+
+    it('is livereload.js wired to sandbox.html?', function () {
+      assert.fileContent('sandbox.html', /livereload\.js\?snipver/);
     });
 
   });

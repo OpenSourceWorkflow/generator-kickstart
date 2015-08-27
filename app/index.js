@@ -85,6 +85,12 @@ KickstartGenerator = yeoman.generators.Base.extend({
         default: false
       },
       {
+        type: 'confirm',
+        name: 'livereload',
+        message: 'Would you like include livereload.js into your sandbox.html?',
+        default: true
+      },
+      {
         type: 'list',
         name: 'WCAG2',
         message: 'What WCAG2A level would you like to develop for?',
@@ -113,6 +119,9 @@ KickstartGenerator = yeoman.generators.Base.extend({
 
       // wysiwygCMS
       this.wysiwygCMS = answers.wysiwygCMS;
+
+      // livereload
+      this.livereload = answers.livereload;
 
       // Support level
       this.oldIE = answers.oldIE;
@@ -290,7 +299,8 @@ KickstartGenerator = yeoman.generators.Base.extend({
       {
         ProjectName: this.ProjectName,
         oldIE: this.oldIE,
-        wysiwygCMS: this.wysiwygCMS
+        wysiwygCMS: this.wysiwygCMS,
+        livereload: this.livereload
       }
     );
   },
