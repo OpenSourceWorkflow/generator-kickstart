@@ -7,50 +7,57 @@ module.exports = function(grunt) {
 
     watch: {
       options: {
-        livereload: true,
         spawn: false
       },
 
       // Styling
       scss: {
         files: 'components/**/*.scss',
-        tasks: ['newer:imagemin', 'sync', 'compass:development', 'modernizr']
+        tasks: ['sync:webfonts', 'imagemin', 'compass:development', 'modernizr']
       },
 
       // Scripting
       js: {
         files: ['components/*.js', 'components/app/**/*.js', '!components/app/_deferred/**/*.js'],
-        tasks: ['requirejs:development', 'modernizr']
+        tasks: ['requirejs:development', 'modernizr'],
       },
       js_deferred: {
         files: ['components/app/_deferred/**/*.js'],
-        tasks: ['newer:uglify:deferred_development', 'modernizr']
+        tasks: ['uglify:deferred', 'modernizr'],
       },
       js_bower: {
-        files: ['components/libs/**/*.js'],
-        tasks: ['newer:uglify:external', 'requirejs:development']
+        files: ['components/bower/**/*.js'],
+        tasks: ['uglify:external', 'requirejs:development'],
+      },
+      json: {
+        options: { livereload: true },
+        files: ['components/app/**/*.json'],
+        tasks: ['sync:json'],
       },
 
       // HTML
       html: {
-        files: ['*.html', 'components/app/**/*.html' , '!components/libs/**/*.html', '!build/**/*.html'],
-        tasks: ['replace']
+        options: { livereload: true },
+        files: ['*.html','components/app/**/*.html' , '!components/bower/**/*.html', '!build/**/*.html'],
+        tasks: ['replace'],
       },
 
       // Images
       img_content: {
+        options: { livereload: true },
         files: 'img/**/*.{png,gif,jpg,svg}',
-        tasks: ['newer:imagemin:content']
+        tasks: ['imagemin:content'],
       },
       img_background: {
+        options: { livereload: true },
         files: 'components/**/*.{png,gif,jpg,svg}',
-        tasks: ['clean:css', 'newer:imagemin:backgrounds' , 'compass:development', 'clean:css']
+        tasks: ['clean:css', 'imagemin:backgrounds' , 'compass:development', 'clean:development'],
       },
 
-      // JSON
-      json: {
-        files: ['components/app/**/*.json'],
-        tasks: ['sync:json'],
+      // websocket support
+      livereload: {
+        options: { livereload: true },
+        files: ['build/**/*.{css,js}']
       }
     },
 
