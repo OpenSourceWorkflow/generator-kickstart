@@ -16,28 +16,37 @@ yeoman = require('yeoman-generator'),
 RemovecomponentGenerator = yeoman.generators.NamedBase.extend({
 
   /**
-   * Loads package.json and sets required arguments.
-   * @function init
+   * Sets required arguments.
+   * @function constructor
    * @private
    */
-  init: function () {
-
-    this.pkg = this.fs.readJSON('package.json');
+  constructor: function () {
+    // console.log(yeoman.NamedBase);
+    yeoman.Base.apply(this, arguments);
 
     this.argument('name', {
       required: true,
       type: String,
-      desc: 'The component name'
+      desc: 'The component name.'
     });
 
   },
 
   /**
-   * Asks user questions about the component.
-   * @function askForApp
+   * Loads package.json.
+   * @function getPackage
    * @private
    */
-  askForApp: function () {
+  getPackage: function () {
+    this.pkg = this.fs.readJSON('package.json');
+  },
+
+  /**
+   * Asks user questions about the component.
+   * @function prompts
+   * @private
+   */
+  prompts: function () {
     var done = this.async();
 
     var prompts = [
