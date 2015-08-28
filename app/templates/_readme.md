@@ -18,15 +18,13 @@ Level: <%= WCAG2 %>
 
 This is a kickstarted project:  https://github.com/markusfalk/generator-kickstart
 
-## Customization
-
-* [.csslintrc](https://github.com/CSSLint/csslint/wiki/Rules)
-* [.jshintrc](http://www.jshint.com/docs/options/)
-
 ## Requirements
 
-* [npm](https://npmjs.org)
-* [Yeoman](http://yeoman.io)
-* [Grunt](http://gruntjs.com)
 * [Bower](http://bower.io)
-* [Bundler](http://bundler.io)
+* [Bundler](http://bundler.io/)
+* [Compass](http://compass-style.org/)
+* [Grunt](http://gruntjs.com)
+* [Node](https://nodejs.org/)
+* [Ruby](https://www.ruby-lang.org/)
+* [Sass CSS Importer Plugin](https://github.com/chriseppstein/sass-css-importer)
+* [Sass](http://sass-lang.com/)

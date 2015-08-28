@@ -121,8 +121,8 @@ describe('Kickstart:app', function () {
     });
 
     it('is modernizr\'s shiv and printshiv set to true?', function () {
-      assert.fileContent('gruntfile.js', /"shiv" : true/);
-      assert.fileContent('gruntfile.js', /"printshiv" : true/);
+      assert.fileContent('gruntfile.js', /'shiv' : true/);
+      assert.fileContent('gruntfile.js', /'printshiv' : true/);
     });
 
     it('is legacy support noted in README?', function () {
