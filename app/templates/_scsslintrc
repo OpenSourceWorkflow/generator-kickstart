@@ -1,0 +1,9 @@
+linters:
+  SelectorFormat:
+    enabled: false
+  NameFormat:
+    enabled: false
+  LeadingZero:
+    enabled: false
+  Comment:
+    enabled: false

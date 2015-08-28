@@ -326,6 +326,18 @@ module.exports = function(grunt) {
           destination: 'documentation'
         }
       }
+    },
+
+    scsslint: {
+      options: {
+        bundleExec: true,
+        config: '.scsslintrc',
+        colorizeOutput: true,
+        reporterOutput: null
+      },
+      scss: [
+        'components/app/**/*.scss',
+      ]
     }
 
   });
@@ -333,19 +345,20 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-accessibility');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-contrib-qunit');
-  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-replace');
-  grunt.loadNpmTasks('grunt-sync');
-  grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-jsdoc');
+  grunt.loadNpmTasks('grunt-modernizr');
+  grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-replace');
+  grunt.loadNpmTasks('grunt-scss-lint');
+  grunt.loadNpmTasks('grunt-sync');
 
   grunt.registerTask('default', [
     'clean:build',
@@ -373,6 +386,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('test', [
     'csslint',
+    'scsslint',
     'jshint',
     'accessibility',
     'connect',
