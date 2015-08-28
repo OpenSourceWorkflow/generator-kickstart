@@ -64,6 +64,7 @@ module.exports = function(grunt) {
     compass: {
       options: {
         asset_cache_buster: false,
+        bundleExec: true,
         cssDir: 'build/assets/css',
         httpFontsPath: '/assets/font',
         httpImagesPath: '/assets/img',
