@@ -134,9 +134,9 @@ module.exports = function(grunt) {
 
     requirejs: {
       options: {
-        mainConfigFile: "components/<%= ProjectName %>.js",
-        name: "<%= ProjectName %>",
-        out: "build/assets/js/<%= ProjectName %>.js",
+        mainConfigFile: 'components/<%= ProjectName %>.js',
+        name: '<%= ProjectName %>',
+        out: 'build/assets/js/<%= ProjectName %>.js',
         useStrict: true
       },
       development: {
@@ -243,10 +243,10 @@ module.exports = function(grunt) {
 
     clean: {
       css: {
-        src: ["build/assets/css/**/*.css"]
+        src: ['build/assets/css/**/*.css']
       },
       build: {
-        src: ["build"]
+        src: ['build']
       }
     },
 
@@ -304,17 +304,17 @@ module.exports = function(grunt) {
 
     modernizr: {
       dist: {
-        "devFile" : "components/libs/modernizr/modernizr.js",
-        "outputFile" : "build/assets/js/libs/modernizr.js",
-        "extra" : {
-          "shiv" : <% if (oldIE) { %>true<% } else { %>false<% } %>,
-          "printshiv" : <% if (oldIE) { %>true<% } else { %>false<% } %>,
-          "load" : false,
-          "mq" : false,
-          "cssclasses" : true
+        'devFile' : 'components/libs/modernizr/modernizr.js',
+        'outputFile' : 'build/assets/js/libs/modernizr.js',
+        'extra' : {
+          'shiv' : <% if (oldIE) { %>true<% } else { %>false<% } %>,
+          'printshiv' : <% if (oldIE) { %>true<% } else { %>false<% } %>,
+          'load' : false,
+          'mq' : false,
+          'cssclasses' : true
         },
-        "files" : {
-          "src": ['components/app/**/*.js', 'build/**/*.css']
+        'files' : {
+          'src': ['components/app/**/*.js', 'build/**/*.css']
         }
       }
     },
@@ -336,7 +336,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks("grunt-modernizr");
+  grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
