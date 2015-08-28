@@ -83,7 +83,7 @@ module.exports = function(grunt) {
       production: {
         options: {
           environment: 'production',
-          httpPath: "/" // . = relative
+          httpPath: '/' // . = relative
         }
       }
     },
