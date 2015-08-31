@@ -17,6 +17,7 @@ describe('Kickstart:app', function () {
       '.scsslintrc',
       'README.md',
       'apple-touch-icon.png',
+      'windows-tile-icon.png',
       'bower.json',
       'components/app/main.js',
       'components/foo.scss',

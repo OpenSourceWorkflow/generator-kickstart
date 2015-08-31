@@ -295,8 +295,8 @@ module.exports = function(grunt) {
           flatten: true,
           expand: true,
           cwd: '.',
-          src: ['favicon.ico', 'apple-touch-icon.png'],
-          dest: 'build'
+          src: ['favicon.ico', 'apple-touch-icon.png', 'windows-tile-icon.png'],
+          dest: 'build/assets/img'
         }],
         verbose: true
       }
