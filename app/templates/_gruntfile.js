@@ -331,8 +331,9 @@ module.exports = function(grunt) {
     scsslint: {
       options: {
         bundleExec: true,
-        config: '.scsslintrc',
         colorizeOutput: true,
+        compact: true,
+        config: '.scsslintrc',
         reporterOutput: null
       },
       scss: [
