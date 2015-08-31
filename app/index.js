@@ -327,6 +327,11 @@ KickstartGenerator = yeoman.generators.Base.extend({
       this.destinationPath('apple-touch-icon.png')
     );
 
+    this.fs.copy(
+      this.templatePath('_windows-tile-icon.png'),
+      this.destinationPath('windows-tile-icon.png')
+    );
+
   },
 
   /**
