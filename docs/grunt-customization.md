@@ -21,6 +21,7 @@ Creates JavaScript documentation in ```documentation/```.
 
 For each customizable task there is a ```.*rc```-file that you can use to make these tasks fit your needs.
 
+* Accessibility-Linter: [.accessibilityrc](https://github.com/yargalot/grunt-accessibility/)
+* JSHint: [.jshintrc](http://www.jshint.com/docs/options/)
 * OOCSS-Linter: [.csslintrc](https://github.com/CSSLint/csslint/wiki/Rules)
-* JSHint-Linter: [.jshintrc](http://www.jshint.com/docs/options/)
-* accessibility-task: [.accessibilityrc](https://github.com/yargalot/grunt-accessibility/)
+* SCSS-Linter: [.scsslintrc](https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md)
