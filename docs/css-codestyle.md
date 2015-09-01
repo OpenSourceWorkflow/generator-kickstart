@@ -30,7 +30,7 @@ In Kickstart projects all of these properties are set by default. An editorconfi
     color: blue;
 
     div{ // no space after selector
-      span { // nested to deep
+      span { // nested too deep
         border: 1px solid red;
       }
     }
