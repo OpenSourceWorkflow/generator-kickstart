@@ -1,10 +1,10 @@
 {
   "name": "generator-kickstart",
-  "version": "3.3.1",
+  "version": "3.3.2",
   "description": "Yeoman generator for creating websites and single page applications",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "markusfalk/generator-kickstart",
+  "repository": "OpenSourceWorkflow/generator-kickstart",
   "author": {
     "name": "Markus Falk",
     "email": "mail@markus-falk.com",
