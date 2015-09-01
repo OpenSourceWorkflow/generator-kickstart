@@ -49,7 +49,7 @@ KickstartGenerator = yeoman.generators.Base.extend({
     var done = this.async();
 
     // Have Yeoman greet the user.
-    this.log(yosay('Thank you for choosing Kickstart. Sit back and relax while I setup your project.'));
+    this.log(yosay('Sit back and relax while I setup your project.'));
 
     var prompts = [
       {
@@ -346,6 +346,8 @@ KickstartGenerator = yeoman.generators.Base.extend({
       this.installDependencies();
 
       // gems
+      this.log('Running ' + chalk.yellow.bold('bundle install') + ' for you to install the required dependencies. If this fails, try running the command yourself.');
+      this.log('\n');
       this.spawnCommand('bundle', ['install']);
     }
 
