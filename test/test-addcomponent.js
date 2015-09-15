@@ -71,7 +71,7 @@ describe('Kickstart:addcomponent', function () {
     });
 
     it('is the new module wired to project-name.scss?', function () {
-      assert.fileContent('components/foo.scss', /@import \"app\/foo\/foo\";/);
+      assert.fileContent('components/foo.scss', /@import \'app\/foo\/foo\';/);
     });
 
     it('is the new module wired to project-name.js?', function () {
@@ -129,7 +129,7 @@ describe('Kickstart:addcomponent', function () {
     });
 
     it('is the new module wired to _project-name.scss?', function () {
-      assert.fileContent('components/_foo.scss', /@import \"app\/foo\/foo\";/);
+      assert.fileContent('components/_foo.scss', /@import \'app\/foo\/foo\';/);
     });
 
   });
@@ -194,7 +194,7 @@ describe('Kickstart:addcomponent', function () {
     });
 
     it('is the new module wired to project-name.scss?', function () {
-      assert.fileContent('components/bar.scss', /@import \"app\/_deferred\/bar\/bar\";/);
+      assert.fileContent('components/bar.scss', /@import \'app\/_deferred\/bar\/bar\';/);
     });
 
     it('is the new module wired to project-name.js?', function () {
