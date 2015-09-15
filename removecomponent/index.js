@@ -118,9 +118,9 @@ RemovecomponentGenerator = yeoman.generators.NamedBase.extend({
     var file = this.fs.read(path);
 
     if (this.ComponentType === 'standardModule') {
-      match = '@import \"app\/' + string.slugify(this.name) + '\/' + string.slugify(this.name) + '\";\n';
+      match = '@import \'app\/' + string.slugify(this.name) + '\/' + string.slugify(this.name) + '\';\n';
     } else {
-      match = '@import \"app\/_deferred\/' + string.slugify(this.name) + '\/' + string.slugify(this.name) + '\";\n';
+      match = '@import \'app\/_deferred\/' + string.slugify(this.name) + '\/' + string.slugify(this.name) + '\';\n';
     }
 
     var newfile = file.replace(match, newcontent);

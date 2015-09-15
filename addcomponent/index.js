@@ -230,9 +230,9 @@ AddcomponentGenerator = yeoman.generators.NamedBase.extend({
 
         // compose
         if (this.ComponentType === 'standardModule') {
-          file += '@import "app/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '";\n';
+          file += '@import \'app/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '\';\n';
         } else {
-          file += '@import "app/_deferred/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '";\n';
+          file += '@import \'app/_deferred/' + string.slugify(this.name) + '/' + string.slugify(this.name) + '\';\n';
         }
 
         // write
