@@ -250,10 +250,9 @@ AddcomponentGenerator = yeoman.generators.NamedBase.extend({
         path = 'components/_' + this.pkg.name + '.scss';
       }
 
-      this.log('PATH: ' + path);
-
+      // exit app when file doesn't exist
       if(!this.fs.exists(path)) {
-        this.log.error('FILE DOESNT EXIST');
+        this.emit('error', 'Does ' + path + ' exist?');
       }
 
       // read
@@ -291,8 +290,14 @@ AddcomponentGenerator = yeoman.generators.NamedBase.extend({
     if (this.includeJS) {
 
       var
-      path = 'components/' + this.pkg.name + '.js',
-      file = this.fs.read(path),
+      path = 'components/' + this.pkg.name + '.js';
+
+      // exit app when file doesn't exist
+      if(!this.fs.exists(path)) {
+        this.emit('error', 'Does ' + path + ' exist?');
+      }
+
+      var file = this.fs.read(path),
       match = '//{{app}}',
       regex = new RegExp('/' + string.slugify(this.name) + '/', 'g'),
       line = lineNumber(file, regex),

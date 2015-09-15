@@ -144,6 +144,11 @@ RemovecomponentGenerator = yeoman.generators.NamedBase.extend({
       path = 'components/_' + this.pkg.name + '.scss';
     }
 
+    // exit app when file doesn't exist
+    if(!this.fs.exists(path)) {
+      this.emit('error', 'Does ' + path + ' exist?');
+    }
+
     var file = this.fs.read(path);
 
     if (this.ComponentType === 'standardModule') {
@@ -165,7 +170,14 @@ RemovecomponentGenerator = yeoman.generators.NamedBase.extend({
   removeFromRequireJS: function () {
 
     var
-    path = 'components/' + this.pkg.name + '.js',
+    path = 'components/' + this.pkg.name + '.js';
+
+    // exit app when file doesn't exist
+    if(!this.fs.exists(path)) {
+      this.emit('error', 'Does ' + path + ' exist?');
+    }
+
+    var
     file = this.fs.read(path),
     newcontent = '',
     match;
