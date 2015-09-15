@@ -21,7 +21,6 @@ RemovecomponentGenerator = yeoman.generators.NamedBase.extend({
    * @private
    */
   constructor: function () {
-    // console.log(yeoman.NamedBase);
     yeoman.Base.apply(this, arguments);
 
     this.argument('name', {
@@ -29,6 +28,31 @@ RemovecomponentGenerator = yeoman.generators.NamedBase.extend({
       type: String,
       desc: 'The component name.'
     });
+
+    // take care of error handling
+    this.on('error', function(message) {
+      // print error message
+      this.log.error(message);
+      // exit shell
+      process.exit(5);
+    });
+
+  },
+
+  /**
+   * Loads JSON files.
+   * @function _loadJSON
+   * @returns {JSON} file's contents
+   * @private
+   */
+  _loadJSON: function(name) {
+    var json = this.fs.readJSON(name);
+
+    if(json) {
+      return json;
+    } else {
+      throw new Error('Could not open ' + name + '. Are you in root directory of the project?');
+    }
 
   },
 
@@ -38,7 +62,12 @@ RemovecomponentGenerator = yeoman.generators.NamedBase.extend({
    * @private
    */
   getPackage: function () {
-    this.pkg = this.fs.readJSON('package.json');
+    try {
+      this.pkg = this._loadJSON('package.json');
+    } catch (error) {
+      this.emit('error', error);
+      return;
+    }
   },
 
   /**
