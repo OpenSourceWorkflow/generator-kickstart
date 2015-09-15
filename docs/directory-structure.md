@@ -14,20 +14,23 @@
 |   |   |   └── <component-name>.scss
 |   |   |   └── <component-name>.html
 |   |   └── main.js #(main requirejs module)
-|   └── .js #(require config)
-|   └── .scss #(base file for SCSS)
+|   └── <project-name>.js #(require config)
+|   └── <project-name>.scss #(base file for SCSS)
 |── img/ #(images rendered by CMS)
 └── .bowerrc
 └── .csslintrc
 └── .editorconfig
 └── .gitignore
-└── Gemfile
-└── bower.json
-└── gruntfile.js
-└── favicon.ico
-└── package.json
+└── .scsslintrc
 └── README.md
+└── apple-touch-icon.png
+└── bower.json
+└── favicon.ico
+└── gems.rb
+└── gruntfile.js
+└── package.json
 └── sandbox.html #(main template, you can add as many as you want)
+└── windows-tile-icon.png
 ```
 
 This is what it builds into:
@@ -36,12 +39,14 @@ This is what it builds into:
 build/
 |── assets/
 |   └── img/
+|       └── favicon.ico
+|       └── windows-tile-icon.png
+|       └── apple-touch-icon.png
 |   └── css/
 |   └── js/
 |       └── _deferred/
 |       └── libs/
 |── img/
-└── favicon.ico
 └── sandbox.html
 ```
 
