@@ -1,7 +1,5 @@
 # Kickstart
 
-<b>The open source workflow for the web</b>
-
 ![Project is deprecated!](https://cdn.rawgit.com/OpenSourceWorkflow/generator-kickstart/master/deprecation-notice.svg)
 
 ## Alternatives
@@ -9,9 +7,10 @@
 * [Angular CLI](https://angular.io/docs/ts/latest/cli-quickstart.html)
 * [Webpack CLI](https://webpack.js.org/api/cli/#components/sidebar/sidebar.jsx)
 
+## What is Kickstart?
+
 <img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/master/docs/kickstart.png" alt="">
 
-## What is Kickstart?
 
 The Kickstart project is a yeoman generator. But it is also an open source workflow for creating the front-end of **websites** or **single page applications**.
 It is continuously tested and improved in an web agency environment and aims at small to large teams working with HTML, CSS and JS.
