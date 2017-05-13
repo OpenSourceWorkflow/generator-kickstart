@@ -1,6 +1,6 @@
 # Kickstart
 
-![Project is deprecated!](https://cdn.rawgit.com/OpenSourceWorkflow/generator-kickstart/master/deprecation-notice.svg)
+![Project is deprecated!](https://cdn.rawgit.com/OpenSourceWorkflow/generator-kickstart/master/deprecation-warning.svg)
 
 ## Alternatives
 
