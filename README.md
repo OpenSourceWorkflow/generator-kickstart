@@ -2,6 +2,13 @@
 
 <b>The open source workflow for the web</b>
 
+<img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/master/docs/deprecation-notice.svg" alt="">
+
+## Alternatives
+
+* [Angular CLI](https://angular.io/docs/ts/latest/cli-quickstart.html)
+* [Webpack CLI](https://webpack.js.org/api/cli/#components/sidebar/sidebar.jsx)
+
 <img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/master/docs/kickstart.png" alt="">
 
 ## What is Kickstart?
