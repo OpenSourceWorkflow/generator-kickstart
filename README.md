@@ -2,7 +2,7 @@
 
 <b>The open source workflow for the web</b>
 
-<img src="https://raw.githubusercontent.com/markusfalk/generator-kickstart/master/docs/deprecation-notice.svg" alt="">
+<img src="https://raw.githubusercontent.com/OpenSourceWorkflow/generator-kickstart/master/deprecation-notice.svg" alt="This project is deprecated!">
 
 ## Alternatives
 
