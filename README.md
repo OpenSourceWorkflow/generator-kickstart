@@ -4,8 +4,12 @@
 
 ## Alternatives
 
+The project has been deprecated in favor of these alternatives and I highly recommend using them instead:
+
 * [Angular CLI](https://angular.io/docs/ts/latest/cli-quickstart.html)
 * [Webpack CLI](https://webpack.js.org/api/cli/#components/sidebar/sidebar.jsx)
+
+If you still need to use the generator there is a more actively maintained [fork](https://github.com/webit-de/generator-kickstart).
 
 ## What is Kickstart?
 
