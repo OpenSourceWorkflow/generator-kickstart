@@ -2,10 +2,10 @@
  <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
  <g>
   <title>Border</title>
-  <rect fill-opacity="0" id="svg_1" height="80" width="640" y="0" x="0" stroke-width="5" fill="#000000" stroke="#ff0000"/>
+  <rect stroke="#ff0000" fill="#000000" stroke-width="5" x="0" y="0" width="640" height="80" id="svg_1" fill-opacity="0"/>
  </g>
  <g>
   <title>Text</title>
-  <text font-weight="bold" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" id="svg_2" y="47.5" x="315.98438" stroke-width="0" stroke="#ff0000" fill="#ff0000">Deprecation Notice</text>
+  <text style="cursor: move;" fill="#ff0000" stroke="#ff0000" stroke-width="0" x="315.98438" y="47.5" id="svg_2" font-size="24" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" font-weight="bold">DEPRECATED!</text>
  </g>
 </svg>
